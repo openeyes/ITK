@@ -1,0 +1,544 @@
+<protocol name="Opthalmology Paediatric Protocol" region="NHS Scotland" version="1.2">
+	<category text="Patient Demographics">
+		<question text="Title" id="patient_title" type="select" mandatory="true" objectOld="patient" propertyOld="Title" object="Patient" property="Title">
+			<option text=" " value="" isDefault="true"/>
+			<option text="Mr" value="Mr"/>
+			<option text="Mrs" value="Mrs"/>
+			<option text="Ms" value="Ms"/>
+			<option text="Dr" value="Dr"/>
+			<option text="Miss" value="Miss"/>
+			<option text="Mst" value="Mst"/>
+		</question>
+		<question text="First Name(s)" id="patient_forename" type="text" mandatory="true" objectOld="patient" propertyOld="forename" object="Patient" property="Forename"/>
+		<question text="Surname" id="patient_surname" type="text" mandatory="true" objectOld="patient" propertyOld="surname" object="Patient" property="Surname"/>
+		<question text="Address" id="patient_addressline" type="textArea" mandatory="true" objectOld="patient" propertyOld="Address" object="Patient" property="Address"/>
+		<question text="Post Code" id="patient_postcode" type="text" mandatory="true" objectOld="patient" propertyOld="Postcode" object="Patient" property="Postcode"/>
+		<question text="Phone Number" id="patient_phone" type="text" objectOld="patient" propertyOld="Phone" object="Patient" property="Phone"/>
+		<question text="CHI Number" id="chi" type="text" readonly="true" objectOld="patient" propertyOld="CHINumber" object="Patient" property="Chi"/>
+		<question text="Date of Birth" id="patient_dob" type="date" mandatory="true" objectOld="patient" propertyOld="DateOfBirth" object="Patient" property="DateOfBirth"/>
+		<question text="Date of Exam" id="referral_date" mandatory="true" type="date"/>
+		<question text="Health Board" id="health_board_cipher" type="select" mandatory="true" objectOld="patient" propertyOld="HealthBoardCipher" object="Patient" property="HealthBoardCipher">
+			<option text="(Not Known)" value=""/>
+			<option text="Ayrshire and Arran" value="A"/>
+			<option text="Borders" value="B"/>
+			<option text="Dumfries and Galloway" value="Y"/>
+			<option text="Fife" value="F"/>
+			<option text="Forth Valley" value="V"/>
+			<option text="Grampian" value="N"/>
+			<option text="GGC" value="G"/>
+			<option text="Highland" value="H"/>
+			<option text="Lanarkshire" value="L"/>
+			<option text="Lothian" value="S"/>
+			<option text="Northumberland" value="E"/>
+			<option text="Orkney" value="R"/>
+			<option text="Shetland" value="Z"/>
+			<option text="Tayside" value="T"/>
+			<option text="Western Isles" value="W"/>
+		</question>
+		<question text="Reference Number" id="structadmin_reference" type="text" mandatory="true"/>
+		<question id="priority" type="select" text="Priority" mandatory="true">
+			<option text="Routine" value="Routine" isDefault="true" source="0"/>
+			<option text="Urgent" value="Urgent" source="1"/>
+		</question>
+	</category>
+	<category text="Optometry Referral Details">
+		<category text="Paediatric Information">
+			<freeText>
+				<table width="100%" style="border-color: Black;border-style: solid;border-width: thin;">
+					<tr>
+						<td>
+							Ocular examination
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<question text="Dilated" id="protresponse_dilated" type="select">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Yes" value="Yes"/>
+								<option text="No" value="No"/>
+							</question>
+						</td>
+					</tr>
+					<tr>
+						<td width="50%">
+							<question text="Comment Right" id="protresponse_PseudoRightText" type="textArea"/>
+						</td>
+						<td width="50%">
+							<question text="Comment Left" id="protresponse_PseudoLeftText" type="textArea"/>
+						</td>
+					</tr>
+				</table>
+				<table width="100%" style="border-color: Black;border-style: solid;border-width: 0px thin thin;">
+					<tr>
+						<td>
+							<question text="Amblyoia" id="protresponse_amblyoia" type="select" width="80">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Yes" value="Yes"/>
+								<option text="No" value="No"/>
+							</question>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<question text="Squint" id="protresponse_squint" type="select" width="80">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Yes" value="Yes"/>
+								<option text="No" value="No"/>
+							</question>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<question text="Cover test/stereopsis/EOM" id="protresponse_cover_stereopsis" type="textArea"/>
+						</td>
+					</tr>
+				</table>
+			</freeText>
+		</category>
+		<category text="Refraction Details">
+			<freeText>
+				<table width="100%">
+					<tr>
+						<td>
+							<question text="Test Date" id="protresponse_test_date" type="date"/>
+						</td>
+						<td/>
+						<td>
+							<question text="Images Attached" id="structadmin_Images" type="select">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Yes" value="Yes"/>
+								<option text="No" value="No"/>
+							</question>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<question text="Refraction - cycloplegic" id="protresponse_cycloplegic" type="select">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Yes" value="Yes"/>
+								<option text="No" value="No"/>
+							</question>
+						</td>
+						<td/>
+						<td/>
+					</tr>
+					<tr>
+						<td>
+							<question text="Glasses Prescribed" id="protresponse_glasses_prescribed" type="select">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Yes" value="Yes"/>
+								<option text="No" value="No"/>
+							</question>
+						</td>
+						<td/>
+						<td/>
+					</tr>
+					<tr>
+						<td width="50%">
+							<h2>Right Vision</h2>
+							<table width="100%" style="background-color: Silver; border-color: Black;border-style: solid;border-width: thin;">
+								<tr>
+									<td width="30%"/>
+									<td width="40%">
+										<question text="R VA" id="protresponse_va_right" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="6/4.5" value="6/4.5"/>
+											<option text="6/5" value="6/5"/>
+											<option text="6/6" value="6/6"/>
+											<option text="6/9" value="6/9"/>
+											<option text="6/12" value="6/12"/>
+											<option text="6/18" value="6/18"/>
+											<option text="6/24" value="6/24"/>
+											<option text="6/36" value="6/36"/>
+											<option text="6/60" value="6/60"/>
+											<option text="CF" value="CF"/>
+											<option text="HM" value="HM"/>
+											<option text="P of L" value="P of L"/>
+											<option text="No P of L" value="No P of L"/>
+										</question>
+									</td>
+									<td width="30%"/>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="R Test Used" id="protresponse_testused_right" type="text" width="80"/>
+									</td>
+									<td>(linear preferred)</td>
+								</tr>
+								<tr>
+									<td>
+										<question text="R Sph +/-" id="protresponse_sph_right_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td>
+										<question text="R Sph" id="protresponse_sph_right_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 0-25)</td>
+								</tr>
+								<tr>
+									<td>
+										<question text="R Cyl +/-" id="protresponse_cyl_right_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td>
+										<question text="R Cyl" id="protresponse_cyl_right_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 0-15)</td>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="R Axis" id="protresponse_axis_right" type="text" maxlength="4" width="80"/>
+									</td>
+									<td>(between 0-180)</td>
+								</tr>
+							</table>
+						</td>
+						<td width="1%"/>
+						<td width="49%">
+							<h2>Left Vision</h2>
+							<table width="100%" style="background-color: Silver; border-color: Black;border-style: solid;border-width: thin;">
+								<tr>
+									<td width="30%"/>
+									<td width="40%">
+										<question text="L VA" id="protresponse_va_left" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="6/4.5" value="6/4.5"/>
+											<option text="6/5" value="6/5"/>
+											<option text="6/6" value="6/6"/>
+											<option text="6/9" value="6/9"/>
+											<option text="6/12" value="6/12"/>
+											<option text="6/18" value="6/18"/>
+											<option text="6/24" value="6/24"/>
+											<option text="6/36" value="6/36"/>
+											<option text="6/60" value="6/60"/>
+											<option text="CF" value="CF"/>
+											<option text="HM" value="HM"/>
+											<option text="P of L" value="P of L"/>
+											<option text="No P of L" value="No P of L"/>
+										</question>
+									</td>
+									<td width="30%"/>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="L Test Used" id="protresponse_testused_left" type="text" width="80"/>
+									</td>
+									<td>(linear preferred)</td>
+								</tr>
+								<tr>
+									<td>
+										<question text="L Sph +/-" id="protresponse_sph_left_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td>
+										<question text="L Sph" id="protresponse_sph_left_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 0-25)</td>
+								</tr>
+								<tr>
+									<td>
+										<question text="L Cyl +/-" id="protresponse_cyl_left_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td>
+										<question text="L Cyl" id="protresponse_cyl_left_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 0-15)</td>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="L Axis" id="protresponse_axis_left" type="text" maxlength="4" width="80"/>
+									</td>
+									<td>(between 0-180)</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr/>
+					<tr/>
+					<tr/>
+					<tr/>
+					<tr/>
+					<tr>
+						<td width="50%">
+							<h2>Corrected Right Vision</h2>
+							<table width="100%" style="background-color: Silver; border-color: Black;border-style: solid;border-width: thin;">
+								<tr>
+									<td width="30%"/>
+									<td width="40%">
+										<question text="Corrected R VA" id="protresponse_corrected_va_right" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="6/4.5" value="6/4.5"/>
+											<option text="6/5" value="6/5"/>
+											<option text="6/6" value="6/6"/>
+											<option text="6/9" value="6/9"/>
+											<option text="6/12" value="6/12"/>
+											<option text="6/18" value="6/18"/>
+											<option text="6/24" value="6/24"/>
+											<option text="6/36" value="6/36"/>
+											<option text="6/60" value="6/60"/>
+											<option text="CF" value="CF"/>
+											<option text="HM" value="HM"/>
+											<option text="P of L" value="P of L"/>
+											<option text="No P of L" value="No P of L"/>
+										</question>
+									</td>
+									<td width="30%"/>
+								</tr>
+								<tr>
+									<td>
+										<question text="Corrected R Sph +/-" id="protresponse_corrected_sph_right_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td>
+										<question text="Corrected R Sph" id="protresponse_corrected_sph_right_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 0-25)</td>
+								</tr>
+								<tr>
+									<td>
+										<question text="Corrected R Cyl +/-" id="protresponse_corrected_cyl_right_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td>
+										<question text="Corrected R Cyl" id="protresponse_corrected_cyl_right_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 0-15)</td>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="Corrected R Axis" id="protresponse_corrected_axis_right" type="text" maxlength="4" width="80"/>
+									</td>
+									<td>(between 0-180)</td>
+								</tr>
+							</table>
+						</td>
+						<td width="1%"/>
+						<td width="49%">
+							<h2>Corrected Left Vision</h2>
+							<table width="100%" style="background-color: Silver; border-color: Black;border-style: solid;border-width: thin;">
+								<tr>
+									<td width="30%"/>
+									<td width="40%">
+										<question text="Corrected L VA" id="protresponse_corrected_va_left" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="6/4.5" value="6/4.5"/>
+											<option text="6/5" value="6/5"/>
+											<option text="6/6" value="6/6"/>
+											<option text="6/9" value="6/9"/>
+											<option text="6/12" value="6/12"/>
+											<option text="6/18" value="6/18"/>
+											<option text="6/24" value="6/24"/>
+											<option text="6/36" value="6/36"/>
+											<option text="6/60" value="6/60"/>
+											<option text="CF" value="CF"/>
+											<option text="HM" value="HM"/>
+											<option text="P of L" value="P of L"/>
+											<option text="No P of L" value="No P of L"/>
+										</question>
+									</td>
+									<td width="30%"/>
+								</tr>
+								<tr>
+									<td>
+										<question text="Corrected L Sph +/-" id="protresponse_corrected_sph_left_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td>
+										<question text="Corrected L Sph" id="protresponse_corrected_sph_left_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 0-25)</td>
+								</tr>
+								<tr>
+									<td>
+										<question text="Corrected L Cyl +/-" id="protresponse_corrected_cyl_left_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td>
+										<question text="Corrected L Cyl" id="protresponse_corrected_cyl_left_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 0-15)</td>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="Corrected L Axis" id="protresponse_corrected_axis_left" type="text" maxlength="4" width="80"/>
+									</td>
+									<td>(between 0-180)</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</freeText>
+		</category>
+		<question text="Patient History and Details" id="structadmin_PatientHistory" type="textArea"/>
+	</category>
+	<category text="Administrative Information">
+		<freeText>
+			<table width="80%" style="border-color: Black;border-style: solid;border-width: thin;">
+				<tr>
+					<td>
+						<question text="Previous Attendance at HES?" id="structadmin_previouslyseen" type="select">
+							<option text=" " value="" isDefault="true"/>
+							<option text="Yes" value="Yes"/>
+							<option text="No" value="No"/>
+						</question>
+					</td>
+					<td>
+						<question text="If Yes, Location" id="structadmin_location" type="select">
+							<option text="(Not Known)" value="(Not Known)"/>
+							<option text="Ayrshire and Arran" value="Ayrshire and Arran"/>
+							<option text="Borders" value="Borders"/>
+							<option text="Dumfries and Galloway" value="Dumfries and Galloway"/>
+							<option text="Fife" value="Fife"/>
+							<option text="Forth Valley" value="Forth Valley"/>
+							<option text="Grampian" value="Grampian"/>
+							<option text="GGC" value="GGC"/>
+							<option text="Highland" value="Highland"/>
+							<option text="Lanarkshire" value="Lanarkshire"/>
+							<option text="Lothian" value="Lothian"/>
+							<option text="Northumberland" value="Northumberland"/>
+							<option text="Orkney" value="Orkney"/>
+							<option text="Shetland" value="Shetland"/>
+							<option text="Tayside" value="Tayside"/>
+							<option text="Western Isles" value="Western Isles"/>
+						</question>
+					</td>
+				</tr>
+			</table>
+			<table width="80%" style="border-color: Black;border-style: solid;border-width: 0px thin thin;">
+				<tr>
+					<td width="100%">
+							Armed Forces Personnel
+						</td>
+				</tr>
+				<tr>
+					<td>
+						<question text="Immediate family" type="select" id="structadmin_forces_immediate_family">
+							<option text=" " value="" isDefault="true"/>
+							<option text="Yes" value="Yes"/>
+							<option text="No" value="No"/>
+						</question>
+					</td>
+				</tr>
+			</table>
+			<table width="80%" style="border-color: Black;border-style: solid;border-width: 0px thin thin;">
+				<tr>
+					<td>
+						<question text="Translator Required?" id="structadmin_translator" type="select">
+							<option text=" " value="" isDefault="true"/>
+							<option text="Yes" value="Yes"/>
+							<option text="No" value="No"/>
+						</question>
+					</td>
+					<td>
+						<question text="If Yes, Language" id="structadmin_language" type="text" width="150">
+						</question>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<br/>
+		</freeText>
+		<question text="Has patients GP been informed?" id="structadmin_gpinformed" type="select">
+			<option text=" " value="" isDefault="true"/>
+			<option text="Yes" value="Yes"/>
+			<option text="No" value="No"/>
+		</question>
+		<category text="Patient GP Details">
+			<question text="Name" type="text" id="structadmin_gp_name"/>
+			<question text="Practice Name" type="text" id="structadmin_practice_name"/>
+			<question text="Address Line 1" type="text" id="structadmin_practice_address1"/>
+			<question text="Address Line 2" type="text" id="structadmin_practice_address2"/>
+			<question text="Address Line 3" type="text" id="structadmin_practice_address3"/>
+			<question text="Address Line 4" type="text" id="structadmin_practice_address4"/>
+			<question text="Postcode" type="text" id="structadmin_practice_postcode"/>
+		</category>
+		<question text="Description" type="select" hidden="true" id="maincondition_description" mandatory="true" objectOld="referral" propertyOld="Reason">
+			<option text="Glaucoma Demo" value="Glaucoma Demo" isDefault="true"/>
+		</question>
+		<question text="Referral Type" type="select" id="referraltype" mandatory="true" hidden="true">
+			<option text="Out Patient" value="Out Patient" isDefault="true"/>
+		</question>
+		<question text="Nature of Request" type="select" id="referral_expectedoutcome" mandatory="true" userName="Nature of Request - Clinical Data Tab" hidden="true">
+			<option text="(Not Specified)" value="Not Specified" isDefault="true"/>
+		</question>
+		<category text="Unique Care Pathway Number">
+			<question text="Pathway Number" id="unique_care_pathway_number" type="text" readonly="false" object="DocumentData" property="UniqueCarePathwayNumber"/>
+		</category>
+	</category>
+	<category text="Optometrist Details">
+		<category text="Referrer">
+			<question text="HCP Registration Scheme" type="hidden" id="refhcp_scheme"/>
+			<question text="Forename" type="text" id="refhcp_forename" mandatory="true"/>
+			<question text="Surname" type="text" id="refhcp_surname" mandatory="true"/>
+			<question text="Practice Name" type="text" id="reforg_name" mandatory="true"/>
+			<question text="Address" type="textArea" id="reforg_address" mandatory="true"/>
+			<question text="Postcode" type="text" id="reforg_postcode" mandatory="true"/>
+			<question text="Telephone Number" type="text" id="reforg_phone"/>
+		</category>
+		<category text="Referral To">
+			<question text="Health Board" id="structadmin_hb_cipher" type="select" mandatory="true">
+				<option text="(Not Known)" value="(Not Known)"/>
+				<option text="Ayrshire and Arran" value="Ayrshire and Arran"/>
+				<option text="Borders" value="Borders"/>
+				<option text="Dumfries and Galloway" value="Dumfries and Galloway"/>
+				<option text="Fife" value="Fife"/>
+				<option text="Forth Valley" value="Forth Valley"/>
+				<option text="Grampian" value="Grampian"/>
+				<option text="GGC" value="GGC"/>
+				<option text="Highland" value="Highland"/>
+				<option text="Lanarkshire" value="Lanarkshire"/>
+				<option text="Lothian" value="Lothian"/>
+				<option text="Northumberland" value="Northumberland"/>
+				<option text="Orkney" value="Orkney"/>
+				<option text="Shetland" value="Shetland"/>
+				<option text="Tayside" value="Tayside"/>
+				<option text="Western Isles" value="Western Isles"/>
+			</question>
+			<question text="Hospital ID" type="text" id="hospital_id" objectOld="referral" propertyOld="HospitalID"/>
+			<question text="Hospital Name" type="text" id="hospital_name" mandatory="true" objectOld="referral" propertyOld="HospitalName"/>
+			<question text="Hospital Address" type="textArea" id="hospital_address" objectOld="referral" propertyOld="HospitalAddress"/>
+			<question text="Hospital Phone Number" type="text" id="hospital_phone" objectOld="referral" propertyOld="HospitalTelephone"/>
+			<question text="Specialty" type="text" id="specialty" mandatory="true" objectOld="referral" propertyOld="Specialty"/>
+			<question text="Protocol" type="text" id="protocol" mandatory="true" objectOld="referral" propertyOld="Protocol"/>
+			<question text="Consultant Surname" type="text" id="hcp_surname" objectOld="referral" propertyOld="ConsultantSurname"/>
+			<question text="Consultant Forename" type="text" id="hcp_forename" objectOld="referral" propertyOld="ConsultantForename"/>
+			<question text="Consultant Grade" type="select" id="hcp_grade" objectOld="referral" propertyOld="ConsultantGrade">
+				<option text="Consultant" value="Consultant" isDefault="true"/>
+				<option text="Nurse" value="Nurse"/>
+			</question>
+			<question text="Consultant ID" type="hidden" id="hcp_id"/>
+		</category>
+	</category>
+</protocol>

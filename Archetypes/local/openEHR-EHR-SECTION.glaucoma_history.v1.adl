@@ -1,0 +1,96 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.glaucoma_history.v1
+
+concept
+	[at0000]	-- Glaucoma history
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2E699678E5E9A84BAB85A6C9AD3CCBB8">
+	>
+
+definition
+	SECTION[at0000] matches {	-- Glaucoma history
+		items cardinality matches {1..*; unordered} matches {
+			SECTION[at0001] occurrences matches {0..1} matches {*}
+			SECTION[at0002] occurrences matches {0..1} matches {	-- Ocular history
+				items cardinality matches {1..*; unordered} matches {
+					SECTION[at0009] occurrences matches {0..1} matches {*}
+					SECTION[at0010] occurrences matches {0..1} matches {*}
+					SECTION[at0011] occurrences matches {0..1} matches {*}
+				}
+			}
+			SECTION[at0004] occurrences matches {0..1} matches {*}
+			SECTION[at0005] occurrences matches {0..1} matches {*}
+			SECTION[at0012] occurrences matches {0..1} matches {*}
+			SECTION[at0006] occurrences matches {0..1} matches {*}
+			SECTION[at0007] occurrences matches {0..1} matches {*}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Glaucoma history">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Patient details">
+					description = <"*">
+				>
+				["at0002"] = <
+					text = <"Ocular history">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"Family history">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Systemic medication">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"Drug allergies">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Non-drug allergies">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Ocular disease">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Ocular surgery">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Ocular medication">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Systemic medical history">
+					description = <"*">
+				>
+			>
+		>
+	>

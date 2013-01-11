@@ -1,0 +1,246 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.visual_field_measurement.v1
+
+concept
+	[at0000]	-- Visual field measurement
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"Ocean Informatics UK">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2012-09-19">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"For recording the results of visual field testing.">
+			use = <"">
+			keywords = <"perimetry", "ophthalmic", "optometry", "eye", "vision">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"Gustavo Bacelar-Silva, Brazil", ...>
+	other_details = <
+		["references"] = <"Aylward W [Internet].Coding Visual Acuity, openEyes Project;2012.Available from http://www.openeyes.org.uk/documents/OpenEyes%20Coding%20Visual%20Acuity.pdf
+
+IHE Eye Care Domain. General Eye Evaluation (GEE) [Internet]. IHE; 2012. Available from: http://www.ihe.net/Technical_Framework/upload/IHE_EyeCare_Supp_GEE_Rev1-1_TI_2012-06-29.pdf
+
+Royal College of Opthalmologists. Cataract National Dataset for Adults [Internet]. 2011. Available from: http://www.rcophth.ac.uk/page.asp?section=583&sectionTitle=Cataract+National+Data+Set+for+Adults
+
+CfH, UK. Do Once & Share - Glaucoma [Internet]. [cited 2012 Sep 26]. Available from: http://www.doasglaucoma.org/
+
+DICOM Supplement 30 [Internet]. [cited 2012 Sep 26]. Available from: http://medical.nema.org/">
+		["current_contact"] = <"Ian McNicoll, Ocean Informatics, UK, ian.mcnicoll@oceaninformatics.com">
+		["MD5-CAM-1.0.1"] = <"59DAC1D8700C48ED4B9B86CDA82BBC6C">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Visual field measurement
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Clinical Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									CLUSTER[at0007] occurrences matches {0..2} matches {	-- Test Result
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0008] occurrences matches {0..1} matches {	-- Eye
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0019, 	-- Left eye
+															at0020]	-- Right eye
+														}
+													}
+												}
+											}
+											ELEMENT[at0009] occurrences matches {0..*} matches {	-- Clinical Interpretation
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0006] occurrences matches {0..1} matches {	-- Image
+												value matches {
+													DV_MULTIMEDIA matches {
+														media_type matches {
+															[openEHR::
+															425, 
+															426, 
+															427, 
+															428, 
+															429]
+														}
+													}
+												}
+											}
+										}
+									}
+									ELEMENT[at0025] occurrences matches {0..1} matches {	-- Overall Interpretation
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0024] occurrences matches {0..1} matches {	-- Additional Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0022] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0023] occurrences matches {0..*} matches {	-- Confounding Factors
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0010] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0011] occurrences matches {0..1} matches {	-- Perimetry Method
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0012, 	-- Goldman perimetry
+									at0013, 	-- Dicon
+									at0014, 	-- Henson
+									at0015, 	-- Octopus
+									at0016, 	-- Humphrey
+									at0017]	-- Frequency Doubling Perimetry (FDP)
+								}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0026] occurrences matches {0..1} matches {	-- Device Details
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Visual field measurement">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"Any measurement event.">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Clinical Description">
+					description = <"A term, commonly coded, expressing an overall interpretation of the visual field test.">
+				>
+				["at0006"] = <
+					text = <"Image">
+					description = <"A multimedia representaion of the visual field test.">
+				>
+				["at0007"] = <
+					text = <"Test Result">
+					description = <"Details of the visual acuity test result for each eye or both eyes.">
+				>
+				["at0008"] = <
+					text = <"Eye">
+					description = <"The eye which is being examined.">
+				>
+				["at0009"] = <
+					text = <"Clinical Interpretation">
+					description = <"The test result expressed as a qualitative term, normally coded.">
+				>
+				["at0010"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0011"] = <
+					text = <"Perimetry Method">
+					description = <"The method used to record the perimetry result.">
+				>
+				["at0012"] = <
+					text = <"Goldman perimetry">
+					description = <"Goldman perimetry was used to measure the visual fields.">
+				>
+				["at0013"] = <
+					text = <"Dicon">
+					description = <"The Dicon device was used to measure the visual fields.">
+				>
+				["at0014"] = <
+					text = <"Henson">
+					description = <"A Henson device was used to measure the visual fields.">
+				>
+				["at0015"] = <
+					text = <"Octopus">
+					description = <"An Octopus device was used to measure the visual fields.">
+				>
+				["at0016"] = <
+					text = <"Humphrey">
+					description = <"A Humphrey device was used to measure the visual fields.">
+				>
+				["at0017"] = <
+					text = <"Frequency Doubling Perimetry (FDP)">
+					description = <"Frequency Doubling Perimetry was used to measure the visual fields.">
+				>
+				["at0019"] = <
+					text = <"Left eye">
+					description = <"The left eye was examined.">
+				>
+				["at0020"] = <
+					text = <"Right eye">
+					description = <"The right eye was examined.">
+				>
+				["at0022"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0023"] = <
+					text = <"Confounding Factors">
+					description = <"Patient circumstances which may affect interpretation of the result.">
+				>
+				["at0024"] = <
+					text = <"Additional Comment">
+					description = <"Any additional narrative comment about the visual acuity test.">
+				>
+				["at0025"] = <
+					text = <"Overall Interpretation">
+					description = <"An overall narrative description of the visual acuity test result.">
+				>
+				["at0026"] = <
+					text = <"Device Details">
+					description = <"Details of the device used to measure visual fields.">
+				>
+			>
+		>
+	>

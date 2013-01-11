@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:itk="urn:nhs-itk:ns:201005">
+	<soap:Header>
+		<wsa:MessageID>uuid_5173B73B-B3B0-4433-9D5A-D321F52B1D00</wsa:MessageID>
+		<wsa:Action>urn:nhs-itk:services:201005:SendCDADocument-v2-0</wsa:Action>
+		<wsa:To>http://faraway.nhs.uk</wsa:To>
+		<wsa:From>
+			<wsa:Address>http://localhost:4000</wsa:Address>
+		</wsa:From>
+        <!--
+		<wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+			<wsu:Timestamp xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="D6CD5232-14CF-11DF-9423-1F9A910D4703">
+				<wsu:Created>__TIMESTAMP__</wsu:Created>
+				<wsu:Expires>__EXPIRES__</wsu:Expires>
+			</wsu:Timestamp>
+			<wsse:UsernameToken>
+				<wsse:Username>TKS Server test</wsse:Username>
+			</wsse:UsernameToken>
+		</wsse:Security>
+        -->
+	</soap:Header>
+	<soap:Body>
+		<DistributionEnvelope xmlns="urn:nhs-itk:ns:201005">
+			<header trackingid="5C89F89B-D4D6-4BA3-BD9A-1C9385000A18" service="urn:nhs-itk:services:201005:SendCDADocument-v2-0">
+				<addresslist>
+					<address uri="urn:nhs-uk:addressing:ods:V396A" />
+				</addresslist>
+				<auditIdentity>
+					<id uri="urn:nhs-uk:identity:ods:5L399:101" />
+				</auditIdentity>
+				<manifest count="1">
+					<manifestitem id="uuid_5D3980CE-7B19-45C6-91E7-030676E578BA" mimetype="text/xml" profileid="urn:nhs-en:profile:nonCodedCDADocument-v2-0" />
+				</manifest>
+				<senderAddress uri="urn:nhs-uk:addressing:ods:5L399:101" />
+				<handlingSpecification>
+					<spec key="urn:nhs-itk:ns:201005:ackrequested" value="true" />
+					<spec key="urn:nhs-itk:ns:201005:interaction" value="urn:nhs-itk:interaction:primaryRecipientNonCodedCDADocument-v2-0" />
+				</handlingSpecification>
+			</header>
+			<payloads count="1">
+				<payload id="uuid_5D3980CE-7B19-45C6-91E7-030676E578BA">
+					<ClinicalDocument xmlns:npfitlc="NPFIT:HL7:Localisation" xsi:schemaLocation="urn:hl7-org:v3 ../Schemas/POCD_MT000002UK01.xsd" moodCode="EVN" classCode="DOCCLIN" xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+						<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040" />
+						<npfitlc:messageType root="2.16.840.1.113883.2.1.3.2.4.18.17" extension="POCD_MT010011GB02" />
+						<id root="25D035CD-FCA3-424F-95F7-285CC4DB050D" />
+						<code code="OPHTH_GLAU_SCR" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.337" displayName="Glaucoma screening report" />
+						<title>Glaucoma screening report</title>
+						<effectiveTime value="20121130142454+0000" />
+						<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="normal" />
+						<setId root="28ABFA82-9C7A-4814-845F-D362E699E4A5" />
+						<versionNumber value="1" />
+						<recordTarget typeCode="RCT" contextControlCode="OP">
+							<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145201GB01#PatientRole" />
+							<patientRole classCode="PAT">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#PatientRole" />
+								<id root="2.16.840.1.113883.2.1.3.2.4.18.24" extension="WM1197955" assigningAuthorityName="E87745:CAVENDISH HEALTH CENTRE" />
+								<id root="2.16.840.1.113883.2.1.3.2.4.18.23" extension="6496618526" />
+								<addr use="H">
+									<streetAddressLine>Flat 5</streetAddressLine>
+									<streetAddressLine>28 Devonshire Place</streetAddressLine>
+									<city>London</city>
+									<postalCode>W1G 6JG</postalCode>
+								</addr>
+								<patient classCode="PSN" determinerCode="INSTANCE">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#patientPatient" />
+									<name>
+										<given>Edward</given>
+										<family>PHILLIPS</family>
+									</name>
+									<administrativeGenderCode code="1" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.25" displayName="Male" />
+									<birthTime value="19930105" />
+									<languageCommunication>
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#languageCommunication" />
+										<languageCode code="en" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.70" />
+									</languageCommunication>
+								</patient>
+							</patientRole>
+						</recordTarget>
+						<author typeCode="AUT" contextControlCode="OP">
+							<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145200GB01#AssignedAuthor" />
+							<functionCode code="OA" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" displayName="Originating Author" />
+							<time value="20120907154200+0100" />
+							<assignedAuthor classCode="ASSIGNED">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#AssignedAuthor" />
+								<id nullFlavor="NI" />
+								<code code="NR0050" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Consultant" />
+								<addr use="WP">
+									<streetAddressLine>64 Victoria Street</streetAddressLine>
+									<streetAddressLine>7th Floor</streetAddressLine>
+									<city>London</city>
+									<postalCode>SW1E 6QP</postalCode>
+								</addr>
+								<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#assignedPerson" />
+									<name>
+										<given>Janet</given>
+										<family>Ronalds</family>
+									</name>
+								</assignedPerson>
+								<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#representedOrganization" />
+									<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="RYX" />
+									<name>Central London Community Healthcare NHS Trust</name>
+								</representedOrganization>
+							</assignedAuthor>
+						</author>
+						<custodian typeCode="CST">
+							<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145018UK03#AssignedCustodian" />
+							<assignedCustodian classCode="ASSIGNED">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#AssignedCustodian" />
+								<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#representedCustodianOrganization" />
+									<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="RYX" />
+									<name>Central London Community Healthcare NHS Trust</name>
+								</representedCustodianOrganization>
+							</assignedCustodian>
+						</custodian>
+						<informationRecipient typeCode="PRCP">
+							<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145202GB02#IntendedRecipient" />
+							<intendedRecipient classCode="ASSIGNED">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145202GB02#IntendedRecipient" />
+								<id root="2.16.840.1.113883.2.1.3.2.4.18.24" extension="G8433547" assigningAuthorityName="E87745:CAVENDISH HEALTH CENTRE" />
+								<telecom value="tel:020 74875244" />
+								<informationRecipient classCode="PSN" determinerCode="INSTANCE">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145202GB02#assignedPerson" />
+									<name>
+										<given>N</given>
+										<family>GIAM</family>
+									</name>
+								</informationRecipient>
+								<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145202GB02#representedOrganization" />
+									<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="E87745" />
+									<name>CAVENDISH HEALTH CENTRE</name>
+								</receivedOrganization>
+							</intendedRecipient>
+						</informationRecipient>
+						<component typeCode="COMP" contextConductionInd="true">
+							<structuredBody classCode="DOCBODY" moodCode="EVN">
+								<component typeCode="COMP" contextConductionInd="true">
+									<section classCode="DOCSECT" moodCode="EVN">
+										<id root="3331A890-6C6B-446B-BE36-D1FF6D0FBAEE" />
+										<entry typeCode="COMP" contextConductionInd="true">
+											<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146224GB02#ObservationMedia" />
+											<observationMedia classCode="OBS" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146224GB02#ObservationMedia" />
+												<id root="5F417A2F-0423-4309-A498-149F9028A511" />
+												<value xsi:type="ED.NHS.ObservationMedia" representation="TXT" mediaType="application/openehr+xml">
+													<![CDATA[
+														<openEhr><moreContentHere /></openEhr>
+													]]></value>
+												<subject typeCode="SBJ" contextControlCode="OP">
+													<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146224GB02#subject" />
+													<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145213GB01#RelatedSubject" />
+													<awarenessCode code="M" codeSystem="2.16.840.1.113883.5.137" displayName="marginal" />
+													<relatedSubject classCode="PRS">
+														<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145213GB01#RelatedSubject" />
+														<addr use="H">
+															<streetAddressLine>The Lodge</streetAddressLine>
+															<streetAddressLine>Pleasant Village</streetAddressLine>
+															<streetAddressLine>Niceplace</streetAddressLine>
+															<city>LovelyTown</city>
+															<postalCode>AA22 9LJ</postalCode>
+														</addr>
+														<telecom value="mailto:email@domain.com" use="H" />
+														<subject classCode="PSN" determinerCode="INSTANCE">
+															<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145213GB01#subject" />
+															<name>Bill Lydon</name>
+															<name use="">
+																<prefix>Miss</prefix>
+																<given>Tabitha</given>
+																<family>Taylor</family>
+															</name>
+															<administrativeGenderCode code="1" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.25" displayName="Male" />
+															<birthTime value="19490201" />
+														</subject>
+													</relatedSubject>
+												</subject>
+												<author typeCode="AUT" contextControlCode="OP">
+													<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146224GB02#author" />
+													<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145208GB01#AssignedAuthor" />
+													<functionCode code="OA" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178" displayName="Originating Author" />
+													<time value="20101020151500+0100" />
+													<assignedAuthor classCode="ASSIGNED">
+														<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145208GB01#AssignedAuthor" />
+														<id nullFlavor="NI" />
+														<code code="NR0620" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.124" displayName="Staff Nurse" />
+														<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+															<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145208GB01#representedOrganization" />
+															<id root="2.16.840.1.113883.2.1.3.2.4.19.2" extension="V396" />
+															<name>East Cheshire NHS Trust</name>
+														</representedOrganization>
+													</assignedAuthor>
+												</author>
+												<informant typeCode="INF" contextControlCode="OP">
+													<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146224GB02#informant" />
+													<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145007UK03#RelatedEntity" />
+													<relatedEntity classCode="PRS">
+														<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145007UK03#RelatedEntity" />
+														<code code="01" codeSystem="2.16.840.1.113883.2.1.3.2.4.16.45" displayName="Spouse" />
+														<addr use="H">
+															<streetAddressLine>The Laurels</streetAddressLine>
+															<streetAddressLine>Pleasant Village</streetAddressLine>
+															<streetAddressLine>Niceplace</streetAddressLine>
+															<city>LovelyTown</city>
+															<postalCode>AA22 9LJ</postalCode>
+														</addr>
+														<telecom value="mailto:email@domain.com" use="H" />
+														<relatedPerson classCode="PSN" determinerCode="INSTANCE">
+															<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145007UK03#relationshipHolder" />
+															<name use="">
+																<prefix>Miss</prefix>
+																<given>Abigail</given>
+																<family>Anderson</family>
+															</name>
+														</relatedPerson>
+													</relatedEntity>
+												</informant>
+											</observationMedia>
+										</entry>
+										<component typeCode="COMP" contextConductionInd="true">
+											<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146229GB01#Section1" />
+											<section classCode="DOCSECT" moodCode="EVN">
+												<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146229GB01#Section1" />
+												<id root="3331A890-6C6B-446B-BE36-D1FF6D0FBAEE" />
+												<title>Glaucoma screening</title>
+												<text>
+													<content>App-specific xml content after transform of openEhr by sender.</content>
+												</text>
+											</section>
+										</component>
+									</section>
+								</component>
+							</structuredBody>
+						</component>
+					</ClinicalDocument>
+				</payload>
+			</payloads>
+		</DistributionEnvelope>
+	</soap:Body>
+</soap:Envelope>

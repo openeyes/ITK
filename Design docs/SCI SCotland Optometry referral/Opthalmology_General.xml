@@ -1,0 +1,854 @@
+<protocol name="Opthalmology General Protocol" region="NHS Scotland" version="1.4">
+	<category text="Patient Demographics">
+		<question text="Title" id="patient_title" type="select" mandatory="true" objectOld="patient" propertyOld="Title" object="Patient" property="Title">
+			<option text=" " value="" isDefault="true"/>
+			<option text="Mr" value="Mr"/>
+			<option text="Mrs" value="Mrs"/>
+			<option text="Ms" value="Ms"/>
+			<option text="Dr" value="Dr"/>
+			<option text="Miss" value="Miss"/>
+			<option text="Mst" value="Mst"/>
+		</question>
+		<question text="First Name(s)" id="patient_forename" type="text" mandatory="true" objectOld="patient" propertyOld="forename" object="Patient" property="Forename"/>
+		<question text="Surname" id="patient_surname" type="text" mandatory="true" objectOld="patient" propertyOld="surname" object="Patient" property="Surname"/>
+		<question text="Address" id="patient_addressline" type="textArea" mandatory="true" objectOld="patient" propertyOld="Address" object="Patient" property="Address"/>
+		<question text="Post Code" id="patient_postcode" type="text" mandatory="true" objectOld="patient" propertyOld="Postcode" object="Patient" property="Postcode"/>
+		<question text="Phone Number" id="patient_phone" type="text" objectOld="patient" propertyOld="Phone" object="Patient" property="Phone"/>
+		<question text="CHI Number" id="chi" type="text" readonly="true" objectOld="patient" propertyOld="CHINumber" object="Patient" property="Chi"/>
+		<question text="Date of Birth" id="patient_dob" type="date" mandatory="true" objectOld="patient" propertyOld="DateOfBirth" object="Patient" property="DateOfBirth"/>
+		<question text="Date of Exam" id="referral_date" mandatory="true" type="date"/>
+		<question text="Health Board" id="health_board_cipher" type="select" mandatory="true" objectOld="patient" propertyOld="HealthBoardCipher" object="Patient" property="HealthBoardCipher">
+			<option text="(Not Known)" value=""/>
+			<option text="Ayrshire and Arran" value="A"/>
+			<option text="Borders" value="B"/>
+			<option text="Dumfries and Galloway" value="Y"/>
+			<option text="Fife" value="F"/>
+			<option text="Forth Valley" value="V"/>
+			<option text="Grampian" value="N"/>
+			<option text="GGC" value="G"/>
+			<option text="Highland" value="H"/>
+			<option text="Lanarkshire" value="L"/>
+			<option text="Lothian" value="S"/>
+			<option text="Northumberland" value="E"/>
+			<option text="Orkney" value="R"/>
+			<option text="Shetland" value="Z"/>
+			<option text="Tayside" value="T"/>
+			<option text="Western Isles" value="W"/>
+		</question>
+		<question text="Reference Number" id="structadmin_reference" type="text" mandatory="true"/>
+		<question id="priority" type="select" text="Priority" mandatory="true">
+			<option text="Routine" value="Routine" isDefault="true" source="0"/>
+			<option text="Urgent" value="Urgent" source="1"/>
+		</question>
+	</category>
+	<category text="Optometry Referral Details">
+		<category text="General Information">
+			<freeText>
+				<table width="100%" style="border-color: Black;border-style: solid;border-width: thin;">
+					<tr>
+						<td valign="top">
+							<question text="Diagnosis" id="protresponse_Diagnosis" type="select">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Amblyopia" value="Amblyopia"/>
+								<option text="Conjunctiva, Conjunctivitis, Allergic" value="Conjunctiva, Conjunctivitis, Allergic"/>
+								<option text="Conjunctiva, Cicatrical Pemphigoid" value="Conjunctiva, Cicatrical Pemphigoid"/>
+								<option text="Conjunctiva, Conjunctivitis, Bacterial" value="Conjunctiva, Conjunctivitis, Bacterial"/>
+								<option text="Conjunctiva, Conjunctivitis, Giant Papillary" value="Conjunctiva, Conjunctivitis, Giant Papillary"/>
+								<option text="Conjunctiva, Conjunctivitis, Herpes Zoster" value="Conjunctiva, Conjunctivitis, Herpes Zoster"/>
+								<option text="Conjunctiva, Conjunctivitis, Neonatal" value="Conjunctiva, Conjunctivitis, Neonatal"/>
+								<option text="Conjunctiva, Conjunctivitis, Toxic" value="Conjunctiva, Conjunctivitis, Toxic"/>
+								<option text="Conjunctiva, Conjunctivitis, Viral" value="Conjunctiva, Conjunctivitis, Viral"/>
+								<option text="Conjunctiva, Haemorrhage, Sub-conjunctival" value="Conjunctiva, Haemorrhage, Sub-conjunctival"/>
+								<option text="Conjunctiva, Melanoma, Conjunctival" value="Conjunctiva, Melanoma, Conjunctival"/>
+								<option text="Conjunctiva, Non-specific" value="Conjunctiva, Non-specific"/>
+								<option text="Conjunctiva, Pigmented lesion" value="Conjunctiva, Pigmented lesion"/>
+								<option text="Conjunctiva, Pinguecula" value="Conjunctiva, Pinguecula"/>
+								<option text="Conjunctiva, Squamous Cell Carcinoma" value="Conjunctiva, Squamous Cell Carcinoma"/>
+								<option text="Conjunctiva, Stevens-Johnson Syndrome" value="Conjunctiva, Stevens-Johnson Syndrome"/>
+								<option text="Cornea, Corneal Abrasion" value="Cornea, Corneal Abrasion"/>
+								<option text="Cornea, Corneal Erosion, Recurrent" value="Cornea, Corneal Erosion, Recurrent"/>
+								<option text="Cornea, Corenal Graft Rejection" value="Cornea, Corenal Graft Rejection"/>
+								<option text="Cornea, Corneal Melt" value="Cornea, Corneal Melt"/>
+								<option text="Cornea, Corenal Oedema, Postoperative" value="Cornea, Corenal Oedema, Postoperative"/>
+								<option text="Cornea, Crystalline Dystrophy" value="Cornea, Crystalline Dystrophy"/>
+								<option text="Cornea, Dermoid, Limbal" value="Cornea, Dermoid, Limbal"/>
+								<option text="Cornea, Descemet Membrane Folds" value="Cornea, Descemet Membrane Folds"/>
+								<option text="Cornea, Dystrophy" value="Cornea, Dystrophy"/>
+								<option text="Cornea, Fuchs Endothelial Dystrophy" value="Cornea, Fuchs Endothelial Dystrophy"/>
+								<option text="Cornea, Hyphaema, Postoperative" value="Cornea, Hyphaema, Postoperative"/>
+								<option text="Cornea, Hyphaema, Spontaneous" value="Cornea, Hyphaema, Spontaneous"/>
+								<option text="Cornea, Keratitis, Acanthomobea" value="Cornea, Keratitis, Acanthomobea"/>
+								<option text="Cornea, Keratitis, Bacterial" value="Cornea, Keratitis, Bacterial"/>
+								<option text="Cornea, Keratitis, Dendritic, Herpes Simplex" value="Cornea, Keratitis, Dendritic, Herpes Simplex"/>
+								<option text="Cornea, Keratitis, Disciform, Herpes Simplex" value="Cornea, Keratitis, Disciform, Herpes Simplex"/>
+								<option text="Cornea, Keratitis, Fungal" value="Cornea, Keratitis, Fungal"/>
+								<option text="Cornea, Keratitis, Herpes Zoster" value="Cornea, Keratitis, Herpes Zoster"/>
+								<option text="Cornea, Keratitis, Interstitial" value="Cornea, Keratitis, Interstitial"/>
+								<option text="Cornea, Keratitis, Marginal" value="Cornea, Keratitis, Marginal"/>
+								<option text="Cornea, Keratitis, Neurotrophic" value="Cornea, Keratitis, Neurotrophic"/>
+								<option text="Cornea, Keratitis, Contact-lens Related, Sterile" value="Cornea, Keratitis, Contact-lens Related, Sterile"/>
+								<option text="Cornea, Keratoconjunctivitis, Adenoviral" value="Cornea, Keratoconjunctivitis, Adenoviral"/>
+								<option text="Cornea, Keratoconjunctivitis, Atopic" value="Cornea, Keratoconjunctivitis, Atopic"/>
+								<option text="Cornea, Keratoconjunctivitis, Sicca" value="Cornea, Keratoconjunctivitis, Sicca"/>
+								<option text="Cornea, Keratoconjunctivitis, Superior Limbic" value="Cornea, Keratoconjunctivitis, Superior Limbic"/>
+								<option text="Cornea, Keratoconus" value="Cornea, Keratoconus"/>
+								<option text="Cornea, Keratopathy, Band" value="Cornea, Keratopathy, Band"/>
+								<option text="Cornea, Keratopathy, Neurotrophic" value="Cornea, Keratopathy, Neurotrophic"/>
+								<option text="Cornea, Keratopathy, Pseudophakic Bullous" value="Cornea, Keratopathy, Pseudophakic Bullous"/>
+								<option text="Cornea, Map-dot-fingerprint Dystrophy" value="Cornea, Map-dot-fingerprint Dystrophy"/>
+								<option text="Cornea, Neovascularization, Corenal, CL-related" value="Cornea, Neovascularization, Corenal, CL-related"/>
+								<option text="Cornea, Non-specific" value="Cornea, Non-specific"/>
+								<option text="Cornea, Peripheral Ulcerative Keratitis" value="Cornea, Peripheral Ulcerative Keratitis"/>
+								<option text="Cornea, Pterygium" value="Cornea, Pterygium"/>
+								<option text="Glaucoma, Angle Closure, Acute" value="Glaucoma, Angle Closure, Acute"/>
+								<option text="Glaucoma, Angle Closure, Chronic" value="Glaucoma, Angle Closure, Chronic"/>
+								<option text="Glaucoma, Angle Recession" value="Glaucoma, Angle Recession"/>
+								<option text="Glaucoma, Bleb Complication" value="Glaucoma, Bleb Complication"/>
+								<option text="Glaucoma, Drug-Induced" value="Glaucoma, Drug-Induced"/>
+								<option text="Glaucoma, Hyphema" value="Glaucoma, Hyphema"/>
+								<option text="Glaucoma, Malignant" value="Glaucoma, Malignant"/>
+								<option text="Glaucoma, Neovascular" value="Glaucoma, Neovascular"/>
+								<option text="Glaucoma, Non-specific" value="Glaucoma, Non-specific"/>
+								<option text="Glaucoma, Normal Tension" value="Glaucoma, Normal Tension"/>
+								<option text="Glaucoma, Ocular Hypertension" value="Glaucoma, Ocular Hypertension"/>
+								<option text="Glaucoma, Ocular Hypotony" value="Glaucoma, Ocular Hypotony"/>
+								<option text="Glaucoma, Phacolytic" value="Glaucoma, Phacolytic"/>
+								<option text="Glaucoma, Phacomorphic" value="Glaucoma, Phacomorphic"/>
+								<option text="Glaucoma, Pigment Dispersion Syndrome" value="Glaucoma, Pigment Dispersion Syndrome"/>
+								<option text="Glaucoma, Plateau Iris" value="Glaucoma, Plateau Iris"/>
+								<option text="Glaucoma, Primary Open Angle" value="Glaucoma, Primary Open Angle"/>
+								<option text="Glaucoma, Pseudoexfoliation Syndrome" value="Glaucoma, Pseudoexfoliation Syndrome"/>
+								<option text="Glaucoma, Pupillary Block, Aphakic" value="Glaucoma, Pupillary Block, Aphakic"/>
+								<option text="Galucoma, Pupillary Block, Pseudophakic" value="Galucoma, Pupillary Block, Pseudophakic"/>
+								<option text="Galucoma, Suspect" value="Galucoma, Suspect"/>
+								<option text="Galucoma, Uveitic" value="Galucoma, Uveitic"/>
+								<option text="Headache, Acute Sinusitis" value="Headache, Acute Sinusitis"/>
+								<option text="Headache, Cluster Headache" value="Headache, Cluster Headache"/>
+								<option text="Headache, Giant Cell Arteritis" value="Headache, Giant Cell Arteritis"/>
+								<option text="Headache, Migrane" value="Headache, Migrane"/>
+								<option text="Headache, Neuropathy, Trigeminal Neuralgia" value="Headache, Neuropathy, Trigeminal Neuralgia"/>
+								<option text="Headache, Non-specific" value="Headache, Non-specific"/>
+								<option text="Iris, Lisch Nodule" value="Iris, Lisch Nodule"/>
+								<option text="Iris, Melanoma" value="Iris, Melanoma"/>
+								<option text="Iris, Naevus" value="Iris, Naevus"/>
+								<option text="Iris, Non-specific" value="Iris, Non-specific"/>
+								<option text="Lens, Cataract" value="Lens, Cataract"/>
+								<option text="Lens, Subluxation" value="Lens, Subluxation"/>
+								<option text="Lid, Basal Cell Carcinoma" value="Lid, Basal Cell Carcinoma"/>
+								<option text="Lid, Blepharitis" value="Lid, Blepharitis"/>
+								<option text="Lid, Blepharospasm" value="Lid, Blepharospasm"/>
+								<option text="Lid, Chalazion" value="Lid, Chalazion"/>
+								<option text="Lid, Dacryoadenitis" value="Lid, Dacryoadenitis"/>
+								<option text="Lid, Dacryocystitis" value="Lid, Dacryocystitis"/>
+								<option text="Lid, Dermatitis, Atopic" value="Lid, Dermatitis, Atopic"/>
+								<option text="Lid, Dermatitis, Contact" value="Lid, Dermatitis, Contact"/>
+								<option text="Lid, Dermatitis, Rosacea" value="Lid, Dermatitis, Rosacea"/>
+								<option text="Lid, Dermatochalasis" value="Lid, Dermatochalasis"/>
+								<option text="Lid, Ectropion" value="Lid, Ectropion"/>
+								<option text="Lid, Entropion" value="Lid, Entropion"/>
+								<option text="Lid, Floppy Eyelid Syndrome" value="Lid, Floppy Eyelid Syndrome"/>
+								<option text="Lid, Haemangioma, Capillary" value="Lid, Haemangioma, Capillary"/>
+								<option text="Lid, Haemangioma, Cavernous" value="Lid, Haemangioma, Cavernous"/>
+								<option text="Lid, Hordeolum" value="Lid, Hordeolum"/>
+								<option text="Lid, Lagophthalmos, Facial Nerve Palsy" value="Lid, Lagophthalmos, Facial Nerve Palsy"/>
+								<option text="Lid, Molluscum Contagiosum" value="Lid, Molluscum Contagiosum"/>
+								<option text="Lid, Nasolacrimal Duct, Dacrocystitis" value="Lid, Nasolacrimal Duct, Dacrocystitis"/>
+								<option text="Lid, Nasolacrimal Duct, Obstruction" value="Lid, Nasolacrimal Duct, Obstruction"/>
+								<option text="Lid, Non-specific" value="Lid, Non-specific"/>
+								<option text="Lid, Orbital Cellulitis" value="Lid, Orbital Cellulitis"/>
+								<option text="Lid, Papilloma" value="Lid, Papilloma"/>
+								<option text="Lid, Pigmented Lesion" value="Lid, Pigmented Lesion"/>
+								<option text="Lid, Preseptal Cellulitis" value="Lid, Preseptal Cellulitis"/>
+								<option text="Lid, Proptosis, Non-thyroid" value="Lid, Proptosis, Non-thyroid"/>
+								<option text="Lid, Psoriasis" value="Lid, Psoriasis"/>
+								<option text="Lid, Ptosis, Aponeurotic" value="Lid, Ptosis, Aponeurotic"/>
+								<option text="Lid, Ptosis, Congenital" value="Lid, Ptosis, Congenital"/>
+								<option text="Lid, Ptosis, Myasthenia Gravis" value="Lid, Ptosis, Myasthenia Gravis"/>
+								<option text="Lid, Squamous Cell Carcinoma" value="Lid, Squamous Cell Carcinoma"/>
+								<option text="Lid, Thyroid Eye Disease" value="Lid, Thyroid Eye Disease"/>
+								<option text="Lid, Trichiasis" value="Lid, Trichiasis"/>
+								<option text="Lid, Xanthelasma" value="Lid, Xanthelasma"/>
+								<option text="Macula, Acute Multifocal Placoid Pigment Epitheliopathy" value="Macula, Acute Multifocal Placoid Pigment Epitheliopathy"/>
+								<option text="Macula, Atrophic Age-Related Macular Degeneration" value="Macula, Atrophic Age-Related Macular Degeneration"/>
+								<option text="Macula, Atrophic Myopic Macular Degeneration" value="Macula, Atrophic Myopic Macular Degeneration"/>
+								<option text="Macula, Central Serious Retinopathy" value="Macula, Central Serious Retinopathy"/>
+								<option text="Macula, Chorodial Neovascular Membrance, Other" value="Macula, Chorodial Neovascular Membrance, Other"/>
+								<option text="Macula, Chorodial Neovascular Membrane, Age-related Macular Degeneration" value="Macula, Chorodial Neovascular Membrane, Age-related Macular Degeneration"/>
+								<option text="Macula, Chorodial Neovascualr Membrance, Myopic Macular Degeneration" value="Macula, Chorodial Neovascualr Membrance, Myopic Macular Degeneration"/>
+								<option text="Macula, Dystropy" value="Macula, Dystropy"/>
+								<option text="Macula, Non-specific" value="Macula, Non-specific"/>
+								<option text="No abnormality detected" value="No abnormality detected"/>
+								<option text="Optic Chiasm, Bitemporal heteronymous hemianopia" value="Optic Chiasm, Bitemporal heteronymous hemianopia"/>
+								<option text="Optic Nerve, Non-specific" value="Optic Nerve, Non-specific"/>
+								<option text="Optic Nerve, Optic Neuritis, Adult" value="Optic Nerve, Optic Neuritis, Adult"/>
+								<option text="Optic Nerve, Optic Neuritis, Childhood" value="Optic Nerve, Optic Neuritis, Childhood"/>
+								<option text="Optic Nerve, Optic Neuropathy, Anterior Ischaemic, Arteritic" value="Optic Nerve, Optic Neuropathy, Anterior Ischaemic, Arteritic"/>
+								<option text="Optic Nerve, Optic Neuropathy, Anterios Ischaemic, Non-Arteritic" value="Optic Nerve, Optic Neuropathy, Anterios Ischaemic, Non-Arteritic"/>
+								<option text="Optic Nerve, Optic Neuropathy, Compressive" value="Optic Nerve, Optic Neuropathy, Compressive"/>
+								<option text="Optic Nerve, Optic Neuropathy, Toxic/Nutritional" value="Optic Nerve, Optic Neuropathy, Toxic/Nutritional"/>
+								<option text="Optic Nerve, Papilloedema" value="Optic Nerve, Papilloedema"/>
+								<option text="Optic Nerve, Pseudopapilledema" value="Optic Nerve, Pseudopapilledema"/>
+								<option text="Pupil, Adie's Tonic Pupil" value="Pupil, Adie's Tonic Pupil"/>
+								<option text="Pupil, Essential Anisocoria" value="Pupil, Essential Anisocoria"/>
+								<option text="Pupil, Horner's Syndrome" value="Pupil, Horner's Syndrome"/>
+								<option text="Pupil, Leucocoria" value="Pupil, Leucocoria"/>
+								<option text="Pupil, Non-specific" value="Pupil, Non-specific"/>
+								<option text="Retina Paeds, Retinoblastoma" value="Retina Paeds, Retinoblastoma"/>
+								<option text="Retina Surgical, Chorodial Naevus" value="Retina Surgical, Chorodial Naevus"/>
+								<option text="Retina Surgical, Epiretinal Membrane" value="Retina Surgical, Epiretinal Membrane"/>
+								<option text="Retina Surgical, Haemorrhage, Vitreous" value="Retina Surgical, Haemorrhage, Vitreous"/>
+								<option text="Retina Surgical, Lattice Degeneration" value="Retina Surgical, Lattice Degeneration"/>
+								<option text="Retina Surgical, Macular Hole" value="Retina Surgical, Macular Hole"/>
+								<option text="Retina Surgical, Macular Oedema, Post-operative" value="Retina Surgical, Macular Oedema, Post-operative"/>
+								<option text="Retina Surgical, Melanoma" value="Retina Surgical, Melanoma"/>
+								<option text="Retina Surgical, Posterior Vitreous Detachment" value="Retina Surgical, Posterior Vitreous Detachment"/>
+								<option text="Retina Surgical, Retinal Detachment, Postoperative" value="Retina Surgical, Retinal Detachment, Postoperative"/>
+								<option text="Retina Surgical, Retinal Detachment, Rhegmatogenous" value="Retina Surgical, Retinal Detachment, Rhegmatogenous"/>
+								<option text="Retina Surgical, Retinal Detachment, Tractional" value="Retina Surgical, Retinal Detachment, Tractional"/>
+								<option text="Retina Surgical, Retinal Tear" value="Retina Surgical, Retinal Tear"/>
+								<option text="Retina Surgical, Retinal Tear/Hole" value="Retina Surgical, Retinal Tear/Hole"/>
+								<option text="Retina Surgical, Retinoschisis" value="Retina Surgical, Retinoschisis"/>
+								<option text="Retina, Accelerated Hypertension" value="Retina, Accelerated Hypertension"/>
+								<option text="Retina, Acute Retinal Necrosis" value="Retina, Acute Retinal Necrosis"/>
+								<option text="Retina, Haemorrhage, Retinal" value="Retina, Haemorrhage, Retinal"/>
+								<option text="Retina, Haemorrhage, Subhyaloid" value="Retina, Haemorrhage, Subhyaloid"/>
+								<option text="Retina, Macroaneurysm" value="Retina, Macroaneurysm"/>
+								<option text="Retina, Non-specific" value="Retina, Non-specific"/>
+								<option text="Retina, Ocular Ischaemic Syndrome" value="Retina, Ocular Ischaemic Syndrome"/>
+								<option text="Retina, Retinal Artery occlusion, Branch" value="Retina, Retinal Artery Occlusion, Branch"/>
+								<option text="Retina, Retinal Artery Occlusion, Central" value="Retina, Retinal Artery Occlusion, Central"/>
+								<option text="Retina, Retinal Artery Occlusion, Transient" value="Retina, Retinal Artery Occlusion, Transient"/>
+								<option text="Retina, Retinal Detachment, Exudative" value="Retina, Retinal Detachment, Exudative"/>
+								<option text="Retina, Retinal Vein Occlusion, Branch" value="Retina, Retinal Vein Occlusion, Branch"/>
+								<option text="Retina, Retinal Vein Occlusion, Central" value="Retina, Retinal Vein Occlusion, Central"/>
+								<option text="Retina, Retinitis Pigmentosa" value="Retina, Retinitis Pigmentosa"/>
+								<option text="Retina, Retinitis, Cytomegalovirus" value="Retina, Retinitis, Cytomegalovirus"/>
+								<option text="Retina, Retinopathy, Diabetic, Mild Retinopathy" value="Retina, Retinopathy, Diabetic, Mild Retinopathy"/>
+								<option text="Retina, Retinopathy, Diabetic, Observable Maculopathy" value="Retina, Retinopathy, Diabetic, Observable Maculopathy"/>
+								<option text="Retina, Retinopathy, Diabetic, Observable Retinopathy" value="Retina, Retinopathy, Diabetic, Observable Retinopathy"/>
+								<option text="Retina, Retinopathy, Diabetic, Proliferative" value="Retina, Retinopathy, Diabetic, Proliferative"/>
+								<option text="Retina, Retinopathy, Diabetic, Referable background" value="Retina, Retinopathy, Diabetic, Referable background"/>
+								<option text="Retina, Retinopathy, Diabetic, Referable maculopathy, no oedema" value="Retina, Retinopathy, Diabetic, Referable maculopathy, no oedema"/>
+								<option text="Retina, Retinopathy, Diabetic, Referable maculopathy, with oedema" value="Retina, Retinopathy, Diabetic, Referable maculopathy, with oedema"/>
+								<option text="Retina, Retinopathy, HIV" value="Retina, Retinopathy, HIV"/>
+								<option text="Retina, Retinopathy, Purtscher's" value="Retina, Retinopathy, Purtscher's"/>
+								<option text="Retina, Retinopathy, Valsalva" value="Retina, Retinopathy, Valsalva"/>
+								<option text="Retrochiasm, Homonymous hemianopia" value="Retrochiasm, Homonymous hemianopia"/>
+								<option text="Sclera/Episclera, Episcleritis" value="Sclera/Episclera, Episcleritis"/>
+								<option text="Sclera/Episclera, Fistula, Carotico-Cavernous" value="Sclera/Episclera, Fistula, Carotico-Cavernous"/>
+								<option text="Sclera/Episclera, Non-specific" value="Sclera/Episclera, Non-specific"/>
+								<option text="Sclera/Episclera, Scleritis, necrotising" value="Sclera/Episclera, Scleritis, necrotising"/>
+								<option text="Sclera/Episclera, Scleritis, non-necrotising" value="Sclera/Episclera, Scleritis, non-necrotising"/>
+								<option text="Squint/Diplopia, Chronic Progressive External Opthalmoplegia" value="Squint/Diplopia, Chronic Progressive External Opthalmoplegia"/>
+								<option text="Squint/Diplopia, Convergence Insufficiency" value="Squint/Diplopia, Convergence Insufficiency"/>
+								<option text="Squint/Diplopia, Estropia, Acquired" value="Squint/Diplopia, Estropia, Acquired"/>
+								<option text="Squint/Diplopia, Estropia, Congenital" value="Squint/Diplopia, Estropia, Congenital"/>
+								<option text="Squint/Diplopia, Exotropia, Acquired" value="Squint/Diplopia, Exotropia, Acquired"/>
+								<option text="Squint/Diplopia, Exotropia, Congenital" value="Squint/Diplopia, Exotropia, Congenital"/>
+								<option text="Squint/Diplopia, Myasthenia Gravis" value="Squint/Diplopia, Myasthenia Gravis"/>
+								<option text="Squint/Diplopia, Nerve Palsy, Fourth" value="Squint/Diplopia, Nerve Palsy, Fourth"/>
+								<option text="Squint/Diplopia, Nerve Palsy, Sixth" value="Squint/Diplopia, Nerve Palsy, Sixth"/>
+								<option text="Squint/Diplopia, Nerve Palsy, Third" value="Squint/Diplopia, Nerve Palsy, Third"/>
+								<option text="Squint/Diplopia, Non-specific" value="Squint/Diplopia, Non-specific"/>
+								<option text="Squint/Diplopia, Nystagmus, Acquired" value="Squint/Diplopia, Nystagmus, Acquired"/>
+								<option text="Squint/Diplopia, Nystagmus, Congenital" value="Squint/Diplopia, Nystagmus, Congenital"/>
+								<option text="Squint/Diplopia, Skew deviation" value="Squint/Diplopia, Skew deviation"/>
+								<option text="Trauma, Canalicular Laceration" value="Trauma, Canalicular Laceration"/>
+								<option text="Trauma, Chemical Burn" value="Trauma, Chemical Burn"/>
+								<option text="Trauma, Chorodial Detachment" value="Trauma, Chorodial Detachment"/>
+								<option text="Trauma, Chorodial Rupture" value="Trauma, Chorodial Rupture"/>
+								<option text="Trauma, Corneal Foreign Body" value="Trauma, Corneal Foreign Body"/>
+								<option text="Trauma, Corneoscleral Laceration" value="Trauma, Corneoscleral Laceration"/>
+								<option text="Trauma, Eyelid Laceration" value="Trauma, Eyelid Laceration"/>
+								<option text="Trauma, Globe Rupture" value="Trauma, Globe Rupture"/>
+								<option text="Taruma, Hyphaema" value="Taruma, Hyphaema"/>
+								<option text="Trauma, Intraocular Foreign Body" value="Trauma, Intraocular Foreign Body"/>
+								<option text="Trauma, IOL Dislocation" value="Trauma, IOL Dislocation"/>
+								<option text="Trauma, Iris Prolapse" value="Trauma, Iris Prolapse"/>
+								<option text="Trauma, Non-Specific" value="Trauma, Non-Specific"/>
+								<option text="Trauma, Optic Neuropathy" value="Trauma, Optic Neuropathy"/>
+								<option text="Trauma, Orbital Fracture" value="Trauma, Orbital Fracture"/>
+								<option text="Unexplained medical symptoms" value="Unexplained medical symptoms"/>
+								<option text="Uveitis, Anterior, Granulomatous" value="Uveitis, Anterior, Granulomatous"/>
+								<option text="Uveitis, Anterior, Nongranulomatous" value="Uveitis, Anterior, Nongranulomatous"/>
+								<option text="Uveitis, Chorodial Neovascular Membrane" value="Uveitis, Chorodial Neovascular Membrane"/>
+								<option text="Uveitis, Endophthalmitis, Bacterial" value="Uveitis, Endophthalmitis, Bacterial"/>
+								<option text="Uveitis, Endophthalmitis, Fungal" value="Uveitis, Endophthalmitis, Fungal"/>
+								<option text="Uveitis, Endophthalmitis, Postoperative" value="Uveitis, Endophthalmitis, Postoperative"/>
+								<option text="Uveitis, Fuchs Heterochromic" value="Uveitis, Fuchs Heterochromic"/>
+								<option text="Uveitis, Intermediate" value="Uveitis, Intermediate"/>
+								<option text="Uveitis, Panuveitis" value="Uveitis, Panuveitis"/>
+								<option text="Uveitis, Posterior" value="Uveitis, Posterior"/>
+							</question>
+						</td>
+						<td>
+							<question text="Treatment Instigated" id="protresponse_instigated" type="select">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Yes" value="Yes"/>
+								<option text="No" value="No"/>
+							</question>
+						</td>
+					</tr>
+					<tr>
+						<td width="50%">
+							<question text="Treatment" id="protresponse_treatment" type="text" width="444"/>
+						</td>
+						<td/>
+					</tr>
+					<tr>
+						<table width="100%" style="border-color: Black;border-style: solid;border-width: 0px thin thin;">
+							<tr>
+								<td>
+									Ocular examination - External / Internal
+								</td>
+							</tr>
+							<tr>
+								<td width="50%">
+									<question text="Comment Right" id="protresponse_PseudoRightText" type="textArea"/>
+								</td>
+								<td width="50%">
+									<question text="Comment Left" id="protresponse_PseudoLeftText" type="textArea"/>
+								</td>
+							</tr>
+						</table>
+					</tr>
+				</table>
+				<table width="100%" style="border-color: Black;border-style: solid;border-width: 0px thin thin;">
+					<tr>
+						<td valign="top" colspan="20"> Applanation Tonometry (value between 0-50 mmhg) </td>
+					</tr>
+					<tr>
+						<td width="25%" colspan="5">
+							<question text="Right" id="protresponse_tonomright" type="text" width="80"/>
+						</td>
+						<td width="25%" colspan="5">
+							<question text="Left" id="protresponse_tonomleft" type="text" width="80"/>
+						</td>
+						<td width="25%" colspan="5"/>
+						<td width="25%" colspan="5">
+							<question text="RAPD" id="protresponse_rapd" type="select">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Yes" value="Yes"/>
+								<option text="No" value="No"/>
+							</question>
+						</td>
+					</tr>
+					<tr><td width="5%" colspan="1"> Time</td></tr>
+					<tr>
+						<td width="10%" colspan="2">
+							<question text="hrs" id="protresponse_tonomtimehrs" type="select">
+								<option text=" " value="" isDefault="true"/>
+								<option text="00" value="00"/>
+								<option text="01" value="01"/>
+								<option text="02" value="02"/>
+								<option text="03" value="03"/>
+								<option text="04" value="04"/>
+								<option text="05" value="05"/>
+								<option text="06" value="06"/>
+								<option text="07" value="07"/>
+								<option text="08" value="08"/>
+								<option text="09" value="09"/>
+								<option text="10" value="10"/>
+								<option text="11" value="11"/>
+								<option text="12" value="12"/>
+								<option text="13" value="13"/>
+								<option text="14" value="14"/>
+								<option text="15" value="15"/>
+								<option text="16" value="16"/>
+								<option text="17" value="17"/>
+								<option text="18" value="18"/>
+								<option text="19" value="19"/>
+								<option text="20" value="20"/>
+								<option text="21" value="21"/>
+								<option text="22" value="22"/>
+								<option text="23" value="23"/>
+							</question>
+							</td>
+						<td width="10%" colspan="2">
+							<question text="mins" id="protresponse_tonomtimemins" type="select" >
+								<option text=" " value="" isDefault="true"/>
+								<option text="00" value="00"/>
+								<option text="01" value="01"/>
+								<option text="02" value="02"/>
+								<option text="03" value="03"/>
+								<option text="04" value="04"/>
+								<option text="05" value="05"/>
+								<option text="06" value="06"/>
+								<option text="07" value="07"/>
+								<option text="08" value="08"/>
+								<option text="09" value="09"/>
+								<option text="10" value="10"/>
+								<option text="11" value="11"/>
+								<option text="12" value="12"/>
+								<option text="13" value="13"/>
+								<option text="14" value="14"/>
+								<option text="15" value="15"/>
+								<option text="16" value="16"/>
+								<option text="17" value="17"/>
+								<option text="18" value="18"/>
+								<option text="19" value="19"/>
+								<option text="20" value="20"/>
+								<option text="21" value="21"/>
+								<option text="22" value="22"/>
+								<option text="23" value="23"/>
+								<option text="24" value="24"/>
+								<option text="25" value="25"/>
+								<option text="26" value="26"/>
+								<option text="27" value="27"/>
+								<option text="28" value="28"/>
+								<option text="29" value="29"/>
+								<option text="30" value="30"/>
+								<option text="31" value="31"/>
+								<option text="32" value="32"/>
+								<option text="33" value="33"/>
+								<option text="34" value="34"/>
+								<option text="35" value="35"/>
+								<option text="36" value="36"/>
+								<option text="37" value="37"/>
+								<option text="38" value="38"/>
+								<option text="39" value="39"/>
+								<option text="40" value="40"/>
+								<option text="41" value="41"/>
+								<option text="42" value="42"/>
+								<option text="43" value="43"/>
+								<option text="44" value="44"/>
+								<option text="45" value="45"/>
+								<option text="46" value="46"/>
+								<option text="47" value="47"/>
+								<option text="48" value="48"/>
+								<option text="49" value="49"/>
+								<option text="50" value="50"/>
+								<option text="51" value="51"/>
+								<option text="52" value="52"/>
+								<option text="53" value="53"/>
+								<option text="54" value="54"/>
+								<option text="55" value="55"/>
+								<option text="56" value="56"/>
+								<option text="57" value="57"/>
+								<option text="58" value="58"/>
+								<option text="59" value="59"/>
+								<option text="60" value="60"/>
+							</question>
+						</td>
+						<td width="10%" colspan="2"/>
+						<td width="20%" colspan="4">
+							<question text="Applanation" id="protresponse_tonomApplanation" type="select">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Yes" value="Yes"/>
+								<option text="No" value="No"/>
+							</question>
+						</td>
+						<td width="25%" colspan="5"/>
+						<td width="25%" colspan="5">
+							<question text="Fields Attached" id="protresponse_Fields" type="select">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Yes" value="Yes"/>
+								<option text="No" value="No"/>
+							</question>
+						</td>
+					</tr>
+				</table>
+			</freeText>
+		</category>
+		<category text="Refraction Details">
+			<freeText>
+				<table width="100%">
+					<tr>
+						<td>
+							<question text="Test Date" id="protresponse_test_date" type="date"/>
+						</td>
+						<td/>
+						<td>
+							<question text="Images Attached" id="structadmin_Images" type="select">
+								<option text=" " value="" isDefault="true"/>
+								<option text="Yes" value="Yes"/>
+								<option text="No" value="No"/>
+							</question>
+						</td>
+					</tr>
+					<tr>
+						<td width="49%">
+							<h2>Right Vision</h2>
+							<table width="100%" style="background-color: Silver; border-color: Black;border-style: solid;border-width: thin;">
+								<tr>
+									<td width="30%">
+										<question text="R Sph +/-" id="protresponse_sph_right_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td width="40%">
+										<question text="R Sph" id="protresponse_sph_right_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td width="30%">(between 0-25)</td>
+								</tr>
+								<tr>
+									<td>
+										<question text="R Cyl +/-" id="protresponse_cyl_right_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td>
+										<question text="R Cyl" id="protresponse_cyl_right_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 0-15)</td>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="R Axis" id="protresponse_axis_right" type="text" maxlength="4" width="80"/>
+									</td>
+									<td>(between 0-180)</td>
+								</tr>
+								<tr>
+									<td>
+										<question text="R Prism In/Out" id="protresponse_prism_right_1" type="select">
+											<option text=" " value="" isDefault="true"/>											
+											<option text="In" value="In"/>
+											<option text="Out" value="Out"/>
+										</question>
+									</td>
+									<td>
+										<question text="R Prism" id="protresponse_prism_right_2" type="text" maxlength="3" width="80"/>
+									</td>
+									<td>(between 0.5-12)</td>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="R VA" id="protresponse_va_right" type="select">
+											<option text=" " value="" isDefault="true"/>											
+											<option text="6/4.5" value="6/4.5"/>
+											<option text="6/5" value="6/5"/>
+											<option text="6/6" value="6/6"/>
+											<option text="6/9" value="6/9"/>
+											<option text="6/12" value="6/12"/>
+											<option text="6/18" value="6/18"/>
+											<option text="6/24" value="6/24"/>
+											<option text="6/36" value="6/36"/>
+											<option text="6/60" value="6/60"/>
+											<option text="CF" value="CF"/>
+											<option text="HM" value="HM"/>
+											<option text="P of L" value="P of L"/>
+											<option text="No P of L" value="No P of L"/>
+										</question>
+									</td>
+									<td/>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="R PH VA" id="protresponse_phva_right" type="select">
+											<option text=" " value="" isDefault="true"/>											
+											<option text="6/4.5" value="6/4.5"/>
+											<option text="6/5" value="6/5"/>
+											<option text="6/6" value="6/6"/>
+											<option text="6/9" value="6/9"/>
+											<option text="6/12" value="6/12"/>
+											<option text="6/18" value="6/18"/>
+											<option text="6/24" value="6/24"/>
+											<option text="6/36" value="6/36"/>
+											<option text="6/60" value="6/60"/>
+										</question>
+									</td>
+									<td/>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="R Add" id="protresponse_add_right" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 1-4)</td>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="R NVA" id="protresponse_nva_right" type="select">
+											<option text=" " value="" isDefault="true"/>											
+											<option text="N4.5" value="N4.5"/>
+											<option text="N5" value="N5"/>
+											<option text="N6" value="N6"/>
+											<option text="N8" value="N8"/>
+											<option text="N9" value="N9"/>
+											<option text="N10" value="N10"/>
+											<option text="N12" value="N12"/>
+											<option text="N14" value="N14"/>
+											<option text="N18" value="N18"/>
+											<option text="N24" value="N24"/>
+											<option text="N36" value="N36"/>
+											<option text="N48" value="N48"/>
+											<option text="NIL" value="NIL"/>
+										</question>
+									</td>
+									<td/>
+								</tr>
+							</table>
+						 </td>
+						<td width="2%"/>
+						<td width="49%">
+							<h2>Left Vision</h2>
+							<table width="100%" style="background-color: Silver; border-color: Black;border-style: solid;border-width: thin;">
+								<tr>
+									<td width="30%">
+										<question text="L Sph +/-" id="protresponse_sph_left_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td width="40%">
+										<question text="L Sph" id="protresponse_sph_left_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td width="30%">(between 0-25)</td>
+								</tr>
+								<tr>
+									<td>
+										<question text="L Cyl +/-" id="protresponse_cyl_left_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="+" value="+"/>
+											<option text="-" value="-"/>
+										</question>
+									</td>
+									<td>
+										<question text="L Cyl" id="protresponse_cyl_left_2" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 0-15)</td>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="L Axis" id="protresponse_axis_left" type="text" maxlength="4" width="80"/>
+									</td>
+									<td>(between 0-180)</td>
+								</tr>
+								<tr>
+									<td>
+										<question text="L Prism In/Out" id="protresponse_prism_left_1" type="select">
+											<option text=" " value="" isDefault="true"/>
+											<option text="In" value="In"/>
+											<option text="Out" value="Out"/>
+										</question>
+									</td>
+									<td>
+										<question text="L Prism" id="protresponse_prism_left_2" type="text" maxlength="3" width="80"/>
+									</td>
+									<td>(between 0.5-12)</td>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="L VA" id="protresponse_va_left" type="select">
+											<option text=" " value="" isDefault="true"/>											
+											<option text="6/4.5" value="6/4.5"/>
+											<option text="6/5" value="6/5"/>
+											<option text="6/6" value="6/6"/>
+											<option text="6/9" value="6/9"/>
+											<option text="6/12" value="6/12"/>
+											<option text="6/18" value="6/18"/>
+											<option text="6/24" value="6/24"/>
+											<option text="6/36" value="6/36"/>
+											<option text="6/60" value="6/60"/>
+											<option text="CF" value="CF"/>
+											<option text="HM" value="HM"/>
+											<option text="P of L" value="P of L"/>
+											<option text="No P of L" value="No P of L"/>
+										</question>
+									</td>
+									<td/>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="L PH VA" id="protresponse_phva_left" type="select">
+											<option text=" " value="" isDefault="true"/>											
+											<option text="6/4.5" value="6/4.5"/>
+											<option text="6/5" value="6/5"/>
+											<option text="6/6" value="6/6"/>
+											<option text="6/9" value="6/9"/>
+											<option text="6/12" value="6/12"/>
+											<option text="6/18" value="6/18"/>
+											<option text="6/24" value="6/24"/>
+											<option text="6/36" value="6/36"/>
+											<option text="6/60" value="6/60"/>
+										</question>
+									</td>
+									<td/>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="L Add" id="protresponse_add_left" type="text" maxlength="5" width="80"/>
+									</td>
+									<td>(between 1-4)</td>
+								</tr>
+								<tr>
+									<td/>
+									<td>
+										<question text="L NVA" id="protresponse_nva_left" type="select">
+											<option text=" " value="" isDefault="true"/>											
+											<option text="N4.5" value="N4.5"/>
+											<option text="N5" value="N5"/>
+											<option text="N6" value="N6"/>
+											<option text="N8" value="N8"/>
+											<option text="N9" value="N9"/>
+											<option text="N10" value="N10"/>
+											<option text="N12" value="N12"/>
+											<option text="N14" value="N14"/>
+											<option text="N18" value="N18"/>
+											<option text="N24" value="N24"/>
+											<option text="N36" value="N36"/>
+											<option text="N48" value="N48"/>
+											<option text="NIL" value="NIL"/>
+										</question>
+									</td>
+									<td/>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</freeText>
+		</category>
+		<question text="Patient History and Details" id="structadmin_PatientHistory" type="textArea"/>
+	</category>
+	<category text="Administrative Information">
+		<freeText>
+			<table width="80%" style="border-color: Black;border-style: solid;border-width: thin;">
+				<tr>
+					<td>
+						<question text="Previous Attendance at HES?" id="structadmin_previouslyseen" type="select">
+							<option text=" " value="" isDefault="true"/>
+							<option text="Yes" value="Yes"/>
+							<option text="No" value="No"/>
+						</question>
+					</td>
+					<td>
+						<question text="If Yes, Location" id="structadmin_location" type="select">
+							<option text="(Not Known)" value="(Not Known)"/>
+							<option text="Ayrshire and Arran" value="Ayrshire and Arran"/>
+							<option text="Borders" value="Borders"/>
+							<option text="Dumfries and Galloway" value="Dumfries and Galloway"/>
+							<option text="Fife" value="Fife"/>
+							<option text="Forth Valley" value="Forth Valley"/>
+							<option text="Grampian" value="Grampian"/>
+							<option text="GGC" value="GGC"/>
+							<option text="Highland" value="Highland"/>
+							<option text="Lanarkshire" value="Lanarkshire"/>
+							<option text="Lothian" value="Lothian"/>
+							<option text="Northumberland" value="Northumberland"/>
+							<option text="Orkney" value="Orkney"/>
+							<option text="Shetland" value="Shetland"/>
+							<option text="Tayside" value="Tayside"/>
+							<option text="Western Isles" value="Western Isles"/>
+						</question>
+					</td>
+				</tr>
+			</table>
+			<table width="80%" style="border-color: Black;border-style: solid;border-width: 0px thin thin;">
+				<tr>
+					<td width="100%">
+							Armed Forces Personnel, Immediate Families and Veterans
+						</td>
+				</tr>
+				<tr>
+					<td>
+						<question text="Armed Forces Veteran" type="check" id="structadmin_forcesVeteran"/>
+						<question text="On Active Service" type="check" id="structadmin_forcesCurrent"/>
+						<question text="Condition Related to Service" type="check" id="structadmin_relatedcondition"/>
+						<question text="Immediate Family Member" type="check" id="structadmin_FamilyMember"/>
+					</td>
+				</tr>
+			</table>
+			<table width="80%" style="border-color: Black;border-style: solid;border-width: 0px thin thin;">
+				<tr>
+					<td>
+						<question text="Translator Required?" id="structadmin_translator" type="select">
+							<option text=" " value="" isDefault="true"/>
+							<option text="Yes" value="Yes"/>
+							<option text="No" value="No"/>
+						</question>
+					</td>
+					<td>
+						<question text="If Yes, Language" id="structadmin_language" type="text" width="150">
+						</question>
+					</td>
+				</tr>
+			</table>
+			<br/>
+			<br/>
+		</freeText>
+		<question text="Has patients GP been informed?" id="structadmin_gpinformed" type="select">
+			<option text=" " value="" isDefault="true"/>
+			<option text="Yes" value="Yes"/>
+			<option text="No" value="No"/>
+		</question>
+		<category text="Patient GP Details">
+			<question text="Name" type="text" id="structadmin_gp_name"/>
+			<question text="Practice Name" type="text" id="structadmin_practice_name"/>
+			<question text="Address Line 1" type="text" id="structadmin_practice_address1"/>
+			<question text="Address Line 2" type="text" id="structadmin_practice_address2"/>
+			<question text="Address Line 3" type="text" id="structadmin_practice_address3"/>
+			<question text="Address Line 4" type="text" id="structadmin_practice_address4"/>
+			<question text="Postcode" type="text" id="structadmin_practice_postcode"/>
+		</category>
+		<question text="Description" type="select" hidden="true" id="maincondition_description" mandatory="true" objectOld="referral" propertyOld="Reason">
+			<option text="Glaucoma Demo" value="Glaucoma Demo" isDefault="true"/>
+		</question>
+		<question text="Referral Type" type="select" id="referraltype" mandatory="true" hidden="true">
+			<option text="Out Patient" value="Out Patient" isDefault="true"/>
+		</question>
+		<question text="Nature of Request" type="select" id="referral_expectedoutcome" mandatory="true" userName="Nature of Request - Clinical Data Tab" hidden="true">
+			<option text="(Not Specified)" value="Not Specified" isDefault="true"/>
+		</question>
+		<category text="Unique Care Pathway Number">
+			<question text="Pathway Number" id="unique_care_pathway_number" type="text" readonly="false" object="DocumentData" property="UniqueCarePathwayNumber"/>
+		</category>
+	</category>
+	<category text="Optometrist Details">
+		<category text="Referrer">
+			<question text="HCP Registration Scheme" type="hidden" id="refhcp_scheme"/>
+			<question text="Forename" type="text" id="refhcp_forename" mandatory="true"/>
+			<question text="Surname" type="text" id="refhcp_surname" mandatory="true"/>
+			<question text="Practice Name" type="text" id="reforg_name" mandatory="true"/>
+			<question text="Address" type="textArea" id="reforg_address" mandatory="true"/>
+			<question text="Postcode" type="text" id="reforg_postcode" mandatory="true"/>
+			<question text="Telephone Number" type="text" id="reforg_phone" />
+		</category>
+		<category text="Referral To">
+			<question text="Health Board" id="structadmin_hb_cipher" type="select" mandatory="true">
+				<option text="(Not Known)" value="(Not Known)"/>
+				<option text="Ayrshire and Arran" value="Ayrshire and Arran"/>
+				<option text="Borders" value="Borders"/>
+				<option text="Dumfries and Galloway" value="Dumfries and Galloway"/>
+				<option text="Fife" value="Fife"/>
+				<option text="Forth Valley" value="Forth Valley"/>
+				<option text="Grampian" value="Grampian"/>
+				<option text="GGC" value="GGC"/>
+				<option text="Highland" value="Highland"/>
+				<option text="Lanarkshire" value="Lanarkshire"/>
+				<option text="Lothian" value="Lothian"/>
+				<option text="Northumberland" value="Northumberland"/>
+				<option text="Orkney" value="Orkney"/>
+				<option text="Shetland" value="Shetland"/>
+				<option text="Tayside" value="Tayside"/>
+				<option text="Western Isles" value="Western Isles"/>
+			</question>
+			<question text="Hospital ID" type="text" id="hospital_id" objectOld="referral" propertyOld="HospitalID"/>
+			<question text="Hospital Name" type="text" id="hospital_name" mandatory="true" objectOld="referral" propertyOld="HospitalName"/>
+			<question text="Hospital Address" type="textArea" id="hospital_address" objectOld="referral" propertyOld="HospitalAddress"/>
+			<question text="Hospital Phone Number" type="text" id="hospital_phone" objectOld="referral" propertyOld="HospitalTelephone"/>
+			<question text="Specialty" type="text" id="specialty" mandatory="true" objectOld="referral" propertyOld="Specialty"/>
+			<question text="Protocol" type="text" id="protocol" mandatory="true" objectOld="referral" propertyOld="Protocol"/>
+			<question text="Consultant Surname" type="text" id="hcp_surname" objectOld="referral" propertyOld="ConsultantSurname"/>
+			<question text="Consultant Forename" type="text" id="hcp_forename" objectOld="referral" propertyOld="ConsultantForename"/>
+			<question text="Consultant Grade" type="select" id="hcp_grade" objectOld="referral" propertyOld="ConsultantGrade">
+				<option text="Consultant" value="Consultant" isDefault="true"/>
+				<option text="Nurse" value="Nurse"/>
+			</question>
+			<question text="Consultant ID" type="hidden" id="hcp_id"/>
+		</category>
+	</category>
+</protocol>

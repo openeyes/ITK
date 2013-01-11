@@ -1,0 +1,510 @@
+﻿archetype (adl_version=1.5; generated)
+	openEHR-EHR-OBSERVATION.heart_rate-pulse.v1
+
+specialize
+	openEHR-EHR-OBSERVATION.heart_rate.v1
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			author = <
+				["name"] = <"Jasmin Buck, Sebastian Garde">
+				["organisation"] = <"University of Heidelberg, Central Queensland University">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Sam Heard">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"sam.heard@oceaninformatics.com">
+		["date"] = <"26/03/2006">
+	>
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Zur Dokumentation der mechanischen Herzfrequenz, Herzrhythmus und Charakteristik des Pulses.">
+			use = <"Zur Dokumentation der mechanischen Herzfrequenz ermittelt durch Abtasten oder ein geeignetes Gerät.">
+			keywords = <"Frequenz", "Rhythmus", "Charakteristik", "Puls">
+			misuse = <"Nicht zur Dokumentation des periphären Pulses.">
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the mechanical rate, rhythm and character of the pulse as evidence of 'out-put' heart rate.">
+			use = <"For recording mechanical rate of the heart as determined by palpation or suitable device.">
+			keywords = <"rate", "rhythm", "character", "pulse">
+			misuse = <"Not for recording peripheral pulses.">
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	lifecycle_state = <"Initial">
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"555A747F3BEA5BCB86F63A0D5C003BEA">
+		["references"] = <"">
+	>
+
+definition
+	OBSERVATION[at0000.1] matches {	-- Pulse
+		/data[at0002]/events[at0003]/data[at0001]/items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at1005.1] matches {	-- Pulse present
+				value matches {
+					DV_BOOLEAN matches {
+						value matches {True, False}
+					}
+				}
+			}
+			ELEMENT[at0.42] occurrences matches {0..1} matches {	-- Rate description
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0.43, 	-- Normal pulse rate
+							at0.44, 	-- Tachycardia
+							at0.45, 	-- Bradycardia
+							at0.46]	-- Mixed tachycardia and bradycardia
+						}
+					}
+				}
+			}
+			ELEMENT[at0.11] occurrences matches {0..1} matches {	-- Missed beats per minute
+				value matches {
+					DV_COUNT matches {
+						magnitude matches {|>=0|}
+					}
+				}
+			}
+			ELEMENT[at0.36] occurrences matches {0..1} matches {	-- Volume
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0.37, 	-- Large/full
+							at0.38, 	-- Normal
+							at0.39, 	-- Low/small
+							at0.40, 	-- Half
+							at0.41]	-- Quarter
+						}
+					}
+				}
+			}
+			ELEMENT[at0.27] occurrences matches {0..1} matches {	-- Character
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0.28, 	-- Bounding
+							at0.29, 	-- Thready
+							at0.30, 	-- Normal
+							at0.31, 	-- Slow-rising
+							at0.32, 	-- Water-hammer
+							at0.33, 	-- Collapsing
+							at0.34, 	-- Bisferiens
+							at0.35]	-- Paradoxical
+						}
+					}
+					DV_TEXT matches {*}
+				}
+			}
+			CLUSTER[at0.24] occurrences matches {0..1} matches {	-- Pulse deficit
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0.13] occurrences matches {0..1} matches {	-- Deficit
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[local::]}
+							}
+						}
+					}
+					ELEMENT[at0.25] occurrences matches {0..2} matches {	-- Sites
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0.15, 	-- Ulnar artery
+									at0.17, 	-- Brachial artery
+									at0.20, 	-- Dorsalis Pedis
+									at0.21, 	-- Tibialis Posterior
+									at0.3, 	-- Radial artery
+									at0.4, 	-- Apex of heart
+									at0.5, 	-- Carotid artery
+									at0.6, 	-- Femoral artery
+									at0.19]	-- Popliteal
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		/protocol[at0010]/items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at0.2] occurrences matches {0..1} matches {	-- Location of measurement
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0.3, 	-- Radial artery
+							at0.4, 	-- Apex of heart
+							at0.5, 	-- Carotid artery
+							at0.6, 	-- Femoral artery
+							at0.15, 	-- Ulnar artery
+							at0.17, 	-- Brachial artery
+							at0.19, 	-- Popliteal
+							at0.20, 	-- Dorsalis Pedis
+							at0.21, 	-- Tibialis Posterior
+							at0.22]	-- temporal
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			["at0.10"] = <
+				text = <"Häufig ausgelassene Schläge">
+				description = <"Mehr als zwei ausgelassene Schläge pro Minute">
+			>
+			["at0.11"] = <
+				text = <"*Missed beats per minute(en)">
+				description = <"*The number of missed beats per minute(en)">
+			>
+			["at0.13"] = <
+				text = <"Defizit">
+				description = <"Differenz der Raten">
+			>
+			["at0.15"] = <
+				text = <"Ulnararterie">
+				description = <"Die Ulnararterie">
+			>
+			["at0.17"] = <
+				text = <"Brachialarterie">
+				description = <"Die Brachialarterie">
+			>
+			["at0.19"] = <
+				text = <"Poplitealarterie">
+				description = <"Die Poplitealarterie">
+			>
+			["at0.2"] = <
+				text = <"Messstelle">
+				description = <"Die Körperstelle, an der der Puls gemessen wurde.">
+			>
+			["at0.20"] = <
+				text = <"Dorsalis-Pedis-Arterie">
+				description = <"Die Dorsalis-Pedis-Arterie">
+			>
+			["at0.21"] = <
+				text = <"Tibialis-Posterior-Arterie">
+				description = <"Die Tibialis-Posterior-Arterie">
+			>
+			["at0.22"] = <
+				text = <"temporal">
+				description = <"*">
+			>
+			["at0.24"] = <
+				text = <"*Pulse deficit(en)">
+				description = <"*Difference between the rate at the heart apex and a peripheral pulse.(en)">
+			>
+			["at0.25"] = <
+				text = <"Stellen">
+				description = <"Körperstelle(n) der Messung">
+			>
+			["at0.27"] = <
+				text = <"*Character(en)">
+				description = <"*Shape of the pulse wave on palpation(en)">
+			>
+			["at0.28"] = <
+				text = <"Kräftig">
+				description = <"*">
+			>
+			["at0.29"] = <
+				text = <"Kraftlos">
+				description = <"*">
+			>
+			["at0.3"] = <
+				text = <"Radialarterie">
+				description = <"Die Radialarterie">
+			>
+			["at0.30"] = <
+				text = <"Normal">
+				description = <"*">
+			>
+			["at0.31"] = <
+				text = <"Langsam ansteigend">
+				description = <"*">
+			>
+			["at0.32"] = <
+				text = <"Wasserhammer-Puls">
+				description = <"*">
+			>
+			["at0.33"] = <
+				text = <"Kollabierend">
+				description = <"*">
+			>
+			["at0.34"] = <
+				text = <"Bisferiens">
+				description = <"*">
+			>
+			["at0.35"] = <
+				text = <"Paradoxical">
+				description = <"*">
+			>
+			["at0.36"] = <
+				text = <"Volumen">
+				description = <"Volumen des Puls">
+			>
+			["at0.37"] = <
+				text = <"Groß/Voll">
+				description = <"*">
+			>
+			["at0.38"] = <
+				text = <"Normal">
+				description = <"*">
+			>
+			["at0.39"] = <
+				text = <"Klein/Gering">
+				description = <"*">
+			>
+			["at0.4"] = <
+				text = <"Herzspitze">
+				description = <"Die Herzspitze (linker 5. interkostal-Raum, mid-clavicular)">
+			>
+			["at0.40"] = <
+				text = <"Halb">
+				description = <"*">
+			>
+			["at0.41"] = <
+				text = <"Viertel">
+				description = <"*">
+			>
+			["at0.42"] = <
+				text = <"*Rate description(en)">
+				description = <"*Description of the pulse rate.(en)">
+			>
+			["at0.43"] = <
+				text = <"*Normal pulse rate(en)">
+				description = <"*The pulse rate is normal.(en)">
+			>
+			["at0.44"] = <
+				text = <"Tachykardie">
+				description = <"*">
+			>
+			["at0.45"] = <
+				text = <"Bradykardie">
+				description = <"*">
+			>
+			["at0.46"] = <
+				text = <"Vermischte Tachykardie und Bradykardie">
+				description = <"Tachy-brady-Syndrom">
+			>
+			["at0.5"] = <
+				text = <"Karotis-Arterie">
+				description = <"Die Karotis-Arterie / Halsschlagader">
+			>
+			["at0.6"] = <
+				text = <"Oberschenkelarterie">
+				description = <"Die Oberschenkelarterie">
+			>
+			["at0.7"] = <
+				text = <"Bigeminie">
+				description = <"Doppelschlägigkeit">
+			>
+			["at0.8"] = <
+				text = <"Trigeminie">
+				description = <"Allorhythmie mit Aktions-Dreiergruppen (2 Sinusschläge u. 1 Extrasystole oder umgekehrt)">
+			>
+			["at0.9"] = <
+				text = <"Gelegentlich verpasste Schläge">
+				description = <"Weniger als zwei verpasste Schläge pro Minute">
+			>
+			["at0000.1"] = <
+				text = <"Puls">
+				description = <"Die mechanische Herzfrequenz - üblicherweise durch Abtastung gemessen">
+			>
+			["at1005.1"] = <
+				text = <"*Pulse present(en)">
+				description = <"*The heart rate is present (implied true if rate >0).(en)">
+			>
+		>
+		["en"] = <
+			["at0.10"] = <
+				text = <"Frequent missed beats">
+				description = <"Missed beats of greater than 2 per minute">
+			>
+			["at0.11"] = <
+				text = <"Missed beats per minute">
+				description = <"The number of missed beats per minute">
+			>
+			["at0.13"] = <
+				text = <"Deficit">
+				description = <"Difference between the rates">
+			>
+			["at0.15"] = <
+				text = <"Ulnar artery">
+				description = <"The ulnar artery">
+			>
+			["at0.17"] = <
+				text = <"Brachial artery">
+				description = <"The brachial artery">
+			>
+			["at0.19"] = <
+				text = <"Popliteal">
+				description = <"The popliteal artery">
+			>
+			["at0.2"] = <
+				text = <"Location of measurement">
+				description = <"The body site where the pulse was measured">
+			>
+			["at0.20"] = <
+				text = <"Dorsalis Pedis">
+				description = <"The dorsalis pedis artery">
+			>
+			["at0.21"] = <
+				text = <"Tibialis Posterior">
+				description = <"The tibialis posterior artery">
+			>
+			["at0.22"] = <
+				text = <"temporal">
+				description = <"*">
+			>
+			["at0.24"] = <
+				text = <"Pulse deficit">
+				description = <"Difference between the rate at the heart apex and a peripheral pulse.">
+			>
+			["at0.25"] = <
+				text = <"Sites">
+				description = <"Sites where deficit is measured">
+			>
+			["at0.27"] = <
+				text = <"Character">
+				description = <"Shape of the pulse wave on palpation">
+			>
+			["at0.28"] = <
+				text = <"Bounding">
+				description = <"*">
+			>
+			["at0.29"] = <
+				text = <"Thready">
+				description = <"*">
+			>
+			["at0.3"] = <
+				text = <"Radial artery">
+				description = <"The radial artery">
+			>
+			["at0.30"] = <
+				text = <"Normal">
+				description = <"*">
+			>
+			["at0.31"] = <
+				text = <"Slow-rising">
+				description = <"*">
+			>
+			["at0.32"] = <
+				text = <"Water-hammer">
+				description = <"*">
+			>
+			["at0.33"] = <
+				text = <"Collapsing">
+				description = <"*">
+			>
+			["at0.34"] = <
+				text = <"Bisferiens">
+				description = <"*">
+			>
+			["at0.35"] = <
+				text = <"Paradoxical">
+				description = <"*">
+			>
+			["at0.36"] = <
+				text = <"Volume">
+				description = <"Volume of pulse">
+			>
+			["at0.37"] = <
+				text = <"Large/full">
+				description = <"*">
+			>
+			["at0.38"] = <
+				text = <"Normal">
+				description = <"*">
+			>
+			["at0.39"] = <
+				text = <"Low/small">
+				description = <"*">
+			>
+			["at0.4"] = <
+				text = <"Apex of heart">
+				description = <"The apex beat of the heart (left 5th intercostal space, mid-clavicular line)">
+			>
+			["at0.40"] = <
+				text = <"Half">
+				description = <"*">
+			>
+			["at0.41"] = <
+				text = <"Quarter">
+				description = <"*">
+			>
+			["at0.42"] = <
+				text = <"Rate description">
+				description = <"Description of the pulse rate.">
+			>
+			["at0.43"] = <
+				text = <"Normal pulse rate">
+				description = <"The pulse rate is normal.">
+			>
+			["at0.44"] = <
+				text = <"Tachycardia">
+				description = <"*">
+			>
+			["at0.45"] = <
+				text = <"Bradycardia">
+				description = <"*">
+			>
+			["at0.46"] = <
+				text = <"Mixed tachycardia and bradycardia">
+				description = <"Tachy-brady syndrome">
+			>
+			["at0.5"] = <
+				text = <"Carotid artery">
+				description = <"The carotid artery in the neck">
+			>
+			["at0.6"] = <
+				text = <"Femoral artery">
+				description = <"The femoral artery">
+			>
+			["at0.7"] = <
+				text = <"Bigeminy">
+				description = <"Double beats with intervening gap">
+			>
+			["at0.8"] = <
+				text = <"Trigeminy">
+				description = <"Triple beat with intervening gap">
+			>
+			["at0.9"] = <
+				text = <"Occasional missed beats">
+				description = <"Missed beats less than 2 per minute">
+			>
+			["at0000.1"] = <
+				text = <"Pulse">
+				description = <"The mechanical heart rate  - usually measured by palpation">
+			>
+			["at1005.1"] = <
+				text = <"Pulse present">
+				description = <"The heart rate is present (implied true if rate >0).">
+			>
+		>
+	>
+	term_bindings = <
+		["SNOMED-CT"] = <
+			["at0.23"] = <[SNOMED-CT(2009)::64730000]>
+			["at0.24"] = <[SNOMED-CT(2009)::34624004]>
+			["at0.27"] = <[SNOMED-CT(2009)::366200009]>
+			["at0.42"] = <[SNOMED-CT::111972009]>
+			["at0.44"] = <[SNOMED-CT(2009)::86651002]>
+			["at0.45"] = <[SNOMED-CT(2009)::42177007]>
+			["at0.47"] = <[SNOMED-CT::78564009]>
+			["at0000.1"] = <[SNOMED-CT::248627000]>
+		>
+	>

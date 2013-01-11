@@ -1,0 +1,307 @@
+﻿archetype (adl_version=1.5; generated)
+	openEHR-EHR-OBSERVATION.timed_25_foot_walk.v1
+
+language
+	original_language = <[ISO_639-1::de]>
+	translations = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			author = <
+				["name"] = <"Michael Braun">
+				["organisation"] = <"University Medical Center Freiburg, Germany">
+				["email"] = <"braun@imbi.uni-freiburg.de">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Michael Braun">
+		["organisation"] = <"University Medical Center Freiburg, Germany">
+		["email"] = <"braun@imbi.uni-freiburg.de">
+		["date"] = <"2012-03-01">
+	>
+	details = <
+		["de"] = <
+			language = <[ISO_639-1::de]>
+			purpose = <"Zur Protokollierung der Durchführung eines Timed 25-Foot Walk, in der Regel als Teil der MSFC-Testreihe (Multiple Sclerosis Functional Composite).">
+			use = <"Der Timed 25-Foot Walk kann sowohl im Rahmen des MSFC, als auch davon unabhängig eingesetzt werden. Der Patient wird zu einem Ende einer klar markierten Strecke von 25 Fuß (7,62 m) Länge geführt. Dann wird er angewiesen, diese Strecke so schnell wie möglich, jedoch sicher, zurückzulegen. Die Aufgabe wird anschließend sofort wiederholt, der Patient legt dieselbe Strecke auf umgekehrtem Weg zurück. Unterstützende Hilfsmittel (i. Allg. die gewohnten Gehhilfen) dürfen beim Test verwendet werden. Das Zeitlimit pro Strecke beträgt 180 s (3 min). Ferner wird der Test abgebrochen, wenn ein Patient die zweite Strecke nach einer Ruhepause von 5 min nicht zurücklegen kann. Siehe MSFC-Handbuch für detaillierte Handlungsanweisungen. Der Test sollte nur von einer entsprechend geschulten Person durchgeführt werden.">
+			keywords = <"Timed 25-Foot Walk", "T25-FW", "T25FW", "TW", "Multiple Sclerosis Functional Composite", "MSFC">
+			misuse = <"">
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the administration of a Timed 25-Foot Walk, normally as part of the MSFC (Multiple Sclerosis Functional Composite) suite of tests.">
+			use = <"Use the Timed 25-Foot Walk both, as part of the MSFC, as well as independently. The patient is directed to one end of a clearly marked 25-foot (7,62 m) course. Then he is instructed to walk this course as quickly as possible, but safely. The task is immediately administered again by having the patient walk back the same distance. Assistive devices (in general, customary walking devices) may be used when doing this task. The time limit is 180 sec (3 min) per trial. Furthermore, the test is terminated if the patient cannot complete the second trial after a rest period of 5 min. Use the MSFC Manual for detailed administration instructions. The test should only be administred by a suitably trained person.">
+			keywords = <"Timed 25-Foot Walk", "T25-FW", "T25FW", "TW", "Multiple Sclerosis Functional Composite", "MSFC">
+			misuse = <"">
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"Athanasios Anastasiou, UoP, United Kingdom", "Sebastian Bischoff, gfnmediber, Germany", "Martin Boeker, University Medical Center Freiburg, Germany", "Michael Braun, University Medical Center Freiburg, Germany (Editor)", "Sebastian Garde, Ocean Informatics, Germany", "Eugene Igras, IRIS Systems, Inc., Canada", "Heather Leslie, Ocean Informatics, Australia", "Sebastian Mansow-Model, gfnmediber GmbH, Germany", "Catalina Martínez-Costa, University of Murcia, Spain", "Ian McNicoll, Ocean Informatics, United Kingdom (Editor)", "Alexander U. Brandt, gfnmediber GmbH, Germany">
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"C1C00177F4B4FA4828A8599C88A46AE5">
+		["references"] = <"Fischer JS, Jak AJ, Kniker JE, Rudick RA, Cutter G. Multiple Sclerosis Functional Composite (MSFC), Administration and Scoring Manual: National Multiple Sclerosis Society; 2001.">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Timed 25-Foot Walk
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					POINT_EVENT[at0002] occurrences matches {0..1} matches {	-- Trial 1
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Time
+										value matches {
+											DV_DURATION matches {
+												value matches {PTS/|PT0S..PT180S|}
+											}
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Trial Not Completed
+										value matches {
+											DV_BOOLEAN matches {
+												value matches {True}
+											}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..*} matches {	-- Reasons For Non-completion
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0009] matches {	-- Tree
+								items matches {
+									ELEMENT[at0010] occurrences matches {0..*} matches {	-- Confounding Factors
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+					POINT_EVENT[at0007] occurrences matches {0..1} matches {	-- Trial 2
+						data matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/data[at0003]	-- /data[Event Series]/events[Trial 1]/data[Tree]
+						}
+						state matches {
+							use_node ITEM_TREE /data[at0001]/events[at0002]/state[at0009]	-- /data[Event Series]/events[Trial 1]/state[Tree]
+						}
+					}
+				}
+			}
+		}
+		protocol matches {
+			ITEM_TREE[at0011] matches {	-- Tree
+				items matches {
+					ELEMENT[at0012] occurrences matches {0..*} matches {	-- Unilateral Assistive Device
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0013, 	-- Ankle-foot orthosis
+									at0014, 	-- Cane
+									at0015]	-- Crutch
+								}
+							}
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0020] occurrences matches {0..*} matches {	-- Bilateral Assistive Device
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0013, 	-- Ankle-foot orthosis
+									at0014, 	-- Cane
+									at0015, 	-- Crutch
+									at0016]	-- Walker/rollator
+								}
+							}
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {	-- More Than Two Attempts?
+						value matches {
+							DV_BOOLEAN matches {
+								value matches {True, False}
+							}
+						}
+					}
+					ELEMENT[at0018] occurrences matches {0..1} matches {	-- Reasons For More than Two Attempts
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["de"] = <
+			["at0000"] = <
+				text = <"Timed 25-Foot Walk">
+				description = <"Der Timed 25-Foot Walk ist ein Gehtest, eine quantitative Messung der Beweglichkeit und Motorik der unteren Extremitäten. Dieser Test bildet die erste Komponente des Multiple Sclerosis Functional Composite (MSFC, eine Testreihe zur Verlaufsdokumentation der Multiplen Sklerose).">
+			>
+			["at0001"] = <
+				text = <"Event Series">
+				description = <"@ internal @">
+			>
+			["at0002"] = <
+				text = <"Test 1">
+				description = <"Erster von zwei Teilen des Timed 25-Foot Walk.">
+			>
+			["at0003"] = <
+				text = <"Baum">
+				description = <"@ internal @">
+			>
+			["at0004"] = <
+				text = <"Zeit">
+				description = <"Benötigte Zeit für eine erfolgreich zurückgelegte Gehstrecke von 25 Fuß.">
+			>
+			["at0005"] = <
+				text = <"Test nicht beendet">
+				description = <"Konnte die Strecke nicht zurückgelegt werden oder wurde der Test vorzeitig abgebrochen? Gründe hierfür bitte gesondert angeben. Ein erfolgreicher Test muss nicht eigens gekennzeichnet werden.">
+			>
+			["at0006"] = <
+				text = <"Gründe für Nichtbeenden">
+				description = <"Angabe der Gründe, falls die Strecke nicht zurückgelegt werden konnte oder der Test vorzeitig abgebrochen wurde (beispielsweise aufgrund körperlicher Einschränkungen).">
+			>
+			["at0007"] = <
+				text = <"Test 2">
+				description = <"Zweiter von zwei Teilen des Timed 25-Foot Walk.">
+			>
+			["at0009"] = <
+				text = <"Baum">
+				description = <"@ internal @">
+			>
+			["at0010"] = <
+				text = <"Begleitumstände">
+				description = <"Jedwede Umstände, welche die Leistung des Patienten beeinflusst haben (wie Erkältung, Unwohlsein, Stolpern).">
+			>
+			["at0011"] = <
+				text = <"Baum">
+				description = <"@ internal @">
+			>
+			["at0012"] = <
+				text = <"Unilaterale Gehhilfe">
+				description = <"Angabe, welches unterstützende Hilfsmittel verwendet wurde.">
+			>
+			["at0013"] = <
+				text = <"Sprunggelenkorthese">
+				description = <"Gehorthese, Knöchel-Fuss-Orthese.">
+			>
+			["at0014"] = <
+				text = <"Stock">
+				description = <"Geh- oder Krückstock.">
+			>
+			["at0015"] = <
+				text = <"Krücke">
+				description = <"Unterarmgehstütze.">
+			>
+			["at0016"] = <
+				text = <"Gehwagen/Rollator">
+				description = <"Gehwagen oder Rollator.">
+			>
+			["at0017"] = <
+				text = <"Mehr als zwei Anläufe?">
+				description = <"Wurden mehr als zwei Anläufe benötigt, um zwei Testläufe erfolgreich abzuschließen?">
+			>
+			["at0018"] = <
+				text = <"Gründe für mehr als zwei Anläufe">
+				description = <"Gründe für mehr als zwei Anläufe, um zwei erfolgreiche Tests zu erhalten (bspw. Sturz, Bedienungsfehler der Stoppuhr oder Störungen).">
+			>
+			["at0020"] = <
+				text = <"Bilaterale Gehhilfen">
+				description = <"Angabe, welche unterstützenden Hilfsmittel verwendet wurden.">
+			>
+		>
+		["en"] = <
+			["at0000"] = <
+				text = <"Timed 25-Foot Walk">
+				description = <"The Timed 25-Foot Walk is a walking test, a quantitative measure of lower extremity mobility and motor function. This test is the first component of the Multiple Sclerosis Functional Composite (MSFC, a series of three tests to document the course of Multiple Sclerosis).">
+			>
+			["at0001"] = <
+				text = <"Event Series">
+				description = <"@ internal @">
+			>
+			["at0002"] = <
+				text = <"Trial 1">
+				description = <"First of two trials of the Timed 25-Foot Walk.">
+			>
+			["at0003"] = <
+				text = <"Tree">
+				description = <"@ internal @">
+			>
+			["at0004"] = <
+				text = <"Time">
+				description = <"Time required to successfully complete the 25-foot walking distance.">
+			>
+			["at0005"] = <
+				text = <"Trial Not Completed">
+				description = <"Could the distance not be completed or was the trial terminated prematurely? Please specify reasons for this separately. A successful trial needs not to be specifically marked.">
+			>
+			["at0006"] = <
+				text = <"Reasons For Non-completion">
+				description = <"Record the reasons, if the distance could not be completed or the test was terminated prematurely (e.g. because of physical limitations).">
+			>
+			["at0007"] = <
+				text = <"Trial 2">
+				description = <"Second of two trials of the Timed 25-Foot Walk.">
+			>
+			["at0009"] = <
+				text = <"Tree">
+				description = <"@ internal @">
+			>
+			["at0010"] = <
+				text = <"Confounding Factors">
+				description = <"Record any circumstances that you believe may have affected the patient's perfomance (e.g. a cold, not feeling well, tripping).">
+			>
+			["at0011"] = <
+				text = <"Tree">
+				description = <"@ internal @">
+			>
+			["at0012"] = <
+				text = <"Unilateral Assistive Device">
+				description = <"Record which unilateral assistive devices were used.">
+			>
+			["at0013"] = <
+				text = <"Ankle-foot orthosis">
+				description = <"Ankle-Foot Orthosis (AFO).">
+			>
+			["at0014"] = <
+				text = <"Cane">
+				description = <"Walking stick or cane.">
+			>
+			["at0015"] = <
+				text = <"Crutch">
+				description = <"Underarm crutch.">
+			>
+			["at0016"] = <
+				text = <"Walker/rollator">
+				description = <"Walker or rollator device.">
+			>
+			["at0017"] = <
+				text = <"More Than Two Attempts?">
+				description = <"Were there more than two attempts to get two successful trials?">
+			>
+			["at0018"] = <
+				text = <"Reasons For More than Two Attempts">
+				description = <"Reasons for more than two attempts to get two successful trials (e.g. fall, handling error of the stopwatch or interference).">
+			>
+			["at0020"] = <
+				text = <"Bilateral Assistive Device">
+				description = <"Record which bilateral assistive devices were used.">
+			>
+		>
+	>

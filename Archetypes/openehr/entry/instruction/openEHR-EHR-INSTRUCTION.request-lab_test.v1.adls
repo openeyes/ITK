@@ -1,0 +1,86 @@
+﻿archetype (adl_version=1.5; generated)
+	openEHR-EHR-INSTRUCTION.request-lab_test.v1
+
+specialize
+	openEHR-EHR-INSTRUCTION.request.v1
+
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"Ocean Informatics, United Kingdom">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"08/12/2009">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To request a laboratory test to be performed and convey supporting clinical details.">
+			use = <"Use in most requests for a laboratory test to be conducted on a patient.
+If there are more specific details about the test and/or specimen include this information in more detailed CLUSTER archetypes appropriate for the purpose.">
+			keywords = <"request", "refer", "order", "service", "provide", "laboratory", "pathology", "microbiology", "haematology", "diagnostic">
+			misuse = <"">
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"Heather Leslie, Ocean Informatics, Australia", ...>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"656E810E31E0DC37FC44ECA07B07A8EC">
+		["references"] = <"">
+	>
+
+definition
+	INSTRUCTION[at0000.1] matches {	-- Laboratory Test request
+		/activities cardinality matches {0..*; unordered} matches {
+			ACTIVITY[at0001] matches {	-- Request
+				description matches {
+					ITEM_TREE[at0009] matches {	-- Tree
+						items matches {
+							allow_archetype CLUSTER[at0.145] occurrences matches {0..*} matches {	-- Specimen details
+								include
+									archetype_id/value matches {/.*/}
+							}
+							ELEMENT[at0040.1] matches {	-- DateTime test preferred
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+							ELEMENT[at0144.1] matches {	-- Latest DateTime test required
+								value matches {
+									DV_DATE_TIME matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			["at0.145"] = <
+				text = <"Specimen details">
+				description = <"Structured detail defining the specimen.">
+			>
+			["at0.146"] = <
+				text = <"New element">
+				description = <"*">
+			>
+			["at0000.1"] = <
+				text = <"Laboratory Test request">
+				description = <"Generic request for a laboratory request.">
+			>
+			["at0040.1"] = <
+				text = <"DateTime test preferred">
+				description = <"The preferred date and time by which the service should be performed or completed.">
+			>
+			["at0144.1"] = <
+				text = <"Latest DateTime test required">
+				description = <"The latest date that is acceptable for the service to be completed.">
+			>
+		>
+	>

@@ -1,0 +1,93 @@
+﻿archetype (adl_version=1.5; generated)
+	openEHR-EHR-OBSERVATION.body_weight-adjusted.v1
+
+specialize
+	openEHR-EHR-OBSERVATION.body_weight.v1
+
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"heather.leslie@oceaninformatics.com">
+		["date"] = <"19/06/2009">
+	>
+	details = <
+		["ru"] = <
+			language = <[ISO_639-1::ru]>
+			purpose = <"Для записи скорректированного веса тела(ru)">
+			use = <"Используется для записи скорректированной массы тела - то есть, расчет полной и окончательной массы тела человека с ампутации конечностей, основанном на других измерениях и алгоритме.">
+			keywords = <"*weight(en)", "*adjusted(en)">
+			misuse = <"Не использовать для записи фактического веса человека, или прибавки / потери массы - использовать для этого архетип OBSERVATION.body_weight.
+Не использовать для записи первого вес ребенка вскоре после рождения - использовать для этого архетип OBSERVATION.body_weight.
+Не использовать для записи веса предмета или части тела(ru)">
+			copyright = <"© openEHR Foundation">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record the adjusted body weight of an individual.">
+			use = <"To be used to record the adjusted measurement of body weight - that is, a calculation of the full and complete body weight of a person with limb amputation, based on other measurements and an algorithm.">
+			keywords = <"weight", "adjusted">
+			misuse = <"Not to be used to record the actual weight of an individual, or weight gain/loss - use OBSERVATION.body_weight.
+Not to be used to record the first weight of an infant soon after birth - use the specialisation of this archetype OBSERVATION.body_weight-birth.
+Not to be used to record the weight of an object or body part.">
+			copyright = <"© openEHR Foundation">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"Jeroen Meintjens, Medisch Centrum Alkmaar, Netherlands", "Marja Buur-Krom, Medisch Centrum Alkmaar, Netherlands", "Sebastian Garde, Ocean Informatics, Germany", "Ian McNicoll, Ocean Informatics, Scotland", "Paul Donaldson, Queensland Health, Australia", "Heather Grain, Llewellyn Informatics, Australia", "Anne Harbison, Australia", "Andrew James, University of Toronto, Canada", "Sam Heard, Ocean Informatics, Australia">
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"5239B12D3B47C1DDF12356C08BB9EB6F">
+	>
+
+definition
+	OBSERVATION[at0000.1] matches {	-- Adjusted Body weight
+		/data[at0002]/events[at0003]/data[at0001]/items[at0004.1]/value matches {
+			(C_DV_QUANTITY) <
+				property = <[openehr::124]>
+				list = <
+					["1"] = <
+						units = <"kg">
+						magnitude = <|0.0..1000.0|>
+					>
+					["2"] = <
+						units = <"lb">
+						magnitude = <|0.0..2000.0|>
+					>
+				>
+			>
+		}
+	}
+
+ontology
+	term_definitions = <
+		["ru"] = <
+			["at0000.1"] = <
+				text = <"Вес тела с добавлениями">
+				description = <"Измерение массы тела пациента с протезами / внешними устройствами.">
+			>
+			["at0004.1"] = <
+				text = <"Вес дополнения">
+				description = <"Вес дополнения.">
+			>
+		>
+		["en"] = <
+			["at0000.1"] = <
+				text = <"Adjusted Body weight">
+				description = <"Measurement of the adjusted body weight of an individual.">
+			>
+			["at0004.1"] = <
+				text = <"Adjusted Weight">
+				description = <"The adjusted weight of the individual.">
+			>
+		>
+	>
