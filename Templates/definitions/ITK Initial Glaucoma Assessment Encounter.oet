@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="openEHR/v1/Template">
   <id>c4bb651c-c7cc-4103-a758-e0543fe70e88</id>
-  <name>ITK Initial Glaucoma Assessment</name>
+  <name>DOAS Initial Glaucoma Assessment</name>
   <description>
     <lifecycle_state>Initial</lifecycle_state>
     <details>
-      <purpose />
+      <purpose>To record findings at an Initial Glaucoma Assessment based on the DOAS guidelines</purpose>
       <use />
       <misuse />
     </details>
@@ -62,9 +62,7 @@
   </description>
   <definition xsi:type="COMPOSITION" archetype_id="openEHR-EHR-COMPOSITION.encounter.v1" concept_name="Encounter" name="Initial Glaucoma Assessment">
     <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.glaucoma_history.v1" concept_name="Glaucoma history" path="/content">
-      <Rule path="/items[at0005]" max="0" />
       <Rule path="/items[at0012]" max="0" />
-      <Rule path="/items[at0007]" max="0" />
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" max="1" path="/items[at0001]/items" name="Occupation">
         <Rule path="/data[at0001]" hide_on_form="true" />
         <Rule path="/data[at0001]/items[at0002]" name="Occupation" />
@@ -102,8 +100,10 @@
       </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" max="1" path="/items[at0002]/items[at0011]/items" name="Ocular medication" />
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.risk-family_history.v1" concept_name="Risk of condition based on family history" path="/items[at0004]/items">
+        <Rule path="/data[at0001]" hide_on_form="true" />
         <Rule path="/data[at0001]/items[at0002]" default="Glaucoma" />
         <Rule path="/data[at0001]/items[at0003.1]" max="0" />
+        <Rule path="/data[at0001]/items[at0.2]" max="1" />
         <Rule path="/data[at0001]/items[at0.2]/items[at0.4]" max="0" />
         <Rule path="/data[at0001]/items[at0.2]/items[at0.27]" max="0" />
         <Rule path="/data[at0001]/items[at0.2]/items[at0.5]" max="0" />
@@ -113,11 +113,21 @@
         <Rule path="/data[at0001]/items[at0.2]/items[at0.28]" max="0" />
         <Rule path="/data[at0001]/items[at0.2]/items[at0.12]" max="0" />
         <Rule path="/data[at0001]/items[at0.14]" max="0" />
+        <Rule path="/protocol[at0010]" hide_on_form="true" />
         <Rule path="/protocol[at0010]/items[at0011]" max="0" />
       </Item>
-      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" max="1" path="/items[at0005]/items" name="Systemic medication" />
-      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" max="1" path="/items[at0006]/items" name="Drug allergies" />
-      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" max="1" path="/items[at0007]/items" name="Other allergies" />
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" max="1" path="/items[at0005]/items" name="Systemic medication" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/items[at0002]" name="Medication" />
+      </Item>
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" max="1" path="/items[at0006]/items" name="Drug allergies" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/items[at0002]" name="Allergies" />
+      </Item>
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" max="1" path="/items[at0007]/items" name="Other allergies" hide_on_form="true">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/items[at0002]" name="Non-drug allergies" />
+      </Item>
     </Content>
     <Content xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/content" name="2. Glaucoma examination">
       <Item xsi:type="SECTION" archetype_id="openEHR-EHR-SECTION.adhoc.v1" concept_name="Adhoc heading" max="1" path="/items" name="Visual acuity">
@@ -214,6 +224,7 @@
           <Rule path="/data[at0001]/events[at0134]/state[at0041]" hide_on_form="true" />
           <Rule path="/data[at0001]/events[at0134]/state[at0041]/items[at0112]" max="0" />
           <Rule path="/data[at0001]/events[at0134]/state[at0041]/items[at0042]" max="0" />
+          <Rule path="/protocol[at0020]" hide_on_form="true" />
           <Rule path="/protocol[at0020]/items[at0081]" max="0" />
           <Rule path="/protocol[at0020]/items[at0023]" max="0" />
           <Rule path="/protocol[at0020]/items[at0021]" max="0" />
@@ -279,6 +290,8 @@
         <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0004]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0006]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0007]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0007]/items[at0008]" max="0" />
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.pupil_examination.v1" concept_name="Pupil examination" max="1" path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]" name="Right pupil">
           <Rule path="/items[at0015]" default="local::at0017::Right">
             <constraint xsi:type="textConstraint">
@@ -380,6 +393,54 @@
         <Rule path="/data[at0001]/events[at0002]/state[at0054]" hide_on_form="true" />
         <Rule path="/data[at0001]/events[at0002]/state[at0054]/items[at0055]" max="0" />
         <Rule path="/protocol[at0051]" hide_on_form="true" />
+        <Rule path="/protocol[at0051]/items[at0052]" max="0" />
+      </Item>
+      <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.fundoscopic_examination.v1" concept_name="Fundoscopic examination of eyes" path="/items">
+        <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0008]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007]" max="1" name="Right eye" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0004]" default="local::at0006::Right eye&#xA;">
+          <constraint xsi:type="textConstraint">
+            <excludedValues>local::at0005</excludedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0010]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0011]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0012]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0016]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0017]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0018]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0019]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0020]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0021]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0022]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0023]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0009]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007]" max="1" clone="true" name="Left eye" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0004]" default="local::at0005::Left eye&#xA;">
+          <constraint xsi:type="textConstraint">
+            <excludedValues>local::at0006</excludedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0010]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0011]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0012]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0016]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0017]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0018]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0019]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0020]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0021]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0022]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0023]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0009]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0033]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0034]" max="0" />
+        <Rule path="/data[at0001]/events[at0002]/state[at0013]" hide_on_form="true" />
+        <Rule path="/protocol[at0028]" hide_on_form="true" />
+        <Rule path="/protocol[at0028]/items[at0029]" max="0" />
       </Item>
       <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.visual_field_measurement.v1" concept_name="Visual field measurement" path="/items" annotation="2.6">
         <Rule path="/data[at0001]" hide_on_form="true" />

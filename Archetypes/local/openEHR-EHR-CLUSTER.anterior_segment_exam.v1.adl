@@ -1,0 +1,433 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.anterior_segment_exam.v1
+
+concept
+	[at0000]	-- Ocular anterior segment examination
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Ian McNicoll">
+		["organisation"] = <"Ocean Informatics UK">
+		["email"] = <"ian.mcnicoll@oceaninformatics.com">
+		["date"] = <"2012-12-29">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record details of examination of the anterior segment of the eye">
+			use = <"">
+			keywords = <"eye", "examination", "ocular", "gonioscopy">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <>
+	other_details = <
+		["references"] = <"Aylward W [Internet].Coding Visual Acuity, openEyes Project;2012.Available from http://www.openeyes.org.uk/documents/OpenEyes%20Coding%20Visual%20Acuity.pdf
+
+IHE Eye Care Domain. General Eye Evaluation (GEE) [Internet]. IHE; 2012. Available from: http://www.ihe.net/Technical_Framework/upload/IHE_EyeCare_Supp_GEE_Rev1-1_TI_2012-06-29.pdf
+
+Royal College of Opthalmologists. Cataract National Dataset for Adults [Internet]. 2011. Available from: http://www.rcophth.ac.uk/page.asp?section=583&sectionTitle=Cataract+National+Data+Set+for+Adults
+
+CfH, UK. Do Once & Share - Glaucoma [Internet]. [cited 2012 Sep 26]. Available from: http://www.doasglaucoma.org/
+
+DICOM Supplement 30 [Internet]. [cited 2012 Sep 26]. Available from: http://medical.nema.org/
+
+Practical Ophthalmology: A Manual for Beginning Residents, 6th Edition [Paperback]
+American Academy Of Ophthalmology (Author), Fred M. Wilson II (Editor), MD (Editor)">
+		["current_contact"] = <"Ian McNicoll, Ocean Informatics, UK, ian.mcnicoll@oceaninformatics.com">
+		["MD5-CAM-1.0.1"] = <"BCE81064D29BCF237E8BD0BFE63EF43F">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- Ocular anterior segment examination
+		items cardinality matches {0..*; unordered} matches {
+			ELEMENT[at0008] occurrences matches {0..1} matches {	-- Eye
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0007, 	-- Left eye
+							at0012]	-- Right eye
+						}
+					}
+				}
+			}
+			ELEMENT[at0056] occurrences matches {0..1} matches {	-- Inflammation
+				value matches {
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::
+							at0057, 	-- Inflammation present
+							at0058]	-- Inflammation absent
+						}
+					}
+				}
+			}
+			CLUSTER[at0038] occurrences matches {0..1} matches {	-- Conjunctiva
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0041] occurrences matches {0..1} matches {	-- Ocular TearFilm Breakup Time
+						value matches {
+							DV_DURATION matches {
+								value matches {PTS/|>=PT0S|}
+							}
+						}
+					}
+					ELEMENT[at0039] occurrences matches {0..*} matches {	-- Conjunctiva Finding
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0013] occurrences matches {0..1} matches {	-- Cornea
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0014] occurrences matches {0..1} matches {	-- Central Corneal Thickness
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"µm">
+										magnitude = <|>=0.0|>
+										precision = <|1|>
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0044] occurrences matches {0..*} matches {	-- Cornea Finding
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0042] occurrences matches {0..1} matches {	-- Anterior Sclera
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0043] occurrences matches {0..*} matches {	-- Anterior Sclera finding
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0046] occurrences matches {0..1} matches {	-- Anterior Chamber
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0047] occurrences matches {0..1} matches {	-- Anterior Chamber Depth
+						value matches {
+							DV_PROPORTION matches {
+								numerator matches {|0.0..1.0|}
+								is_integral matches {False}
+								type matches {1}
+							}
+						}
+					}
+					ELEMENT[at0018] occurrences matches {0..1} matches {	-- Anterior Chamber Angle
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0019, 	-- Open
+									at0020, 	-- Occlusable
+									at0021]	-- Closed
+								}
+							}
+						}
+					}
+				}
+			}
+			CLUSTER[at0015] occurrences matches {0..1} matches {	-- Lens
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0017] occurrences matches {0..*} matches {	-- Lens Morphology
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0033, 	-- Normal, clear crystalline lens
+									at0022, 	-- Nuclear sclerosis
+									at0023, 	-- Brunescent nucleus
+									at0024, 	-- Cortical cataract
+									at0025, 	-- Posterior sub capsular cataract
+									at0026, 	-- Mature (white cortex) cataract
+									at0027, 	-- Hypermature / Morgagnian cataract
+									at0028, 	-- Watercleft cataract
+									at0029, 	-- Retrodot cataract
+									at0030, 	-- Coronary cataract
+									at0031, 	-- Polar cataract
+									at0032]	-- Lamellar cataract
+								}
+							}
+						}
+					}
+					ELEMENT[at0016] occurrences matches {0..1} matches {	-- Cataract Maturity
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0037, 	-- None
+									at0034, 	-- Early
+									at0035, 	-- Moderate
+									at0036]	-- Mature
+								}
+							}
+						}
+					}
+					ELEMENT[at0048] occurrences matches {0..1} matches {	-- Lens Finding
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			CLUSTER[at0049] occurrences matches {0..1} matches {	-- Vitreous Cavity
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0050] occurrences matches {0..*} matches {	-- Vitreous Finding
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+			ELEMENT[at0009] occurrences matches {0..1} matches {	-- Clinical Interpretation
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+		}
+	}
+}
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Ocular anterior segment examination">
+					description = <"Examiniation of the anterior segment of the eye.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Clinical Description">
+					description = <"An overall narrative description of examination of the anterior segment.">
+				>
+				["at0005"] = <
+					text = <"Anterior Segment">
+					description = <"Details of the anterior segment foe each eye.">
+				>
+				["at0007"] = <
+					text = <"Left eye">
+					description = <"The left eye was examined.">
+				>
+				["at0008"] = <
+					text = <"Eye">
+					description = <"The eye that was examined.">
+				>
+				["at0009"] = <
+					text = <"Clinical Interpretation">
+					description = <"An interpretation of the findings for one eye, preferably coded.">
+				>
+				["at0010"] = <
+					text = <"Overall Interpretation">
+					description = <"An overall interpretation of findings for both eyes, preferably coded.">
+				>
+				["at0011"] = <
+					text = <"Additional Comment">
+					description = <"Any additional narrative comment not covered by other elements.">
+				>
+				["at0012"] = <
+					text = <"Right eye">
+					description = <"The right eye was examined.">
+				>
+				["at0013"] = <
+					text = <"Cornea">
+					description = <"Details of the cornea.">
+				>
+				["at0014"] = <
+					text = <"Central Corneal Thickness">
+					description = <"Thickness of the central cornea.">
+				>
+				["at0015"] = <
+					text = <"Lens">
+					description = <"Details of the appearance of the lens.">
+				>
+				["at0016"] = <
+					text = <"Cataract Maturity">
+					description = <"The maturity of cataract development.">
+				>
+				["at0017"] = <
+					text = <"Lens Morphology">
+					description = <"The morphology of the lens / or cataract.">
+				>
+				["at0018"] = <
+					text = <"Anterior Chamber Angle">
+					description = <"Assement of the anterior chamber angle.">
+				>
+				["at0019"] = <
+					text = <"Open">
+					description = <"The anterior chamber angle is open.">
+				>
+				["at0020"] = <
+					text = <"Occlusable">
+					description = <"The anterior chamber angle is occlusable.">
+				>
+				["at0021"] = <
+					text = <"Closed">
+					description = <"The anterior chamber angle is closed.">
+				>
+				["at0022"] = <
+					text = <"Nuclear sclerosis">
+					description = <"Nucelar sclerosia is present.">
+				>
+				["at0023"] = <
+					text = <"Brunescent nucleus">
+					description = <"A brunescent catract nucleus is present.">
+				>
+				["at0024"] = <
+					text = <"Cortical cataract">
+					description = <"A cortical cataract is present.">
+				>
+				["at0025"] = <
+					text = <"Posterior sub capsular cataract">
+					description = <"A posterior sub-capsular cataract is present.">
+				>
+				["at0026"] = <
+					text = <"Mature (white cortex) cataract">
+					description = <"A mature cataract is present.">
+				>
+				["at0027"] = <
+					text = <"Hypermature / Morgagnian cataract">
+					description = <"A hypermature, Morgagnian catarct is present.">
+				>
+				["at0028"] = <
+					text = <"Watercleft cataract">
+					description = <"A watercleft cataract is present.">
+				>
+				["at0029"] = <
+					text = <"Retrodot cataract">
+					description = <"A retrodot cataract is present.">
+				>
+				["at0030"] = <
+					text = <"Coronary cataract">
+					description = <"A coronary cataract is present.">
+				>
+				["at0031"] = <
+					text = <"Polar cataract">
+					description = <"A polar cataract is present.">
+				>
+				["at0032"] = <
+					text = <"Lamellar cataract">
+					description = <"A lamellar cataract is present.">
+				>
+				["at0033"] = <
+					text = <"Normal, clear crystalline lens">
+					description = <"The lens is normal, clear and crystalline.">
+				>
+				["at0034"] = <
+					text = <"Early">
+					description = <"The cataract is at an early stage of maturity.">
+				>
+				["at0035"] = <
+					text = <"Moderate">
+					description = <"A moderate cataract is present.">
+				>
+				["at0036"] = <
+					text = <"Mature">
+					description = <"A mature cataract is present.">
+				>
+				["at0037"] = <
+					text = <"None">
+					description = <"There is no cataract present.">
+				>
+				["at0038"] = <
+					text = <"Conjunctiva">
+					description = <"Details of the conjunctiva.">
+				>
+				["at0039"] = <
+					text = <"Conjunctiva Finding">
+					description = <"Interpretative findings related to the conjunctiva.">
+				>
+				["at0041"] = <
+					text = <"Ocular TearFilm Breakup Time">
+					description = <"The time taken for ocular tear film break-up.">
+				>
+				["at0042"] = <
+					text = <"Anterior Sclera">
+					description = <"Details of the anterior sclera.">
+				>
+				["at0043"] = <
+					text = <"Anterior Sclera finding">
+					description = <"Interpretative findings related to the anterior sclera.">
+				>
+				["at0044"] = <
+					text = <"Cornea Finding">
+					description = <"Interpretive finding related to the cornea.">
+				>
+				["at0046"] = <
+					text = <"Anterior Chamber">
+					description = <"Details of the anterior chamber.">
+				>
+				["at0047"] = <
+					text = <"Anterior Chamber Depth">
+					description = <"Measurement depth of anterior chamber, by van Herricks method, to grade ratio of aqueous gap/cornea into ranges of variation.">
+				>
+				["at0048"] = <
+					text = <"Lens Finding">
+					description = <"Any othe lens interpretive finding not covered by other elements.">
+				>
+				["at0049"] = <
+					text = <"Vitreous Cavity">
+					description = <"Details of the vitreous cavity.">
+				>
+				["at0050"] = <
+					text = <"Vitreous Finding">
+					description = <"An interpretive comment about the vitreous humor. preferably coded.">
+				>
+				["at0051"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0052"] = <
+					text = <"Methodology">
+					description = <"Brief description, preferably coded  of device/ methodology used as part of anterior segment examination.">
+				>
+				["at0053"] = <
+					text = <"Device detail">
+					description = <"Details of any device used.">
+				>
+				["at0054"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0055"] = <
+					text = <"Confounding Factors">
+					description = <"Anty patient or environmental factors which may effect interpretation of the examination.">
+				>
+				["at0056"] = <
+					text = <"Inflammation">
+					description = <"Presence of current anterior segment for inflammation.">
+				>
+				["at0057"] = <
+					text = <"Inflammation present">
+					description = <"Anterior segment inflammation is present.">
+				>
+				["at0058"] = <
+					text = <"Inflammation absent">
+					description = <"Anterior segment inflammation is absent.">
+				>
+			>
+		>
+	>

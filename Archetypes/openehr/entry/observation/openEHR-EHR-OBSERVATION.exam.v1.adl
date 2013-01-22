@@ -49,7 +49,7 @@ Not to be used to record stand-alone clinical observations - use specific OBSERV
 	lifecycle_state = <"OrganisationDraft">
 	other_contributors = <"Sheryl Alexander, NT Department of Health, Australia", "Rita Apelt, Department of Health,NT, Australia", "Margaret Campbell, Queensland Health, Australia", "Stephen Chu, NEHTA, Australia", "Margaret Cotter, AMSANT, Australia", "Michelle Dowden, Miwatj Health Ngalkanbuy Health, Australia", "Tim Garden, NTG Department of Health, Australia", "Tanya Gardner, CAAC, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Jeremy Oats, NT Health, Australia", "Steven Schatz, Department of Health (Northern Territory), Australia", "Cherie Whitbread, Royal Darwin Hospital, Australia", "Jo Wright, NT Dept of Health, Australia (Editor)">
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"2B41FA85F1FFB5D48BDCB0BADB8EC3B1">
+		["MD5-CAM-1.0.1"] = <"3D4B973233B2AAD67394074E60476CE4">
 	>
 
 definition
@@ -71,6 +71,17 @@ definition
 											archetype_id/value matches {/.*/}
 									}
 									ELEMENT[at0006] occurrences matches {0..*} matches {	-- Clinical Interpretation
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+						state matches {
+							ITEM_TREE[at0007] matches {	-- Tree
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0008] occurrences matches {0..1} matches {	-- Confounding Factors
 										value matches {
 											DV_TEXT matches {*}
 										}
@@ -118,6 +129,15 @@ ontology
 					text = <"*New element(en)">
 					description = <"**(en)">
 				>
+				["at0007"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0008"] = <
+					text = <"*Confounding Factors(en)">
+					description = <"*Narrative description on any incidental factors that may be contributing to the clinical examination findings, including difficulties with the examination itself.(en)">
+					comment = <"*For example: uncooperative subject.(en)">
+				>
 			>
 		>
 		["en"] = <
@@ -151,6 +171,15 @@ ontology
 					text = <"Clinical Interpretation">
 					description = <"Single word, phrase or brief description representing a summary of the examination findings.">
 					comment = <"Coding with a terminology is preferred, if possible. For example, normal examination or chronic otitis media.">
+				>
+				["at0007"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0008"] = <
+					text = <"Confounding Factors">
+					description = <"Narrative description on any incidental factors that may be contributing to the clinical examination findings, including difficulties with the examination itself.">
+					comment = <"For example: uncooperative subject.">
 				>
 			>
 		>

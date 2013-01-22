@@ -9,8 +9,8 @@ language
 		["pt-br"] = <
 			language = <[ISO_639-1::pt-br]>
 			author = <
-				["name"] = <"Marco Borges">
 				["organisation"] = <"P2D">
+				["name"] = <"Marco Borges">
 				["email"] = <"marco.borges@p2d.com.br">
 			>
 		>
@@ -41,115 +41,163 @@ description
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"2A64A8FDB455A13CD40A3237E21FAE06">
-		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"E3FED0D6DFF786D301E4EA8D2C9D4BD2">
 	>
 
 definition
-	OBSERVATION[at0000] matches {	-- Exame de fundoscopia
+	OBSERVATION[at0000] matches {	-- Fundoscopic examination of eyes
 		data matches {
-			HISTORY[at0001] matches {	-- Série de Eventos
+			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
-					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+					POINT_EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
 						data matches {
 							ITEM_TREE[at0003] matches {	-- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0008] occurrences matches {0..1} matches {	-- Descrição clínica
+									ELEMENT[at0008] occurrences matches {0..1} matches {	-- Clinical Description
 										value matches {
 											DV_TEXT matches {*}
 										}
 									}
-									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Lado
-										value matches {
-											DV_CODED_TEXT matches {
-												defining_code matches {
-													[local::
-													at0005, 	-- Esquerdo
-													at0006]	-- Direito
+									CLUSTER[at0007] occurrences matches {0..*} matches {	-- Examination Details
+										items cardinality matches {1..*; unordered} matches {
+											ELEMENT[at0004] occurrences matches {0..1} matches {	-- Eye Examined
+												value matches {
+													DV_CODED_TEXT matches {
+														defining_code matches {
+															[local::
+															at0005, 	-- Left eye
+															at0006]	-- Right eye
+														}
+													}
 												}
 											}
-										}
-									}
-									CLUSTER[at0007] occurrences matches {0..1} matches {	-- Detalhes
-										items cardinality matches {0..*; unordered} matches {
-											ELEMENT[at0010] occurrences matches {0..1} matches {	-- Reflexo vermelho
+											ELEMENT[at0010] occurrences matches {0..1} matches {	-- Red reflex
 												value matches {
 													DV_BOOLEAN matches {
 														value matches {True, False}
 													}
 												}
 											}
-											ELEMENT[at0011] occurrences matches {0..1} matches {	-- Cristalino
+											ELEMENT[at0011] occurrences matches {0..1} matches {	-- Lens
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0012] occurrences matches {0..1} matches {	-- Nervo óptico
+											ELEMENT[at0012] occurrences matches {0..1} matches {	-- Optic Disc
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0016] occurrences matches {0..1} matches {	-- Papiledema
+											ELEMENT[at0016] occurrences matches {0..1} matches {	-- Papilloedema
 												value matches {
 													DV_BOOLEAN matches {
 														value matches {True, False}
 													}
 												}
 											}
-											ELEMENT[at0017] occurrences matches {0..1} matches {	-- Mácula
+											ELEMENT[at0017] occurrences matches {0..1} matches {	-- Macula
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0018] occurrences matches {0..1} matches {	-- Artérias da retina
+											ELEMENT[at0018] occurrences matches {0..1} matches {	-- Retinal arteries
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0019] occurrences matches {0..1} matches {	-- Veias da retina
+											ELEMENT[at0019] occurrences matches {0..1} matches {	-- Retinal veins
 												value matches {
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0020] occurrences matches {0..1} matches {	-- Flocos de algodão
+											ELEMENT[at0020] occurrences matches {0..1} matches {	-- 'Cotton Wool' artefacts
 												value matches {
 													DV_BOOLEAN matches {
 														value matches {True, False}
 													}
 												}
 											}
-											ELEMENT[at0021] occurrences matches {0..1} matches {	-- Hemorragias retinianas
+											ELEMENT[at0021] occurrences matches {0..1} matches {	-- Retinal haemorrhages
 												value matches {
-													DV_BOOLEAN matches {
-														value matches {True, False}
+													DV_TEXT matches {*}
+												}
+											}
+											CLUSTER[at0050] occurrences matches {0..1} matches {	-- Optic Disc
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0049] occurrences matches {0..1} matches {	-- Vertical Disc Diameter
+														value matches {
+															C_DV_QUANTITY <
+																property = <[openehr::122]>
+																list = <
+																	["1"] = <
+																		units = <"mm">
+																		magnitude = <|>=0.0|>
+																		precision = <|1|>
+																	>
+																>
+															>
+														}
 													}
-												}
-											}
-											ELEMENT[at0022] occurrences matches {0..1} matches {	-- Fundo da retina
-												value matches {
-													DV_TEXT matches {*}
-												}
-											}
-											ELEMENT[at0023] occurrences matches {0..1} matches {	-- Vítreo
-												value matches {
-													DV_TEXT matches {*}
-												}
-											}
-											CLUSTER[at0009] occurrences matches {0..1} matches {	-- Visualização
-												items cardinality matches {0..*; unordered} matches {
-													ELEMENT[at0015] occurrences matches {0..1} matches {	-- Visibilidade
+													ELEMENT[at0046] occurrences matches {0..1} matches {	-- Cup / Disc Ratio
+														value matches {
+															DV_PROPORTION matches {
+																numerator matches {|>=0.0|}
+																denominator matches {|>=0.0|}
+																is_integral matches {False}
+																type matches {0}
+															}
+														}
+													}
+													ELEMENT[at0047] occurrences matches {0..1} matches {	-- Cup / Disc Not Visible
+														value matches {
+															DV_BOOLEAN matches {
+																value matches {True, False}
+															}
+														}
+													}
+													ELEMENT[at0043] occurrences matches {0..1} matches {	-- Optic Disc Haemorrhages
 														value matches {
 															DV_CODED_TEXT matches {
 																defining_code matches {
 																	[local::
-																	at0024, 	-- Totalmente visível
-																	at0025, 	-- Parcialmente visível
-																	at0026]	-- Não visível
+																	at0044, 	-- Disc haemorrhages present
+																	at0045]	-- Disc haemorrhages absent
 																}
 															}
 														}
 													}
-													ELEMENT[at0027] occurrences matches {0..1} matches {	-- Comentário
+												}
+											}
+											ELEMENT[at0022] occurrences matches {0..1} matches {	-- Retinal background
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0023] occurrences matches {0..1} matches {	-- Vitreous
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0032] occurrences matches {0..*} matches {	-- Clincal Interpretation
+												value matches {
+													DV_TEXT matches {*}
+												}
+											}
+											CLUSTER[at0009] occurrences matches {0..1} matches {	-- Visualisation
+												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0015] occurrences matches {0..1} matches {	-- Ease of Visualisation
+														value matches {
+															DV_CODED_TEXT matches {
+																defining_code matches {
+																	[local::
+																	at0024, 	-- Fully visualised
+																	at0025, 	-- Partially visualised
+																	at0026]	-- Not visualised
+																}
+															}
+														}
+													}
+													ELEMENT[at0027] occurrences matches {0..1} matches {	-- Comment
 														value matches {
 															DV_TEXT matches {*}
 														}
@@ -158,13 +206,28 @@ definition
 											}
 										}
 									}
+									ELEMENT[at0033] occurrences matches {0..*} matches {	-- Overall Interpretation
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0034] occurrences matches {0..1} matches {	-- Comment
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
 								}
 							}
 						}
 						state matches {
 							ITEM_TREE[at0013] matches {	-- Tree
 								items cardinality matches {0..*; unordered} matches {
-									ELEMENT[at0014] occurrences matches {0..1} matches {	-- *Mydriatic used(en)
+									ELEMENT[at0048] occurrences matches {0..1} matches {	-- Confounding Factors
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+									ELEMENT[at0014] occurrences matches {0..1} matches {	-- Mydriatic used
 										value matches {
 											DV_BOOLEAN matches {
 												value matches {True, False; False}
@@ -181,22 +244,47 @@ definition
 		protocol matches {
 			ITEM_TREE[at0028] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
-					ELEMENT[at0029] occurrences matches {0..1} matches {	-- Método
+					ELEMENT[at0029] occurrences matches {0..1} matches {	-- Method
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0030, 	-- Direto
-									at0031]	-- Indireto
+									at0030, 	-- Direct
+									at0031]	-- Indirect
 								}
 							}
 						}
+					}
+					CLUSTER[at0036] occurrences matches {0..1} matches {	-- Slit-lamp Lens
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0035] occurrences matches {0..1} matches {	-- Manufacturer
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0037] occurrences matches {0..1} matches {	-- Power
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0039, 	-- 60D
+											at0040, 	-- 68D
+											at0041, 	-- 78D
+											at0042]	-- 90D
+										}
+									}
+								}
+							}
+						}
+					}
+					allow_archetype CLUSTER[at0038] occurrences matches {0..1} matches {	-- Device
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.device(-[a-zA-Z0-9_]+)*\.v1/}
 					}
 				}
 			}
 		}
 	}
-
 
 ontology
 	term_definitions = <
@@ -219,24 +307,25 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Side">
+					text = <"Eye Examined">
 					description = <"*">
 				>
 				["at0005"] = <
-					text = <"Left">
-					description = <"*">
+					text = <"Left eye">
+					description = <"Left eye.">
 				>
 				["at0006"] = <
-					text = <"Right">
-					description = <"*">
+					text = <"Right eye">
+					description = <"Right eye.">
 				>
 				["at0007"] = <
-					text = <"Details">
-					description = <"*">
+					text = <"Examination Details">
+					description = <"Details of the examination for each eye.">
 				>
 				["at0008"] = <
+					description = <"Narrative description of the overall findings observed by a clinician during fundoscopic examination.">
 					text = <"Clinical Description">
-					description = <"Descriptive overview of examination findings">
+					comment = <"May be used to record a narrative summary of the complete clinical examination or key aspects of clinical examination findings, which will be supported by structured data. This data element may be used to capture legacy data that is not available in a structured format.">
 				>
 				["at0009"] = <
 					text = <"Visualisation">
@@ -320,7 +409,7 @@ ontology
 				>
 				["at0029"] = <
 					text = <"Method">
-					description = <"*">
+					description = <"The method of fundoscopy used.">
 				>
 				["at0030"] = <
 					text = <"Direct">
@@ -329,6 +418,84 @@ ontology
 				["at0031"] = <
 					text = <"Indirect">
 					description = <"*">
+				>
+				["at0032"] = <
+					description = <"Clinical interpretation of all measurements for the eye examined.">
+					text = <"Clincal Interpretation">
+					comment = <"Coding with a terminology is preferred, where possible.">
+				>
+				["at0033"] = <
+					description = <"Overall clinical interpretation of the measurements and related findings.">
+					text = <"Overall Interpretation">
+					comment = <"Coding with a terminology is preferred, where possible. This data element is effectively a fundoscopic diagnosis.">
+				>
+				["at0034"] = <
+					text = <"Comment">
+					description = <"Any additional narrative comment not covered in other elements.">
+				>
+				["at0035"] = <
+					text = <"Manufacturer">
+					description = <"*">
+				>
+				["at0036"] = <
+					text = <"Slit-lamp Lens">
+					description = <"*">
+				>
+				["at0037"] = <
+					text = <"Power">
+					description = <"The power of the slit-lamp lens used to perfrom the examination.">
+				>
+				["at0038"] = <
+					text = <"Device">
+					description = <"Details of the device used for the examination.">
+				>
+				["at0039"] = <
+					text = <"60D">
+					description = <"The lens power was 60D.">
+				>
+				["at0040"] = <
+					text = <"68D">
+					description = <"The lens power was 68D.">
+				>
+				["at0041"] = <
+					text = <"78D">
+					description = <"The lens power was 78D.">
+				>
+				["at0042"] = <
+					text = <"90D">
+					description = <"The lens power was 90D.">
+				>
+				["at0043"] = <
+					text = <"Optic Disc Haemorrhages">
+					description = <"Assessment of presence of haemorrhage at or near the optic disc margin.">
+				>
+				["at0044"] = <
+					text = <"Disc haemorrhages present">
+					description = <"Disc haemorrhages are present.">
+				>
+				["at0045"] = <
+					text = <"Disc haemorrhages absent">
+					description = <"Disc haemorrhages absent.">
+				>
+				["at0046"] = <
+					text = <"Cup / Disc Ratio">
+					description = <"The decimal value obtained by dividing the vertical cup diameter with the vertical disc diameter.">
+				>
+				["at0047"] = <
+					text = <"Cup / Disc Not Visible">
+					description = <"True if the Cup / Disc Ratio could not be calculated due to poor visibility.">
+				>
+				["at0048"] = <
+					text = <"Confounding Factors">
+					description = <"Narrative description on any incidental factors that may be contributing to the clinical examination findings, including difficulties with the examination itself.">
+				>
+				["at0049"] = <
+					text = <"Vertical Disc Diameter">
+					description = <"The vertical diameter of the optic disc.">
+				>
+				["at0050"] = <
+					text = <"Optic Disc">
+					description = <"Details of optic disc examination.">
 				>
 			>
 		>
@@ -351,24 +518,25 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0004"] = <
-					text = <"Lado">
-					description = <"Lado examinado.">
+					text = <"*Eye Examined(en)">
+					description = <"**(en)">
 				>
 				["at0005"] = <
-					text = <"Esquerdo">
-					description = <"Olho esquerdo.">
+					text = <"*Left eye(en)">
+					description = <"*Left eye.(en)">
 				>
 				["at0006"] = <
-					text = <"Direito">
-					description = <"Olho direito.">
+					text = <"*Right eye(en)">
+					description = <"*Right eye.(en)">
 				>
 				["at0007"] = <
-					text = <"Detalhes">
-					description = <"Detalhes da fundoscopia.">
+					text = <"*Examination Details(en)">
+					description = <"*Details of the examination for each eye.(en)">
 				>
 				["at0008"] = <
-					text = <"Descrição clínica">
-					description = <"Descição dos achados em fundoscopia.">
+					comment = <"*May be used to record a narrative summary of the complete clinical examination or key aspects of clinical examination findings, which will be supported by structured data. This data element may be used to capture legacy data that is not available in a structured format.(en)">
+					text = <"*Clinical Description(en)">
+					description = <"*Narrative description of the overall findings observed by a clinician during fundoscopic examination.(en)">
 				>
 				["at0009"] = <
 					text = <"Visualização">
@@ -451,8 +619,8 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0029"] = <
-					text = <"Método">
-					description = <"Método usado no exame de fundoscopia.">
+					text = <"*Method(en)">
+					description = <"*The method of fundoscopy used.(en)">
 				>
 				["at0030"] = <
 					text = <"Direto">
@@ -461,6 +629,84 @@ ontology
 				["at0031"] = <
 					text = <"Indireto">
 					description = <"*">
+				>
+				["at0032"] = <
+					comment = <"*Coding with a terminology is preferred, where possible.(en)">
+					text = <"*Clincal Interpretation(en)">
+					description = <"*Clinical interpretation of all measurements for the eye examined.(en)">
+				>
+				["at0033"] = <
+					comment = <"*Coding with a terminology is preferred, where possible. This data element is effectively a fundoscopic diagnosis.(en)">
+					text = <"*Overall Interpretation(en)">
+					description = <"*Overall clinical interpretation of the measurements and related findings.(en)">
+				>
+				["at0034"] = <
+					text = <"*Comment(en)">
+					description = <"*Any additional narrative comment not covered in other elements.(en)">
+				>
+				["at0035"] = <
+					text = <"*Manufacturer(en)">
+					description = <"**(en)">
+				>
+				["at0036"] = <
+					text = <"*Slit-lamp Lens(en)">
+					description = <"**(en)">
+				>
+				["at0037"] = <
+					text = <"*Power(en)">
+					description = <"*The power of the slit-lamp lens used to perfrom the examination.(en)">
+				>
+				["at0038"] = <
+					text = <"*Device(en)">
+					description = <"*Details of the device used for the examination.(en)">
+				>
+				["at0039"] = <
+					text = <"*60D(en)">
+					description = <"*The lens power was 60D.(en)">
+				>
+				["at0040"] = <
+					text = <"*68D(en)">
+					description = <"*The lens power was 68D.(en)">
+				>
+				["at0041"] = <
+					text = <"*78D(en)">
+					description = <"*The lens power was 78D.(en)">
+				>
+				["at0042"] = <
+					text = <"*90D(en)">
+					description = <"*The lens power was 90D.(en)">
+				>
+				["at0043"] = <
+					text = <"*Optic Disc Haemorrhages(en)">
+					description = <"*Assessment of presence of haemorrhage at or near the optic disc margin.(en)">
+				>
+				["at0044"] = <
+					text = <"*Disc haemorrhages present(en)">
+					description = <"*Disc haemorrhages are present.(en)">
+				>
+				["at0045"] = <
+					text = <"*Disc haemorrhages absent(en)">
+					description = <"*Disc haemorrhages absent.(en)">
+				>
+				["at0046"] = <
+					text = <"*Cup / Disc Ratio(en)">
+					description = <"*The decimal value obtained by dividing the vertical cup diameter with the vertical disc diameter.(en)">
+				>
+				["at0047"] = <
+					text = <"*Cup / Disc Not Visible(en)">
+					description = <"*True if the Cup / Disc Ratio could not be calculated due to poor visibility.(en)">
+				>
+				["at0048"] = <
+					text = <"*Confounding Factors(en)">
+					description = <"*Narrative description on any incidental factors that may be contributing to the clinical examination findings, including difficulties with the examination itself.(en)">
+				>
+				["at0049"] = <
+					text = <"*Vertical Disc Diameter(en)">
+					description = <"*The vertical diameter of the optic disc.(en)">
+				>
+				["at0050"] = <
+					text = <"*Optic Disc(en)">
+					description = <"*Details of optic disc examination.(en)">
 				>
 			>
 		>
