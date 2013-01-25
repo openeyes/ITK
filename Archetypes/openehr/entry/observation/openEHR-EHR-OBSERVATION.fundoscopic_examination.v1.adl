@@ -41,7 +41,7 @@ description
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"E3FED0D6DFF786D301E4EA8D2C9D4BD2">
+		["MD5-CAM-1.0.1"] = <"086417A431FA994D4E9A90168C59B93B">
 	>
 
 definition
@@ -83,11 +83,6 @@ definition
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0012] occurrences matches {0..1} matches {	-- Optic Disc
-												value matches {
-													DV_TEXT matches {*}
-												}
-											}
 											ELEMENT[at0016] occurrences matches {0..1} matches {	-- Papilloedema
 												value matches {
 													DV_BOOLEAN matches {
@@ -124,6 +119,11 @@ definition
 											}
 											CLUSTER[at0050] occurrences matches {0..1} matches {	-- Optic Disc
 												items cardinality matches {1..*; unordered} matches {
+													ELEMENT[at0012] occurrences matches {0..1} matches {	-- Clinical Description
+														value matches {
+															DV_TEXT matches {*}
+														}
+													}
 													ELEMENT[at0049] occurrences matches {0..1} matches {	-- Vertical Disc Diameter
 														value matches {
 															C_DV_QUANTITY <
@@ -166,6 +166,13 @@ definition
 															}
 														}
 													}
+													ELEMENT[at0051] occurrences matches {0..1} matches {	-- Optic Disc Image
+														value matches {
+															DV_MULTIMEDIA matches {
+																media_type matches {[openEHR::]}
+															}
+														}
+													}
 												}
 											}
 											ELEMENT[at0022] occurrences matches {0..1} matches {	-- Retinal background
@@ -178,9 +185,16 @@ definition
 													DV_TEXT matches {*}
 												}
 											}
-											ELEMENT[at0032] occurrences matches {0..*} matches {	-- Clincal Interpretation
+											ELEMENT[at0032] occurrences matches {0..*} matches {	-- Clinical Interpretation
 												value matches {
 													DV_TEXT matches {*}
+												}
+											}
+											ELEMENT[at0052] occurrences matches {0..1} matches {	-- Retinal image
+												value matches {
+													DV_MULTIMEDIA matches {
+														media_type matches {[openEHR::]}
+													}
 												}
 											}
 											CLUSTER[at0009] occurrences matches {0..1} matches {	-- Visualisation
@@ -323,9 +337,9 @@ ontology
 					description = <"Details of the examination for each eye.">
 				>
 				["at0008"] = <
-					description = <"Narrative description of the overall findings observed by a clinician during fundoscopic examination.">
-					text = <"Clinical Description">
 					comment = <"May be used to record a narrative summary of the complete clinical examination or key aspects of clinical examination findings, which will be supported by structured data. This data element may be used to capture legacy data that is not available in a structured format.">
+					text = <"Clinical Description">
+					description = <"Narrative description of the overall findings observed by a clinician during fundoscopic examination.">
 				>
 				["at0009"] = <
 					text = <"Visualisation">
@@ -340,7 +354,7 @@ ontology
 					description = <"Description of lens">
 				>
 				["at0012"] = <
-					text = <"Optic Disc">
+					text = <"Clinical Description">
 					description = <"Description of optic disc">
 				>
 				["at0013"] = <
@@ -420,14 +434,14 @@ ontology
 					description = <"*">
 				>
 				["at0032"] = <
-					description = <"Clinical interpretation of all measurements for the eye examined.">
-					text = <"Clincal Interpretation">
 					comment = <"Coding with a terminology is preferred, where possible.">
+					text = <"Clinical Interpretation">
+					description = <"Clinical interpretation of all measurements for the eye examined.">
 				>
 				["at0033"] = <
-					description = <"Overall clinical interpretation of the measurements and related findings.">
-					text = <"Overall Interpretation">
 					comment = <"Coding with a terminology is preferred, where possible. This data element is effectively a fundoscopic diagnosis.">
+					text = <"Overall Interpretation">
+					description = <"Overall clinical interpretation of the measurements and related findings.">
 				>
 				["at0034"] = <
 					text = <"Comment">
@@ -497,6 +511,14 @@ ontology
 					text = <"Optic Disc">
 					description = <"Details of optic disc examination.">
 				>
+				["at0051"] = <
+					text = <"Optic Disc Image">
+					description = <"A multimedia image of the optic disc">
+				>
+				["at0052"] = <
+					text = <"Retinal image">
+					description = <"An image of the retina. Use 'Optic Disc image' for images of the optic disc alone.">
+				>
 			>
 		>
 		["pt-br"] = <
@@ -534,9 +556,9 @@ ontology
 					description = <"*Details of the examination for each eye.(en)">
 				>
 				["at0008"] = <
-					comment = <"*May be used to record a narrative summary of the complete clinical examination or key aspects of clinical examination findings, which will be supported by structured data. This data element may be used to capture legacy data that is not available in a structured format.(en)">
-					text = <"*Clinical Description(en)">
 					description = <"*Narrative description of the overall findings observed by a clinician during fundoscopic examination.(en)">
+					text = <"*Clinical Description(en)">
+					comment = <"*May be used to record a narrative summary of the complete clinical examination or key aspects of clinical examination findings, which will be supported by structured data. This data element may be used to capture legacy data that is not available in a structured format.(en)">
 				>
 				["at0009"] = <
 					text = <"Visualização">
@@ -551,8 +573,8 @@ ontology
 					description = <"Descrição dos achados no cristalino.">
 				>
 				["at0012"] = <
-					text = <"Nervo óptico">
-					description = <"Descrição dos achados no nervo óptico.">
+					text = <"*Clinical Description(en)">
+					description = <"*Description of optic disc(en)">
 				>
 				["at0013"] = <
 					text = <"Tree">
@@ -631,14 +653,14 @@ ontology
 					description = <"*">
 				>
 				["at0032"] = <
-					comment = <"*Coding with a terminology is preferred, where possible.(en)">
-					text = <"*Clincal Interpretation(en)">
 					description = <"*Clinical interpretation of all measurements for the eye examined.(en)">
+					text = <"*Clinical Interpretation(en)">
+					comment = <"*Coding with a terminology is preferred, where possible.(en)">
 				>
 				["at0033"] = <
-					comment = <"*Coding with a terminology is preferred, where possible. This data element is effectively a fundoscopic diagnosis.(en)">
-					text = <"*Overall Interpretation(en)">
 					description = <"*Overall clinical interpretation of the measurements and related findings.(en)">
+					text = <"*Overall Interpretation(en)">
+					comment = <"*Coding with a terminology is preferred, where possible. This data element is effectively a fundoscopic diagnosis.(en)">
 				>
 				["at0034"] = <
 					text = <"*Comment(en)">
@@ -707,6 +729,14 @@ ontology
 				["at0050"] = <
 					text = <"*Optic Disc(en)">
 					description = <"*Details of optic disc examination.(en)">
+				>
+				["at0051"] = <
+					text = <"*Optic Disc Image(en)">
+					description = <"*A multimedia image of the optic disc(en)">
+				>
+				["at0052"] = <
+					text = <"*Retinal image(en)">
+					description = <"*An image of the retina. Use 'Optic Disc image' for images of the optic disc alone.(en)">
 				>
 			>
 		>
