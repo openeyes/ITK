@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<te:Initial_Optometrist_Glaucoma_Assessment xmlns:oe="http://schemas.openehr.org/v1"
+ xmlns:te="http://schemas.oceanehr.com/templates"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://schemas.oceanehr.com/templates file:/Users/ian/Documents/Dropbox/Modelling/openEyes/cims/Templates/TDS/Initial%20Optometrist%20Glaucoma%20Assessment%20Encounter.xsd" archetype_node_id="openEHR-EHR-COMPOSITION.report.v1" type="COMPOSITION" template_id="Initial Optometrist Glaucoma Assessment Encounter">
+    <te:name>
+        <te:value>Initial Optometrist Glaucoma Assessment</te:value>
+    </te:name>
+    <te:language>
+        <te:terminology_id>
+            <te:value>ISO_639-1</te:value>
+        </te:terminology_id>
+        <te:code_string>en</te:code_string>
+    </te:language>
+    <te:territory>
+        <te:terminology_id>
+            <te:value>ISO_3166-1</te:value>
+        </te:terminology_id>
+        <te:code_string>EN</te:code_string>
+    </te:territory>
+    <te:category>
+        <te:value>event</te:value>
+        <te:defining_code>
+            <te:terminology_id>
+                <te:value>openehr</te:value>
+            </te:terminology_id>
+            <te:code_string>433</te:code_string>
+        </te:defining_code>
+    </te:category>
+    <te:composer xsi:type="oe:PARTY_IDENTIFIED">
+        <oe:name>Ms.A Optometrist</oe:name>
+        <oe:identifiers>
+            <oe:issuer>NHSWALES</oe:issuer>
+            <oe:assigner>WSDS</oe:assigner>
+            <oe:id>1234567</oe:id>
+            <oe:type>WNACSCODE</oe:type>
+        </oe:identifiers>
+    </te:composer>
+    <te:context>
+        <te:start_time>
+            <oe:value>201301211420</oe:value>
+        </te:start_time>
+        <te:setting>
+            <oe:value>primary allied health care</oe:value>
+            <oe:defining_code>
+                <oe:terminology_id>
+                    <oe:value>openehr</oe:value>
+                </oe:terminology_id>
+                <oe:code_string>230</oe:code_string>
+            </oe:defining_code>
+        </te:setting>
+        <te:health_care_facility>
+            <oe:name>The Optometry Practice</oe:name>
+            <oe:identifiers>
+                <oe:issuer>NHSWALES</oe:issuer>
+                <oe:assigner>WSDS</oe:assigner>
+                <oe:id>1234567</oe:id>
+                <oe:type>WNACSCode</oe:type>
+            </oe:identifiers>
+        </te:health_care_facility>
+        <te:participations>
+            <oe:function>
+                <oe:value>Intended Recipient</oe:value>
+            </oe:function>
+            <oe:performer xsi:type="oe:PARTY_IDENTIFIED">
+                <oe:name>Prof. James Morgan</oe:name>
+                <oe:identifiers>
+                    <oe:issuer>NHSWALES</oe:issuer>
+                    <oe:assigner>WSDS</oe:assigner>
+                    <oe:id>123456</oe:id>
+                    <oe:type>NSWStaffID</oe:type>
+                </oe:identifiers>
+            </oe:performer>
+            <oe:mode>
+                <oe:value></oe:value>
+                <oe:defining_code>
+                    <oe:terminology_id>
+                        <oe:value></oe:value>
+                    </oe:terminology_id>
+                    <oe:code_string></oe:code_string>
+                </oe:defining_code>
+            </oe:mode>
+        </te:participations>
+    </te:context>
+    <te:Glaucoma_history archetype_node_id="openEHR-EHR-SECTION.glaucoma_history.v1" type="SECTION">
+        <te:name>
+            <te:value>Glaucoma history</te:value>
+        </te:name>
+        <te:Ocular_history archetype_node_id="at0002" type="SECTION">
+            <te:name>
+                <te:value>Ocular history</te:value>
+            </te:name>
+            <te:Clinical_Synopsis archetype_node_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" type="EVALUATION">
+                <te:name>
+                    <te:value>Clinical Synopsis</te:value>
+                </te:name>
+                <te:language>
+                    <te:terminology_id>
+                        <te:value>ISO_639-1</te:value>
+                    </te:terminology_id>
+                    <te:code_string>en</te:code_string>
+                </te:language>
+                <te:encoding>
+                    <te:terminology_id>
+                        <te:value>IANA_character-sets</te:value>
+                    </te:terminology_id>
+                    <te:code_string>UTF-8</te:code_string>
+                </te:encoding>
+                <te:subject xsi:type= "oe:PARTY_SELF"/>
+                <te:data archetype_node_id="at0001" type="ITEM_TREE">
+                    <te:Ocular_history archetype_node_id="at0002" type="ELEMENT" valueType="DV_TEXT">
+                        <te:name>
+                            <te:value>Ocular history</te:value>
+                        </te:name>
+                        <te:value>
+                            <oe:value>No past ocular history. Raised IOP found by occupational screen</oe:value>
+                        </te:value>
+                    </te:Ocular_history>
+                </te:data>
+            </te:Clinical_Synopsis>
+        </te:Ocular_history>
+        <te:Systemic_medical_history archetype_node_id="at0012" type="SECTION">
+            <te:name>
+                <te:value>Systemic medical history</te:value>
+            </te:name>
+            <te:Clinical_Synopsis archetype_node_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" type="EVALUATION">
+                <te:name>
+                    <te:value>Clinical Synopsis</te:value>
+                </te:name>
+                <te:language>
+                    <te:terminology_id>
+                        <te:value>ISO_639-1</te:value>
+                    </te:terminology_id>
+                    <te:code_string>en</te:code_string>
+                </te:language>
+                <te:encoding>
+                    <te:terminology_id>
+                        <te:value>IANA_character-sets</te:value>
+                    </te:terminology_id>
+                    <te:code_string>UTF-8</te:code_string>
+                </te:encoding>
+                <te:subject xsi:type="oe:PARTY_SELF" />
+                <te:data archetype_node_id="at0001" type="ITEM_TREE">
+                    <te:Systemic_medical_history archetype_node_id="at0002" type="ELEMENT" valueType="DV_TEXT">
+                        <te:name>
+                            <te:value>Systemic medical history</te:value>
+                        </te:name>
+                        <te:value>
+                            <oe:value>Past history of asthma</oe:value>
+                        </te:value>
+                    </te:Systemic_medical_history>
+                </te:data>
+            </te:Clinical_Synopsis>
+        </te:Systemic_medical_history>
+    </te:Glaucoma_history>
+    <te:_2_prd__Glaucoma_examination archetype_node_id="openEHR-EHR-SECTION.adhoc.v1" type="SECTION">
+        <te:name>
+            <te:value>2. Glaucoma examination</te:value>
+        </te:name>
+        <te:Visual_acuity archetype_node_id="openEHR-EHR-SECTION.adhoc.v1" type="SECTION">
+            <te:name>
+                <te:value>Visual acuity</te:value>
+            </te:name>
+            <te:Corrected_visual_acuity archetype_node_id="openEHR-EHR-OBSERVATION.visual_acuity.v1" type="OBSERVATION">
+                <te:name>
+                    <te:value>Corrected visual acuity</te:value>
+                </te:name>
+                <te:language>
+                    <te:terminology_id>
+                        <te:value>ISO_639-1</te:value>
+                    </te:terminology_id>
+                    <te:code_string>en</te:code_string>
+                </te:language>
+                <te:encoding>
+                    <te:terminology_id>
+                        <te:value>IANA_character-sets</te:value>
+                    </te:terminology_id>
+                    <te:code_string>UTF-8</te:code_string>
+                </te:encoding>
+                <te:subject xsi:type="oe:PARTY_SELF" />
+                <te:protocol archetype_node_id="at0020" type="ITEM_TREE"/>
+                <te:data archetype_node_id="at0001">
+                    <te:origin>
+                        <oe:value>201301211425</oe:value>
+                    </te:origin>
+                    <te:Any_event archetype_node_id="at0134" type="POINT_EVENT">
+                        <te:name>
+                            <te:value>Any event</te:value>
+                        </te:name>
+                        <te:time>
+                            <oe:value>201301211425</oe:value>
+                        </te:time>
+                        <te:data archetype_node_id="at0003" type="ITEM_TREE">
+                        <te:Right_eye archetype_node_id="at0053" type="CLUSTER">
+                            <te:name>
+                                <te:value>Right eye</te:value>
+                            </te:name>
+                            <te:Eye archetype_node_id="at0007" type="ELEMENT" valueType="DV_CODED_TEXT">
+                                <te:name>
+                                    <te:value>Eye</te:value>
+                                </te:name>
+                               <te:value>
+                                   <te:value>Right eye</te:value>
+                                   <te:defining_code>
+                                       <te:terminology_id>
+                                           <te:value>local</te:value>
+                                       </te:terminology_id>
+                                       <te:code_string>at0013</te:code_string>
+                                   </te:defining_code>
+                               </te:value>
+                            </te:Eye>
+                        </te:Right_eye>
+                        <te:Left_eye archetype_node_id="at0053" type="CLUSTER">
+                                <te:name>
+                                    <te:value>Left eye</te:value>
+                                </te:name>
+                                <te:Eye archetype_node_id="at0007" type="ELEMENT" valueType="DV_CODED_TEXT">
+                                    <te:name>
+                                        <te:value>Left eye</te:value>
+                                    </te:name>
+                                    <te:value>
+                                        <te:value></te:value>
+                                        <te:defining_code>
+                                            <te:terminology_id>
+                                                <te:value>local</te:value>
+                                            </te:terminology_id>
+                                            <te:code_string>at0012</te:code_string>
+                                        </te:defining_code>
+                                    </te:value>
+                                </te:Eye>
+                            <te:Notation archetype_node_id="at0028" type="CLUSTER">
+                                <te:name>
+                                    <te:value>Notation</te:value>
+                                </te:name>
+                                <te:Metric_Snellen archetype_node_id="at0056" type="ELEMENT" valueType="DV_PROPORTION">
+                                    <te:name>
+                                        <te:value>Metric Snellen</te:value>
+                                    </te:name>
+                                    <te:value>
+                                        <te:numerator>6</te:numerator>
+                                        <te:denominator>18</te:denominator>
+                                        <te:type>0</te:type>
+                                    </te:value>
+                                </te:Metric_Snellen>
+                            </te:Notation>
+                        </te:Left_eye>
+                        </te:data>
+                        <te:state archetype_node_id="at0041" type="ITEM_TREE"/>
+                    </te:Any_event>
+                </te:data>
+            </te:Corrected_visual_acuity>
+        </te:Visual_acuity>
+        
+        <!-- Where a method described in protocol changes between eyes, a new -->
+        <!-- OBSERVATION Entry must be created -->
+      
+        <!-- In this case different Toniometry methods were used for each eye -->
+        
+        <te:Intraocular_pressure_measurement archetype_node_id="openEHR-EHR-OBSERVATION.intraocular_pressure.v1" type="OBSERVATION">
+            <te:name>
+                <te:value>Intraocular pressure measurement</te:value>
+            </te:name>
+            <te:language>
+                <te:terminology_id>
+                    <te:value>ISO_639-1</te:value>
+                </te:terminology_id>
+                <te:code_string>en</te:code_string>
+            </te:language>
+            <te:encoding>
+                <te:terminology_id>
+                    <te:value>IANA_character-sets</te:value>
+                </te:terminology_id>
+                <te:code_string>UTF-8</te:code_string>
+            </te:encoding>
+            <te:subject xsi:type="oe:PARTY_SELF"/>
+            <te:protocol archetype_node_id="at0068" type="ITEM_TREE">
+                <te:Toniometry_Method archetype_node_id="at0046" type="ELEMENT" valueType="DV_CODED_TEXT">
+                    <te:name>
+                        <te:value>Toniometry Method</te:value>
+                    </te:name>
+                    <te:value>
+                        <te:value>Goldmann</te:value>
+                        <te:defining_code>
+                            <te:terminology_id>
+                                <te:value>local</te:value>
+                            </te:terminology_id>
+                            <te:code_string>at0047</te:code_string>
+                        </te:defining_code>
+                    </te:value>
+                </te:Toniometry_Method>
+            </te:protocol>
+            <te:data archetype_node_id="at0001">
+                <te:origin>
+                    <oe:value>201301211425</oe:value>
+                </te:origin>
+                <te:Any_event_as_Point_Event archetype_node_id="at0002" type="POINT_EVENT">
+                    <te:name>
+                        <te:value>Any event</te:value>
+                    </te:name>
+                    <te:time>
+                        <oe:value>201301211425</oe:value>
+                    </te:time>
+                    <te:data archetype_node_id="at0003" type="ITEM_TREE">
+                        <te:Right_eye archetype_node_id="at0076" type="CLUSTER">
+                            <te:name>
+                                <te:value>Right eye</te:value>
+                            </te:name>
+                            <te:Eye archetype_node_id="at0057" type="ELEMENT" valueType="DV_CODED_TEXT">
+                                <te:name>
+                                    <te:value>Eye</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:value>Right eye</te:value>
+                                    <te:defining_code>
+                                        <te:terminology_id>
+                                            <te:value>local</te:value>
+                                        </te:terminology_id>
+                                        <te:code_string>at0059</te:code_string>
+                                    </te:defining_code>
+                                </te:value>
+                            </te:Eye>
+                            <te:Intraocular_Pressure archetype_node_id="at0042" type="ELEMENT" valueType="DV_QUANTITY">
+                                <te:name>
+                                    <te:value>Intraocular Pressure</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:magnitude>23.0</te:magnitude>
+                                    <te:precision>1</te:precision>
+                                    <te:units>mm[Hg]</te:units>
+                                </te:value>
+                            </te:Intraocular_Pressure>
+                        </te:Right_eye>
+                    </te:data>
+                    <te:state archetype_node_id="at0007" type="ITEM_TREE"/>
+                </te:Any_event_as_Point_Event>
+            </te:data>
+        </te:Intraocular_pressure_measurement>
+        <te:Intraocular_pressure_measurement archetype_node_id="openEHR-EHR-OBSERVATION.intraocular_pressure.v1" type="OBSERVATION">
+            <te:name>
+                <te:value>Intraocular pressure measurement</te:value>
+            </te:name>
+            <te:language>
+                <te:terminology_id>
+                    <te:value>ISO_639-1</te:value>
+                </te:terminology_id>
+                <te:code_string>en</te:code_string>
+            </te:language>
+            <te:encoding>
+                <te:terminology_id>
+                    <te:value>IANA_character-sets</te:value>
+                </te:terminology_id>
+                <te:code_string>UTF-8</te:code_string>
+            </te:encoding>
+            <te:subject xsi:type="oe:PARTY_SELF"/>
+            <te:protocol archetype_node_id="at0068" type="ITEM_TREE">
+                <te:Toniometry_Method archetype_node_id="at0046" type="ELEMENT" valueType="DV_CODED_TEXT">
+                    <te:name>
+                        <te:value>Toniometry Method</te:value>
+                    </te:name>
+                    <te:value>
+                        <te:value>Non-contact toniometry</te:value>
+                        <te:defining_code>
+                            <te:terminology_id>
+                                <te:value>local</te:value>
+                            </te:terminology_id>
+                            <te:code_string>at0066</te:code_string>
+                        </te:defining_code>
+                    </te:value>
+                </te:Toniometry_Method>
+            </te:protocol>
+            <te:data archetype_node_id="at0001">
+                <te:origin>
+                    <oe:value>201301211425</oe:value>
+                </te:origin>
+                <te:Any_event_as_Point_Event archetype_node_id="at0002" type="POINT_EVENT">
+                    <te:name>
+                        <te:value>Any event</te:value>
+                    </te:name>
+                    <te:time>
+                        <oe:value>201301211425</oe:value>
+                    </te:time>
+                    <te:data archetype_node_id="at0003" type="ITEM_TREE">
+                        
+                        <te:Left_eye archetype_node_id="at0076" type="CLUSTER">
+                            <te:name>
+                                <te:value>Left eye</te:value>
+                            </te:name>
+                            <te:Eye archetype_node_id="at0057" type="ELEMENT" valueType="DV_CODED_TEXT">
+                                <te:name>
+                                    <te:value>Eye</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:value>Left eye</te:value>
+                                    <te:defining_code>
+                                        <te:terminology_id>
+                                            <te:value>local</te:value>
+                                        </te:terminology_id>
+                                        <te:code_string>at0058</te:code_string>
+                                    </te:defining_code>
+                                </te:value>
+                            </te:Eye>
+                            <te:Intraocular_Pressure archetype_node_id="at0042" type="ELEMENT" valueType="DV_QUANTITY">
+                                <te:name>
+                                    <te:value>Intraocular Pressure</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:magnitude>25.5</te:magnitude>
+                                    <te:precision>1</te:precision>
+                                    <te:units>mm[Hg]</te:units>
+                                </te:value>
+                            </te:Intraocular_Pressure>
+                        </te:Left_eye>
+                    </te:data>
+                    <te:state archetype_node_id="at0007" type="ITEM_TREE"/>
+                </te:Any_event_as_Point_Event>
+            </te:data>
+        </te:Intraocular_pressure_measurement>
+        <te:Fundoscopic_examination_of_eyes archetype_node_id="openEHR-EHR-OBSERVATION.fundoscopic_examination.v1" type="OBSERVATION">
+            <te:name>
+                <te:value>Fundoscopic examination of eyes</te:value>
+            </te:name>
+            <te:language>
+                <te:terminology_id>
+                    <te:value>ISO_639-1</te:value>
+                </te:terminology_id>
+                <te:code_string>en</te:code_string>
+            </te:language>
+            <te:encoding>
+                <te:terminology_id>
+                    <te:value>IANA_character-sets</te:value>
+                </te:terminology_id>
+                <te:code_string>UTF-8</te:code_string>
+            </te:encoding>
+            <te:subject xsi:type="oe:PARTY_SELF"/>
+            <te:protocol archetype_node_id="at0028" type="ITEM_TREE" />
+            <te:data archetype_node_id="at0001">
+                <te:origin>
+                    <oe:value>201301211425</oe:value>
+                </te:origin>
+                <te:Any_event archetype_node_id="at0002" type="POINT_EVENT">
+                    <te:name>
+                        <te:value>Any event</te:value>
+                    </te:name>
+                    <te:time>
+                        <oe:value>201301211425</oe:value>
+                    </te:time>
+                    <te:data archetype_node_id="at0003" type="ITEM_TREE">
+                        <te:Right_eye archetype_node_id="at0007" type="CLUSTER">
+                            <te:name>
+                                <te:value>Right eye</te:value>
+                            </te:name>
+                            <te:Eye_Examined archetype_node_id="at0004" type="ELEMENT" valueType="DV_CODED_TEXT">
+                                <te:name>
+                                    <te:value>Eye Examined</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:value>Right eye</te:value>
+                                    <te:defining_code>
+                                        <te:terminology_id>
+                                            <te:value>local</te:value>
+                                        </te:terminology_id>
+                                        <te:code_string>at0006</te:code_string>
+                                    </te:defining_code>
+                                </te:value>
+                            </te:Eye_Examined>
+                            <te:Optic_Disc archetype_node_id="at0050" type="CLUSTER">
+                                <te:name>
+                                    <te:value>Optic Disc</te:value>
+                                </te:name>
+                                <te:Optic_Disc_Image archetype_node_id="at0051" type="ELEMENT" valueType="DV_MULTIMEDIA">
+                                    <te:name>
+                                        <te:value>Optic Disc Image</te:value>
+                                    </te:name>
+                                    <te:value>
+                                        <oe:data>TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0aGlz
+                                            IHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1c3Qgb2Yg
+                                            dGhlIG1pbmQsIHRoYXQgYnkgYSBwZXJzZXZlcmFuY2Ugb2YgZGVsaWdodCBpbiB0aGUgY29udGlu
+                                            dWVkIGFuZCBpbmRlZmF0aWdhYmxlIGdlbmVyYXRpb24gb2Yga25vd2xlZGdlLCBleGNlZWRzIHRo
+                                            ZSBzaG9ydCB2ZWhlbWVuY2Ugb2YgYW55IGNhcm5hbCBwbGVhc3VyZS4=</oe:data>
+                                        <oe:media_type>
+                                            <oe:terminology_id>
+                                                <oe:value>openehr</oe:value>
+                                            </oe:terminology_id>
+                                            <oe:code_string>image/tiff</oe:code_string>
+                                        </oe:media_type>
+                                        <oe:size>33456</oe:size>
+                                    </te:value>
+                                </te:Optic_Disc_Image>
+                            </te:Optic_Disc>
+                        </te:Right_eye>
+                        <te:Left_eye>
+                            <te:name>
+                                <te:value>Left eye</te:value>
+                            </te:name>
+                            <te:Eye_Examined archetype_node_id="at0004" type="ELEMENT" valueType="DV_CODED_TEXT">
+                                <te:name>
+                                    <te:value>Eye examined</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:defining_code>
+                                        <te:terminology_id>
+                                            <te:value>local</te:value>
+                                        </te:terminology_id>
+                                        <te:code_string>at0005</te:code_string>
+                                    </te:defining_code>
+                                </te:value>
+                            </te:Eye_Examined>
+                            <te:Optic_Disc archetype_node_id="at0050" type="CLUSTER">
+                                <te:name>
+                                    <te:value>Optic Disc</te:value>
+                                </te:name>
+                                <te:Optic_Disc_Image archetype_node_id="at0051" type="ELEMENT" valueType="DV_MULTIMEDIA">
+                                    <te:name>
+                                        <te:value>Optic Disc Image</te:value>
+                                    </te:name>
+                                    <te:value>
+                                        <oe:data>TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0aGlz
+                                            IHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1c3Qgb2Yg
+                                            dGhlIG1pbmQsIHRoYXQgYnkgYSBwZXJzZXZlcmFuY2Ugb2YgZGVsaWdodCBpbiB0aGUgY29udGlu
+                                            dWVkIGFuZCBpbmRlZmF0aWdhYmxlIGdlbmVyYXRpb24gb2Yga25vd2xlZGdlLCBleGNlZWRzIHRo
+                                            ZSBzaG9ydCB2ZWhlbWVuY2Ugb2YgYW55IGNhcm5hbCBwbGVhc3VyZS4=</oe:data>
+                                        <oe:media_type>
+                                            <oe:terminology_id>
+                                                <oe:value>openehr</oe:value>
+                                            </oe:terminology_id>
+                                            <oe:code_string>image/tiff</oe:code_string>
+                                        </oe:media_type>
+                                        <oe:size>34567890</oe:size>
+                                    </te:value>
+                                </te:Optic_Disc_Image>
+                            </te:Optic_Disc>
+                        </te:Left_eye>
+                    </te:data>
+                    <te:state archetype_node_id="at0013" type="ITEM_TREE"/>
+                </te:Any_event>
+            </te:data>
+        </te:Fundoscopic_examination_of_eyes>
+        <te:Visual_field_measurement archetype_node_id="openEHR-EHR-OBSERVATION.visual_field_measurement.v1" type="OBSERVATION">
+            <te:name>
+                <te:value>Visual field measurement</te:value>
+            </te:name>
+            <te:language>
+                <te:terminology_id>
+                    <te:value>ISO_639-1</te:value>
+                </te:terminology_id>
+                <te:code_string>en</te:code_string>
+            </te:language>
+            <te:encoding>
+                <te:terminology_id>
+                    <te:value>IANA_character-sets</te:value>
+                </te:terminology_id>
+                <te:code_string>UTF-8</te:code_string>
+            </te:encoding>
+            <te:subject xsi:type="oe:PARTY_SELF"/>
+            
+            <te:protocol archetype_node_id="at0010" type="ITEM_TREE"/>
+                
+            <te:data archetype_node_id="at0001">
+                <te:origin>
+                    <oe:value>201301211425</oe:value>
+                </te:origin>
+                <te:Any_event archetype_node_id="at0002" type="POINT_EVENT">
+                    <te:name>
+                        <te:value>Any event</te:value>
+                    </te:name>
+                    <te:time>
+                        <oe:value>201301211425</oe:value>
+                    </te:time>
+                    <te:data archetype_node_id="at0003" type="ITEM_TREE">
+                        <te:Right_eye archetype_node_id="at0007" type="CLUSTER">
+                            <te:name>
+                                <te:value>Right eye</te:value>
+                            </te:name>
+                            <te:Eye>
+                                <te:name>
+                                    <te:value>Eye</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:value>Right eye</te:value>
+                                    <te:defining_code>
+                                        <te:terminology_id>
+                                            <te:value>local</te:value>
+                                        </te:terminology_id>
+                                        <te:code_string>at0020</te:code_string>
+                                    </te:defining_code>
+                                </te:value>
+                            </te:Eye>
+                            <te:Image archetype_node_id="at0006" type="ELEMENT" valueType="DV_MULTIMEDIA">
+                                <te:name>
+                                    <te:value>Image</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:data>TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0aGlz
+                                        IHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1c3Qgb2Yg
+                                        dGhlIG1pbmQsIHRoYXQgYnkgYSBwZXJzZXZlcmFuY2Ugb2YgZGVsaWdodCBpbiB0aGUgY29udGlu
+                                        dWVkIGFuZCBpbmRlZmF0aWdhYmxlIGdlbmVyYXRpb24gb2Yga25vd2xlZGdlLCBleGNlZWRzIHRo
+                                        ZSBzaG9ydCB2ZWhlbWVuY2Ugb2YgYW55IGNhcm5hbCBwbGVhc3VyZS4=</te:data>
+                                    <te:media_type>
+                                        <te:terminology_id>
+                                            <te:value>openehr</te:value>
+                                        </te:terminology_id>
+                                        <te:code_string>image/tiff</te:code_string>
+                                    </te:media_type>
+                                    <te:size>567764564</te:size>
+                                </te:value>
+                            </te:Image>
+                        </te:Right_eye>
+                        <te:Left_eye archetype_node_id="at0007" type="CLUSTER">
+                            <te:name>
+                                <te:value>Left eye</te:value>
+                            </te:name>
+                            <te:Image>
+                                <te:name>
+                                    <te:value>Image</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:data>TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0aGlz
+                                        IHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1c3Qgb2Yg
+                                        dGhlIG1pbmQsIHRoYXQgYnkgYSBwZXJzZXZlcmFuY2Ugb2YgZGVsaWdodCBpbiB0aGUgY29udGlu
+                                        dWVkIGFuZCBpbmRlZmF0aWdhYmxlIGdlbmVyYXRpb24gb2Yga25vd2xlZGdlLCBleGNlZWRzIHRo
+                                        ZSBzaG9ydCB2ZWhlbWVuY2Ugb2YgYW55IGNhcm5hbCBwbGVhc3VyZS4=</te:data>
+                                    <te:media_type>
+                                        <te:terminology_id>
+                                            <te:value>openehr</te:value>
+                                        </te:terminology_id>
+                                        <te:code_string>image/tiff</te:code_string>
+                                    </te:media_type>
+                                    <te:size>434545</te:size>
+                                </te:value>
+                            </te:Image>
+                        </te:Left_eye>
+                    </te:data>
+                    <te:state archetype_node_id="at0022" type="ITEM_TREE"/>
+                </te:Any_event>
+            </te:data>
+        </te:Visual_field_measurement>
+    </te:_2_prd__Glaucoma_examination>
+</te:Initial_Optometrist_Glaucoma_Assessment>
