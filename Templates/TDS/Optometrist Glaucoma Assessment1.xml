@@ -305,7 +305,8 @@
                             <te:name>
                                 <te:value>Right eye</te:value>
                             </te:name>
-                            <te:Eye archetype_node_id="at0057" type="ELEMENT" valueType="DV_CODED_TEXT">
+                            <te:Eye archetype_node_id="at0057" type="ELEMENT"
+                                valueType="DV_CODED_TEXT">
                                 <te:name>
                                     <te:value>Eye</te:value>
                                 </te:name>
@@ -319,7 +320,8 @@
                                     </te:defining_code>
                                 </te:value>
                             </te:Eye>
-                            <te:Intraocular_Pressure archetype_node_id="at0042" type="ELEMENT" valueType="DV_QUANTITY">
+                            <te:Intraocular_Pressure archetype_node_id="at0042" type="ELEMENT"
+                                valueType="DV_QUANTITY">
                                 <te:name>
                                     <te:value>Intraocular Pressure</te:value>
                                 </te:name>
