@@ -7,8 +7,8 @@ language
 	original_language = <[ISO_639-1::en]>
 description
 	original_author = <
-		["name"] = <"Thomas Beale">
 		["organisation"] = <"Ocean Informatics">
+		["name"] = <"Thomas Beale">
 		["date"] = <"2005-10-10">
 	>
 	details = <
@@ -24,8 +24,7 @@ description
 	lifecycle_state = <"AuthorDraft">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"EDEB60AEFE411C22B796CBE227E44095">
-		["references"] = <"">
+		["MD5-CAM-1.0.1"] = <"380162F8E430C1FF0D6070A35828D1FC">
 	>
 
 definition
@@ -35,8 +34,21 @@ definition
 				defining_code matches {[openehr::433]}
 			}
 		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {	-- Tree
+						items cardinality matches {0..*; unordered} matches {
+							allow_archetype ITEM[at0002] occurrences matches {0..*} matches {	-- Other context
+								include
+									archetype_id/value matches {/.*/}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
-
 
 ontology
 	term_definitions = <
@@ -45,6 +57,14 @@ ontology
 				["at0000"] = <
 					text = <"Encounter">
 					description = <"Generic encounter or progress note composition">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Other context">
+					description = <"Other context related to an encounter.">
 				>
 			>
 		>
