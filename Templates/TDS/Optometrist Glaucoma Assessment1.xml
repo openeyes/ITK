@@ -140,7 +140,6 @@
                     </te:encoding>
                     <te:subject xsi:type="oe:PARTY_SELF"/>
                     <te:data type="ITEM_TREE" archetype_node_id="at0001">
-                
                         <te:Problem_fslash_Diagnosis  archetype_node_id="at0002" type="ELEMENT" valueType="DV_CODED_TEXT">
                             <te:name>
                                 <te:value>Problem/Diagnosis</te:value>
@@ -155,6 +154,22 @@
                                 </oe:defining_code>
                             </te:value>
                         </te:Problem_fslash_Diagnosis>
+                        <te:Date_of_onset archetype_node_id="at0010" type="ELEMENT" valueType="DV_DATE_TIME">
+                            <te:name>
+                                <te:value>Date of onset</te:value>
+                            </te:name>
+                            <te:value>
+                                <oe:value>1972</oe:value>
+                            </te:value>
+                        </te:Date_of_onset>
+                        <te:Duration archetype_node_id="at0.83" valueType="DV_DURATION" type="ELEMENT">
+                            <te:name>
+                                <te:value>Duration</te:value>
+                            </te:name>
+                            <te:value>
+                                <te:value>P3Y</te:value>
+                            </te:value>
+                        </te:Duration>
                         <te:Anatomical_Location archetype_node_id="openEHR-EHR-CLUSTER.anatomical_location.v1" type="CLUSTER">
                             <te:name>
                                 <te:value>Anatomical Location</te:value>
@@ -181,6 +196,7 @@
                         </te:Anatomical_Location>
                     </te:data>
                 </te:Problem_fslash_Diagnosis__openBrkt_UK_closeBrkt_>
+              
             </te:Ocular_disease>
            
         </te:Ocular_history>
@@ -239,15 +255,29 @@
                     </te:encoding>
                     <te:subject xsi:type="oe:PARTY_SELF"/>
                     <te:data archetype_node_id="at0001" type="ITEM_TREE">
-                        <te:Problem_fslash_Diagnosis archetype_node_id="at0002" type="ELEMENT" valueType="DV_TEXT">
+                        <te:Problem_fslash_Diagnosis archetype_node_id="at0002" type="ELEMENT" valueType="DV_CODED_TEXT">
                             <te:name>
-                                <te:value>Problem Diagnosis</te:value>
+                                <te:value>Problem/Diagnosis</te:value>
                             </te:name>
                             <te:value>
-                                <oe:value>H O asthma</oe:value>
+                                <oe:value>asthma</oe:value>
+                                <te:defining_code>
+                                    <te:terminology_id>
+                                        <te:value>SNOMEDCT</te:value>
+                                    </te:terminology_id>
+                                    <te:code_string>195967001</te:code_string>
+                                </te:defining_code>
                             </te:value>
                             
                         </te:Problem_fslash_Diagnosis>
+                        <te:Date_of_onset archetype_node_id="at0010" type="ELEMENT" valueType="DV_DATE_TIME">
+                            <te:name>
+                                <te:value>Date of onset</te:value>
+                            </te:name>
+                            <te:value>
+                                <oe:value>197805</oe:value>
+                            </te:value>
+                        </te:Date_of_onset>
                     </te:data>
                 </te:Problem_fslash_Diagnosis__openBrkt_UK_closeBrkt_>
             </te:Systemic_conditions>
@@ -309,6 +339,21 @@
                                    </te:defining_code>
                                </te:value>
                             </te:Eye>
+                            <te:Notation archetype_node_id="at0028" type="CLUSTER">
+                                <te:name>
+                                    <te:value>Notation</te:value>
+                                </te:name>
+                                <te:Metric_Snellen archetype_node_id="at0056" type="ELEMENT" valueType="DV_PROPORTION">
+                                    <te:name>
+                                        <te:value>Metric Snellen</te:value>
+                                    </te:name>
+                                    <te:value>
+                                        <te:numerator>6</te:numerator>
+                                        <te:denominator>24</te:denominator>
+                                        <te:type>0</te:type>
+                                    </te:value>
+                                </te:Metric_Snellen>
+                            </te:Notation>
                         </te:Right_eye>
                         <te:Left_eye archetype_node_id="at0053" type="CLUSTER">
                                 <te:name>
@@ -599,7 +644,7 @@
                                 </te:Optic_Disc_Image>
                             </te:Optic_Disc>
                         </te:Right_eye>
-                        <te:Left_eye>
+                        <te:Left_eye archetype_node_id="at0007" type="CLUSTER">
                             <te:name>
                                 <te:value>Left eye</te:value>
                             </te:name>
@@ -692,12 +737,21 @@
                             <te:name>
                                 <te:value>Right eye</te:value>
                             </te:name>
-                            <te:Eye>
+                            <te:Eye archetype_node_id="at0008" type="ELEMENT" valueType="DV_CODED_TEXT">
                                 <te:name>
                                     <te:value>Eye</te:value>
                                 </te:name>
                                 <te:value>
                                     <te:value>Right eye</te:value>
+                                    <te:mappings>
+                                        <oe:match>=</oe:match>
+                                        <oe:target>
+                                            <oe:terminology_id>
+                                                <oe:value>SNOMEDCT</oe:value>
+                                            </oe:terminology_id>
+                                            <oe:code_string>362502000</oe:code_string>
+                                        </oe:target>
+                                    </te:mappings>
                                     <te:defining_code>
                                         <te:terminology_id>
                                             <te:value>local</te:value>
@@ -753,7 +807,7 @@
                                     </te:defining_code>
                                 </te:value>
                             </te:Eye>
-                           <te:Image>
+                           <te:Image archetype_node_id="at0006" valueType="DV_MULTIMEDIA" type="ELEMENT">
                                 <te:name>
                                     <te:value>Image</te:value>
                                 </te:name>

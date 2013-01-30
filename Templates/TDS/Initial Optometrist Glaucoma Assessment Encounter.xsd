@@ -291,6 +291,28 @@
                                           <xs:attribute name="valueType" fixed="DV_TEXT" />
                                         </xs:complexType>
                                       </xs:element>
+                                      <xs:element name="Date_of_onset" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="name">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="value" type="xs:string" default="Date of onset" />
+                                                  <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                  <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:choice>
+                                              <xs:element name="value" type="oe:DV_DATE_TIME" />
+                                              <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                            </xs:choice>
+                                          </xs:sequence>
+                                          <xs:attribute fixed="at0010" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                          <xs:attribute fixed="ELEMENT" name="type" />
+                                          <xs:attribute name="valueType" fixed="DV_DATE_TIME" />
+                                        </xs:complexType>
+                                      </xs:element>
                                       <xs:element name="Duration" minOccurs="0">
                                         <xs:complexType>
                                           <xs:sequence>
@@ -662,6 +684,28 @@
                                           <xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId" />
                                           <xs:attribute fixed="ELEMENT" name="type" />
                                           <xs:attribute name="valueType" fixed="DV_TEXT" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Date_of_onset" minOccurs="0">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="name">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="value" type="xs:string" default="Date of onset" />
+                                                  <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                  <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:choice>
+                                              <xs:element name="value" type="oe:DV_DATE_TIME" />
+                                              <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                            </xs:choice>
+                                          </xs:sequence>
+                                          <xs:attribute fixed="at0010" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                          <xs:attribute fixed="ELEMENT" name="type" />
+                                          <xs:attribute name="valueType" fixed="DV_DATE_TIME" />
                                         </xs:complexType>
                                       </xs:element>
                                       <xs:element name="Duration" minOccurs="0">

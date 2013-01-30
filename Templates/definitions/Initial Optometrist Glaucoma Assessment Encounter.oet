@@ -83,7 +83,6 @@
         <Rule path="/data[at0001]" hide_on_form="true" />
         <Rule path="/data[at0001]/items[at0009]" max="0" />
         <Rule path="/data[at0001]/items[at0082]" max="0" />
-        <Rule path="/data[at0001]/items[at0010]" max="0" />
         <Rule path="/data[at0001]/items[at0.83]">
           <constraint xsi:type="durationConstraint">
             <pattern>PYMWD</pattern>
@@ -156,7 +155,6 @@
         <Rule path="/data[at0001]" hide_on_form="true" />
         <Rule path="/data[at0001]/items[at0009]" max="0" />
         <Rule path="/data[at0001]/items[at0082]" max="0" />
-        <Rule path="/data[at0001]/items[at0010]" max="0" />
         <Rule path="/data[at0001]/items[at0.83]">
           <constraint xsi:type="durationConstraint">
             <pattern>PYMWD</pattern>
