@@ -21,7 +21,7 @@ description
 	lifecycle_state = <"0">
 	other_contributors = <>
 	other_details = <
-		["MD5-CAM-1.0.1"] = <"2E41AE8E53175D1457C843B16D936512">
+		["MD5-CAM-1.0.1"] = <"1E1BD6FE5D538DDCFBA095B04159DC4A">
 	>
 
 definition
@@ -41,7 +41,15 @@ definition
 			}
 			SECTION[at0004] occurrences matches {0..1} matches {*}
 			SECTION[at0005] occurrences matches {0..1} matches {*}
-			SECTION[at0012] occurrences matches {0..1} matches {*}
+			SECTION[at0012] occurrences matches {0..1} matches {	-- Systemic medical history
+				items cardinality matches {1..*; unordered} matches {
+					allow_archetype EVALUATION[at0015] occurrences matches {0..*} matches {	-- Synopsis
+						include
+							archetype_id/value matches {/.*/}
+					}
+					SECTION[at0014] occurrences matches {0..1} matches {*}
+				}
+			}
 			SECTION[at0006] occurrences matches {0..1} matches {*}
 			SECTION[at0007] occurrences matches {0..1} matches {*}
 		}
@@ -98,6 +106,14 @@ ontology
 				["at0013"] = <
 					text = <"Synopsis">
 					description = <"A narrative overview of Ocular history.">
+				>
+				["at0014"] = <
+					text = <"Systemic conditions">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Synopsis">
+					description = <"*">
 				>
 			>
 		>

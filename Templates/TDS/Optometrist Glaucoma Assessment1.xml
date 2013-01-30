@@ -90,9 +90,9 @@
             <te:name>
                 <te:value>Ocular history</te:value>
             </te:name>
-            <te:Clinical_Synopsis archetype_node_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" type="EVALUATION">
+            <te:Ocular_history archetype_node_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" type="EVALUATION">
                 <te:name>
-                    <te:value>Clinical Synopsis</te:value>
+                    <te:value>Ocular history</te:value>
                 </te:name>
                 <te:language>
                     <te:terminology_id>
@@ -108,17 +108,83 @@
                 </te:encoding>
                 <te:subject xsi:type= "oe:PARTY_SELF"/>
                 <te:data archetype_node_id="at0001" type="ITEM_TREE">
-                    <te:Ocular_history archetype_node_id="at0002" type="ELEMENT" valueType="DV_TEXT">
+                    <te:Synopsis archetype_node_id="at0002" type="ELEMENT" valueType="DV_TEXT">
                         <te:name>
-                            <te:value>Ocular history</te:value>
+                            <te:value>Synopsis</te:value>
                         </te:name>
                         <te:value>
                             <oe:value>No past ocular history. Raised IOP found by occupational screen</oe:value>
                         </te:value>
-                    </te:Ocular_history>
+                    </te:Synopsis>
                 </te:data>
-            </te:Clinical_Synopsis>
+            </te:Ocular_history>
+            <te:Ocular_disease archetype_node_id="at0009" type="SECTION">
+                <te:name>
+                    <te:value>Ocular disease</te:value>
+                </te:name>
+                <te:Problem_fslash_Diagnosis__openBrkt_UK_closeBrkt_ archetype_node_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" type="EVALUATION">
+                    <te:name>
+                        <te:value>Problem/Diagnosis (UK)</te:value>
+                    </te:name>
+                    <te:language>
+                        <te:terminology_id>
+                            <te:value>ISO_639-1</te:value>
+                        </te:terminology_id>
+                        <te:code_string>en</te:code_string>
+                    </te:language>
+                    <te:encoding>
+                        <te:terminology_id>
+                            <te:value>IANA_character-sets</te:value>
+                        </te:terminology_id>
+                        <te:code_string>UTF-8</te:code_string>
+                    </te:encoding>
+                    <te:subject xsi:type="oe:PARTY_SELF"/>
+                    <te:data type="ITEM_TREE" archetype_node_id="at0001">
+                
+                        <te:Problem_fslash_Diagnosis  archetype_node_id="at0002" type="ELEMENT" valueType="DV_CODED_TEXT">
+                            <te:name>
+                                <te:value>Problem/Diagnosis</te:value>
+                            </te:name>
+                            <te:value>
+                                <oe:value>Cataract</oe:value>
+                                <oe:defining_code>
+                                    <te:terminology_id>
+                                        <te:value>SNOMEDCT</te:value>
+                                    </te:terminology_id>
+                                    <te:code_string>193570009</te:code_string>
+                                </oe:defining_code>
+                            </te:value>
+                        </te:Problem_fslash_Diagnosis>
+                        <te:Anatomical_Location archetype_node_id="openEHR-EHR-CLUSTER.anatomical_location.v1" type="CLUSTER">
+                            <te:name>
+                                <te:value>Anatomical Location</te:value>
+                            </te:name>
+                            <te:Specific_location archetype_node_id="at0005" type="CLUSTER">
+                                <te:name>
+                                    <te:value>Specific location</te:value>
+                                </te:name>
+                                <te:Side archetype_node_id="at0002" type="ELEMENT" valueType="DV_CODED_TEXT">
+                                    <te:name>
+                                        <te:value>Side</te:value>
+                                    </te:name>
+                                    <te:value>
+                                        <te:value>Left</te:value>
+                                        <te:defining_code>
+                                            <te:terminology_id>
+                                                <te:value>local</te:value>
+                                            </te:terminology_id>
+                                            <te:code_string>at0003</te:code_string>
+                                        </te:defining_code>
+                                    </te:value>
+                                </te:Side>
+                            </te:Specific_location>
+                        </te:Anatomical_Location>
+                    </te:data>
+                </te:Problem_fslash_Diagnosis__openBrkt_UK_closeBrkt_>
+            </te:Ocular_disease>
+           
         </te:Ocular_history>
+        
         <te:Systemic_medical_history archetype_node_id="at0012" type="SECTION">
             <te:name>
                 <te:value>Systemic medical history</te:value>
@@ -146,11 +212,45 @@
                             <te:value>Systemic medical history</te:value>
                         </te:name>
                         <te:value>
-                            <oe:value>Past history of asthma</oe:value>
+                            <oe:value>Not terribly well</oe:value>
                         </te:value>
                     </te:Systemic_medical_history>
                 </te:data>
             </te:Clinical_Synopsis>
+            <te:Systemic_conditions archetype_node_id="at0014" type="SECTION">
+                <te:name>
+                    <te:value>Systemic conditions</te:value>
+                </te:name>
+                <te:Problem_fslash_Diagnosis__openBrkt_UK_closeBrkt_ archetype_node_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" type="EVALUATION">
+                    <te:name>
+                        <te:value>Problem Diagnosis (UK)</te:value>
+                    </te:name>
+                    <te:language>
+                        <te:terminology_id>
+                            <te:value>ISO_639-1</te:value>
+                        </te:terminology_id>
+                        <te:code_string>en</te:code_string>
+                    </te:language>
+                    <te:encoding>
+                        <te:terminology_id>
+                            <te:value>IANA_character-sets</te:value>
+                        </te:terminology_id>
+                        <te:code_string>UTF-8</te:code_string>
+                    </te:encoding>
+                    <te:subject xsi:type="oe:PARTY_SELF"/>
+                    <te:data archetype_node_id="at0001" type="ITEM_TREE">
+                        <te:Problem_fslash_Diagnosis archetype_node_id="at0002" type="ELEMENT" valueType="DV_TEXT">
+                            <te:name>
+                                <te:value>Problem Diagnosis</te:value>
+                            </te:name>
+                            <te:value>
+                                <oe:value>H O asthma</oe:value>
+                            </te:value>
+                            
+                        </te:Problem_fslash_Diagnosis>
+                    </te:data>
+                </te:Problem_fslash_Diagnosis__openBrkt_UK_closeBrkt_>
+            </te:Systemic_conditions>
         </te:Systemic_medical_history>
     </te:Glaucoma_history>
     <te:_2_prd__Glaucoma_examination archetype_node_id="openEHR-EHR-SECTION.adhoc.v1" type="SECTION">
@@ -216,10 +316,10 @@
                                 </te:name>
                                 <te:Eye archetype_node_id="at0007" type="ELEMENT" valueType="DV_CODED_TEXT">
                                     <te:name>
-                                        <te:value>Left eye</te:value>
+                                        <te:value>Eye</te:value>
                                     </te:name>
                                     <te:value>
-                                        <te:value></te:value>
+                                        <te:value>Left eye</te:value>
                                         <te:defining_code>
                                             <te:terminology_id>
                                                 <te:value>local</te:value>
@@ -457,6 +557,15 @@
                                 </te:name>
                                 <te:value>
                                     <te:value>Right eye</te:value>
+                                    <te:mappings>
+                                        <oe:match>=</oe:match>
+                                        <oe:target>
+                                            <oe:terminology_id>
+                                                <oe:value>SNOMEDCT</oe:value>
+                                            </oe:terminology_id>
+                                            <oe:code_string>362502000</oe:code_string>
+                                        </oe:target>
+                                    </te:mappings>
                                     <te:defining_code>
                                         <te:terminology_id>
                                             <te:value>local</te:value>
@@ -499,6 +608,16 @@
                                     <te:value>Eye examined</te:value>
                                 </te:name>
                                 <te:value>
+                                    <te:value>Left eye</te:value>
+                                    <te:mappings>
+                                        <oe:match>=</oe:match>
+                                        <oe:target>
+                                            <oe:terminology_id>
+                                                <oe:value>SNOMEDCT</oe:value>
+                                            </oe:terminology_id>
+                                            <oe:code_string>362503005</oe:code_string>
+                                        </oe:target>
+                                    </te:mappings>
                                     <te:defining_code>
                                         <te:terminology_id>
                                             <te:value>local</te:value>
@@ -611,7 +730,30 @@
                             <te:name>
                                 <te:value>Left eye</te:value>
                             </te:name>
-                            <te:Image>
+                            <te:Eye archetype_node_id="at0008" type="ELEMENT" valueType="DV_CODED_TEXT">
+                                <te:name>
+                                    <te:value>Eye</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:value>Left eye</te:value>
+                                    <te:mappings>
+                                        <oe:match>=</oe:match>
+                                        <oe:target>
+                                            <oe:terminology_id>
+                                                <oe:value>SNOMEDCT</oe:value>
+                                            </oe:terminology_id>
+                                            <oe:code_string>362503005</oe:code_string>
+                                        </oe:target>
+                                    </te:mappings>
+                                    <te:defining_code>
+                                        <te:terminology_id>
+                                            <te:value>local</te:value>
+                                        </te:terminology_id>
+                                        <te:code_string>at0019</te:code_string>
+                                    </te:defining_code>
+                                </te:value>
+                            </te:Eye>
+                           <te:Image>
                                 <te:name>
                                     <te:value>Image</te:value>
                                 </te:name>
