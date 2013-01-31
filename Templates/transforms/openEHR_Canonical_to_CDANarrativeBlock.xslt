@@ -85,10 +85,29 @@
 			</section>
 		</component>
 	</xsl:template>
+	
 	<xsl:template name="observationBody">
 		<xsl:call-template name="title" />
 		<xsl:apply-templates select="oe:protocol" />
 		<xsl:apply-templates select="oe:data" />
+	</xsl:template>
+	
+	<xsl:template name="evaluationBody">
+		<xsl:call-template name="title" />
+		<xsl:apply-templates select="oe:protocol" />
+		<xsl:apply-templates select="oe:data" />
+	</xsl:template>
+	
+	<xsl:template match="oe:items[@xsi:type='EVALUATION']">
+		<!-- TODO: Determine nest level automatically -->
+		<component typeCode="COMP" contextConductionInd="true">
+			<xsl:call-template name="template_Component2" />
+			<section classCode="DOCSECT" moodCode="EVN">
+				<xsl:call-template name="template_Section3" />
+				<xsl:call-template name="idWithEmptyUuid" />
+				<xsl:call-template name="evaluationBody" />
+			</section>
+		</component>
 	</xsl:template>
 	
 	<xsl:template match="oe:items[@xsi:type='ELEMENT']">
@@ -168,7 +187,7 @@
 			<xsl:value-of select="oe:value/oe:units" />
 		</xsl:if>
 
-		<xsl:if test="oe:value[@xsi:type='DV_CODEDTEXT']">
+		<xsl:if test="oe:value[@xsi:type='DV_CODED_TEXT']">
 			<xsl:text> = </xsl:text>
 			<xsl:value-of select="oe:value/oe:value" />
 		</xsl:if>
@@ -177,8 +196,24 @@
 			<xsl:text>: </xsl:text>
 			<xsl:value-of select="oe:value/oe:value" />
 		</xsl:if>
-	</xsl:template>
+	
+		<xsl:if test="oe:value[@xsi:type='DV_DURATION']">
+			<xsl:text>: </xsl:text>
+			<xsl:value-of select="oe:value/oe:value" />
+		</xsl:if>
+	
+		<xsl:if test="oe:value[@xsi:type='DV_MULTIMEDIA']">
+			<xsl:text>: </xsl:text>
+			<xsl:value-of select="oe:value/oe:value" />
+		</xsl:if>
 		
+		<xsl:if test="oe:value[@xsi:type='DV_DATE_TIME']">
+			<xsl:text>: </xsl:text>
+			<xsl:value-of select="oe:value/oe:value" />
+		</xsl:if>
+	</xsl:template>
+	
+	
 	<!-- Fixed elements -->
 	<xsl:template name="template_Section1">
 		<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146229GB01#Section1"/>

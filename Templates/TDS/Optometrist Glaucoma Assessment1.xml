@@ -194,6 +194,10 @@
                                 </te:Side>
                             </te:Specific_location>
                         </te:Anatomical_Location>
+                            <te:name>
+                                <te:value></te:value>
+                            </te:name>
+                        
                     </te:data>
                 </te:Problem_fslash_Diagnosis__openBrkt_UK_closeBrkt_>
               
@@ -760,6 +764,39 @@
                                     </te:defining_code>
                                 </te:value>
                             </te:Eye>
+                            <te:Glaucoma_Hemifield_Test__openBrkt_GHT_closeBrkt_ archetype_node_id="at0027" type="ELEMENT" valueType="DV_CODED_TEXT">
+                                <te:name>
+                                    <te:value>Glaucoma Hemifield Test (GHT)</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:value>Outside normal limits</te:value>
+                                    <te:defining_code>
+                                        <te:terminology_id>
+                                            <te:value>local</te:value>
+                                        </te:terminology_id>
+                                        <te:code_string>at0028</te:code_string>
+                                    </te:defining_code>
+                                </te:value>
+                            </te:Glaucoma_Hemifield_Test__openBrkt_GHT_closeBrkt_>
+                            <te:Mean_deviation archetype_node_id="at0034" type="ELEMENT" valueType="DV_QUANTITY">
+                                <te:name>
+                                    <te:value>Mean deviation</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:magnitude>2.40</te:magnitude>
+                                    <te:precision>2</te:precision>
+                                    <te:units>dB</te:units>
+                                </te:value>
+                            </te:Mean_deviation>
+                            <te:Mean_deviation_P archetype_node_id="at0038" valueType="DV_PROPORTION" type="ELEMENT">
+                                <te:name>
+                                    <te:value>Mean deviation P</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:numerator>3</te:numerator>
+                                    <te:type>2</te:type>
+                                </te:value>
+                            </te:Mean_deviation_P>
                             <te:Image archetype_node_id="at0006" type="ELEMENT" valueType="DV_MULTIMEDIA">
                                 <te:name>
                                     <te:value>Image</te:value>
@@ -807,6 +844,39 @@
                                     </te:defining_code>
                                 </te:value>
                             </te:Eye>
+                            <te:Glaucoma_Hemifield_Test__openBrkt_GHT_closeBrkt_ archetype_node_id="at0027" type="ELEMENT" valueType="DV_CODED_TEXT">
+                                <te:name>
+                                    <te:value>Glaucoma Hemifield Test (GHT)</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:value>Borderline</te:value>
+                                    <te:defining_code>
+                                        <te:terminology_id>
+                                            <te:value>local</te:value>
+                                        </te:terminology_id>
+                                        <te:code_string>at0029</te:code_string>
+                                    </te:defining_code>
+                                </te:value>
+                            </te:Glaucoma_Hemifield_Test__openBrkt_GHT_closeBrkt_>
+                            <te:Mean_deviation archetype_node_id="at0034" type="ELEMENT" valueType="DV_QUANTITY">
+                                <te:name>
+                                    <te:value>Mean deviation</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:magnitude>-10.20</te:magnitude>
+                                    <te:precision>2</te:precision>
+                                    <te:units>dB</te:units>
+                                </te:value>
+                            </te:Mean_deviation>
+                            <te:Mean_deviation_P archetype_node_id="at0038" valueType="DV_PROPORTION" type="ELEMENT">
+                                <te:name>
+                                    <te:value>Mean deviation P</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:numerator>11</te:numerator>
+                                    <te:type>2</te:type>
+                                </te:value>
+                            </te:Mean_deviation_P>
                            <te:Image archetype_node_id="at0006" valueType="DV_MULTIMEDIA" type="ELEMENT">
                                 <te:name>
                                     <te:value>Image</te:value>

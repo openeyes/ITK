@@ -447,7 +447,6 @@
         <Rule path="/protocol[at0068]/items[at0046]">
           <constraint xsi:type="textConstraint">
             <excludedValues>local::at0048</excludedValues>
-            <excludedValues>local::at0049</excludedValues>
             <excludedValues>local::at0050</excludedValues>
             <excludedValues>local::at0051</excludedValues>
             <excludedValues>local::at0052</excludedValues>
@@ -569,11 +568,21 @@
             <excludedValues>local::at0019</excludedValues>
           </constraint>
         </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0027]">
+          <constraint xsi:type="textConstraint">
+            <excludedValues>local::at0031</excludedValues>
+          </constraint>
+        </Rule>
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0009]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007]" max="1" clone="true" name="Left eye" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0008]" default="local::at0019::Left eye" hide_on_form="true">
           <constraint xsi:type="textConstraint">
             <excludedValues>local::at0020</excludedValues>
+          </constraint>
+        </Rule>
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0027]">
+          <constraint xsi:type="textConstraint">
+            <excludedValues>local::at0031</excludedValues>
           </constraint>
         </Rule>
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0009]" max="0" />
@@ -582,7 +591,14 @@
         <Rule path="/data[at0001]/events[at0002]/state[at0022]" hide_on_form="true" />
         <Rule path="/data[at0001]/events[at0002]/state[at0022]/items[at0023]" max="0" />
         <Rule path="/protocol[at0010]" hide_on_form="true" />
-        <Rule path="/protocol[at0010]/items[at0011]" max="0" />
+        <Rule path="/protocol[at0010]/items[at0011]">
+          <constraint xsi:type="textConstraint">
+            <excludedValues>local::at0012</excludedValues>
+            <excludedValues>local::at0013</excludedValues>
+            <excludedValues>local::at0014</excludedValues>
+            <excludedValues>local::at0015</excludedValues>
+          </constraint>
+        </Rule>
       </Item>
       <Item xsi:type="OBSERVATION" archetype_id="openEHR-EHR-OBSERVATION.refraction.v1" concept_name="Refraction assessment" max="0" path="/items" annotation="2.7">
         <Rule path="/data[at0001]" hide_on_form="true" />
