@@ -15,7 +15,7 @@ description
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
-			purpose = <"For recording the results of both near and distance visual acuity testing, normally measured by testing the subject's ability to read a standard test pattern at a defined distance. ">
+			purpose = <"For recording the results of both near and distance visual acuity testing, normally measured by testing the subject's ability to read a standard test pattern at a defined distance.">
 			use = <"Use to record the results of measurement of visual acuity, for both near and distance testing.
 
 The 'Clinical Description' data element can be used to record simple narrative summary or as a means to integrate legacy data. 
@@ -54,7 +54,7 @@ Chiang MF, Boland MV, Brewer A, Epley KD, Horton MB, Lim MC, et al. Special Requ
 
 Practical Ophthalmology: A Manual for Beginning Residents, 6th Edition [Paperback]
 American Academy Of Ophthalmology (Author), Fred M. Wilson II (Editor), MD (Editor)">
-		["MD5-CAM-1.0.1"] = <"667A11C2F09E88044B16F21B3C1AA0A9">
+		["MD5-CAM-1.0.1"] = <"C762A5EF1AE74B2941D37D372C14D940">
 	>
 
 definition
@@ -368,14 +368,14 @@ ontology
 					description = <"The eye which is being examined.">
 				>
 				["at0009"] = <
-					comment = <"Examples: '20/20' , '20/40', '20/18'">
-					text = <"US Snellen">
 					description = <"The distance test result, recorded as Snellen visual acuity expressed in feet, where 20/20 is regarded as normal.">
+					text = <"US Snellen">
+					comment = <"Examples: '20/20' , '20/40', '20/18'">
 				>
 				["at0010"] = <
-					description = <"Visual acuity expressed as an integer score which is calculated from one or more of the other result notation formats. The original notation should be captured using 'Derived Score Original Notation' format'.">
-					text = <"Derived Score">
 					comment = <"Details of the algorithm used and original result format may be recorded under 'Derived Score Methodology'.">
+					text = <"Derived Score">
+					description = <"Visual acuity expressed as an integer score which is calculated from one or more of the other result notation formats. The original notation should be captured using 'Derived Score Original Notation' format'.">
 				>
 				["at0011"] = <
 					text = <"ETDRS Letters">
@@ -450,9 +450,9 @@ ontology
 					description = <"@ internal @">
 				>
 				["at0042"] = <
-					description = <"The specific type(s) of refractive correction applied when measuring visual acuity.">
-					text = <"Refractive Correction">
 					comment = <"Examples: 'No correction : unaided', 'Pinhole'.">
+					text = <"Refractive Correction">
+					description = <"The specific type(s) of refractive correction applied when measuring visual acuity.">
 				>
 				["at0046"] = <
 					text = <"logMar">
@@ -467,24 +467,24 @@ ontology
 					description = <"A term, commonly coded, expressing an overall interpretation of the visual acuity test.">
 				>
 				["at0055"] = <
-					comment = <"Details of reasons for an absent test result can be described in Additional Comment or Confounding Factors.">
-					text = <"Absent Result">
 					description = <"Details of a test result which could not be recorded.">
+					text = <"Absent Result">
+					comment = <"Details of reasons for an absent test result can be described in Additional Comment or Confounding Factors.">
 				>
 				["at0056"] = <
-					comment = <"Examples: '6/6, '6/12', '6/5'">
-					text = <"Metric Snellen">
 					description = <"The distance test result, recorded in Snellen format expressed in metres, where 6/6 is regarded as normal.">
+					text = <"Metric Snellen">
+					comment = <"Examples: '6/6, '6/12', '6/5'">
 				>
 				["at0057"] = <
 					text = <"Decimal Snellen">
 					description = <"The distance test result,recorded as Sn ellen visual acuity expressed as a decimal ratio, where 1.0 is regarded as normal.">
 				>
 				["at0059"] = <
-					description = <"A line termination adjustment score applied to the visual acuity result.">
-					text = <"Letter termination adjustment">
 					comment = <"If the patient can read at least half of the chart line the visual acuity terminatin line is recorded as that line, with the number of letters missed on that line recorded as a negative Letter Termination Adjustment score.
 If the patient can read less than half of a Visual Acuity line, the previous line is recorded as the Visual Acuity result, with the number of letters seen on the following line recorded as a positive 'Letter Termination Adjustment' score.">
+					text = <"Letter termination adjustment">
+					description = <"A line termination adjustment score applied to the visual acuity result.">
 				>
 				["at0064"] = <
 					text = <"Not performed">
@@ -495,9 +495,9 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
 					description = <"The visual acuity test was started but could not be completed.">
 				>
 				["at0066"] = <
-					description = <"The test result expressed as a qualitative term, normally coded.">
-					text = <"Clinical Interpretation">
 					comment = <"Example: 'Visual Acuity 20/20' or 'Jaeger 'J2' score'.">
+					text = <"Clinical Interpretation">
+					description = <"The test result expressed as a qualitative term, normally coded.">
 				>
 				["at0071"] = <
 					text = <"Spectacles">
@@ -540,9 +540,9 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
 					description = <"An ETDRS chart was used to measure distance visual acuity.">
 				>
 				["at0092"] = <
-					description = <"The original visual acuity result notation from which the Derived Score was calculated.">
-					text = <"Derived Score Original Notation">
 					comment = <"When the visual acuity result is recorded using a Derived Score, this element can be used to record the original notation format, so that it can be displayed using the original notation. ">
+					text = <"Derived Score Original Notation">
+					description = <"The original visual acuity result notation from which the Derived Score was calculated.">
 				>
 				["at0096"] = <
 					text = <"Reduced logMar">
@@ -589,9 +589,9 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
 					description = <"A picture chart was used to measure distance visual acuity.">
 				>
 				["at0112"] = <
-					comment = <"Examples: 'Patient was confused', 'Low light conditions'.">
-					text = <"Confounding Factors">
 					description = <"Patient circumstances which affect interpretation of the result. Often termed 'reliability' in opthalmological documentation.">
+					text = <"Confounding Factors">
+					comment = <"Examples: 'Patient was confused', 'Low light conditions'.">
 				>
 				["at0117"] = <
 					text = <"Derived Score Algorithm">
@@ -618,9 +618,9 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
 					description = <"The test is performed with the patient's optimal refractive correction">
 				>
 				["at0138"] = <
-					comment = <"Details of the exact correction applied, or where multiple corrections should be captured via 'Refractive Correction'.">
-					text = <"Test Name">
 					description = <"The name of the exact visual acuity test performed. This generally represents a broad category of applied refraction. Specific refraction details can be described using 'Refractive Correction'">
+					text = <"Test Name">
+					comment = <"Details of the exact correction applied, or where multiple corrections should be captured via 'Refractive Correction'.">
 				>
 				["at0139"] = <
 					text = <"Unaided visual acuity">

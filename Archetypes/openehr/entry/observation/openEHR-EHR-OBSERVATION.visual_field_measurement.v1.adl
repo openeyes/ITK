@@ -16,9 +16,13 @@ description
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"For recording the results of visual field testing or perimetry.">
-			use = <"To record the results of visual field testing or perimetry. Where the perimetry method changes between each eye, a new record Entry should be created at runtime.">
-			keywords = <"perimetry", "ophthalmic", "optometry", "eye", "vision">
-			misuse = <"">
+			use = <"To record the results of visual field testing or perimetry. 
+
+The 'Clinical Description' data element can be used to record simple narrative summary or as a means to integrate legacy data. 
+
+Detailed, structured visual acuity results are preferred and are generally recorded for each eye in turn.">
+			keywords = <"perimetry", "ophthalmic", "optometry", "eye", "vision", "visual">
+			misuse = <"Where the perimetry method or device changes between each eye, a new record Entry should be created at runtime.">
 			copyright = <"">
 		>
 	>
@@ -37,7 +41,7 @@ http://www.slideshare.net/hmirzaeee/glaucoma-hemifield-test
 
 Standard Automated Perimetry, EyeWiki, http://eyewiki.aao.org/Standard_Automated_Perimetry">
 		["current_contact"] = <"Ian McNicoll, Ocean Informatics, UK, ian.mcnicoll@oceaninformatics.com">
-		["MD5-CAM-1.0.1"] = <"ADFC15B6D05F3718F65A5C432663CD2F">
+		["MD5-CAM-1.0.1"] = <"7A615BAB3DADCD4194B06D28F9E82166">
 	>
 
 definition
@@ -51,9 +55,7 @@ definition
 								items cardinality matches {0..*; unordered} matches {
 									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Clinical Description
 										value matches {
-											DV_CODED_TEXT matches {
-												defining_code matches {[local::]}
-											}
+											DV_TEXT matches {*}
 										}
 									}
 									CLUSTER[at0007] occurrences matches {0..2} matches {	-- Test Result
@@ -250,7 +252,7 @@ ontology
 				>
 				["at0007"] = <
 					text = <"Test Result">
-					description = <"Details of the visual acuity test result for each eye or both eyes.">
+					description = <"Details of the visual field test result for each eye.">
 				>
 				["at0008"] = <
 					text = <"Eye">
@@ -310,11 +312,11 @@ ontology
 				>
 				["at0024"] = <
 					text = <"Additional Comment">
-					description = <"Any additional narrative comment about the visual acuity test.">
+					description = <"Any additional narrative comment about the visual field test.">
 				>
 				["at0025"] = <
 					text = <"Overall Interpretation">
-					description = <"An overall narrative description of the visual acuity test result.">
+					description = <"A term, commonly coded, expressing an overall interpretation of the visual field test.">
 				>
 				["at0026"] = <
 					text = <"Device Details">
@@ -326,7 +328,7 @@ ontology
 				>
 				["at0028"] = <
 					text = <"Outside normal limits">
-					description = <"Differences between a matched pair of corresponding zones exceeds the difference found in 99% of the normal population, or when both members of a pair of zones are more abnormal than 99.5% of the individuals with the normative population">
+					description = <"Differences between a matched pair of corresponding zones exceeds the difference found in 99% of the normal population, or when both members of a pair of zones are more abnormal than 99.5% of the individuals with the normative population.">
 				>
 				["at0029"] = <
 					text = <"Borderline">
