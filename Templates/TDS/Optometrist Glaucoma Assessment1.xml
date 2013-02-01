@@ -783,6 +783,20 @@
                                     <te:value>Mean deviation</te:value>
                                 </te:name>
                                 <te:value>
+                                    <te:normal_range>
+                                        <oe:lower xsi:type="oe:DV_QUANTITY">
+                                            <oe:magnitude>0</oe:magnitude>
+                                            <oe:units>dB</oe:units>
+                                        </oe:lower>
+                                        <oe:upper xsi:type="oe:DV_QUANTITY">
+                                                <oe:magnitude>100</oe:magnitude>
+                                                <oe:units>dB</oe:units>
+                                        </oe:upper>
+                                        <oe:lower_included>true</oe:lower_included>
+                                        <oe:upper_included>true</oe:upper_included>
+                                        <oe:lower_unbounded>false</oe:lower_unbounded>
+                                        <oe:upper_unbounded>false</oe:upper_unbounded>
+                                    </te:normal_range>
                                     <te:magnitude>2.40</te:magnitude>
                                     <te:precision>2</te:precision>
                                     <te:units>dB</te:units>
@@ -797,6 +811,31 @@
                                     <te:type>2</te:type>
                                 </te:value>
                             </te:Mean_deviation_P>
+                            <te:Pattern_Standard_deviation_P archetype_node_id="at0039" type="ELEMENT" valueType="DV_PROPORTION">
+                                <te:name>
+                                    <te:value>Pattern Standard deviation P</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:normal_range>
+                                        <oe:lower xsi:type="oe:DV_PROPORTION">
+                                            <oe:numerator>0</oe:numerator>
+                                            <oe:denominator>100</oe:denominator>
+                                            <oe:type>2</oe:type>
+                                        </oe:lower>
+                                        <oe:upper xsi:type="oe:DV_PROPORTION">
+                                            <oe:numerator>20</oe:numerator>
+                                            <oe:denominator>100</oe:denominator>
+                                            <oe:type>2</oe:type>
+                                        </oe:upper>
+                                        <oe:lower_included>true</oe:lower_included>
+                                        <oe:upper_included>true</oe:upper_included>
+                                        <oe:lower_unbounded>false</oe:lower_unbounded>
+                                        <oe:upper_unbounded>false</oe:upper_unbounded>
+                                    </te:normal_range>
+                                    <te:numerator>10</te:numerator>
+                                    <te:type>2</te:type>
+                                </te:value>
+                            </te:Pattern_Standard_deviation_P>
                             <te:Image archetype_node_id="at0006" type="ELEMENT" valueType="DV_MULTIMEDIA">
                                 <te:name>
                                     <te:value>Image</te:value>
@@ -863,6 +902,20 @@
                                     <te:value>Mean deviation</te:value>
                                 </te:name>
                                 <te:value>
+                                    <te:normal_range>
+                                        <oe:lower xsi:type="oe:DV_QUANTITY">
+                                            <oe:magnitude>0</oe:magnitude>
+                                            <oe:units>dB</oe:units>
+                                        </oe:lower>
+                                        <oe:upper xsi:type="oe:DV_QUANTITY">
+                                            <oe:magnitude>100</oe:magnitude>
+                                            <oe:units>dB</oe:units>
+                                        </oe:upper>
+                                        <oe:lower_included>true</oe:lower_included>
+                                        <oe:upper_included>true</oe:upper_included>
+                                        <oe:lower_unbounded>false</oe:lower_unbounded>
+                                        <oe:upper_unbounded>false</oe:upper_unbounded>
+                                    </te:normal_range>
                                     <te:magnitude>-10.20</te:magnitude>
                                     <te:precision>2</te:precision>
                                     <te:units>dB</te:units>
@@ -877,7 +930,32 @@
                                     <te:type>2</te:type>
                                 </te:value>
                             </te:Mean_deviation_P>
-                           <te:Image archetype_node_id="at0006" valueType="DV_MULTIMEDIA" type="ELEMENT">
+                            <te:Pattern_Standard_deviation_P archetype_node_id="at0039" type="ELEMENT" valueType="DV_PROPORTION">
+                                <te:name>
+                                    <te:value>Pattern Standard deviation P</te:value>
+                                </te:name>
+                                <te:value>
+                                    <te:normal_range>
+                                        <oe:lower xsi:type="oe:DV_PROPORTION">
+                                            <oe:numerator>0</oe:numerator>
+                                            <oe:denominator>100</oe:denominator>
+                                            <oe:type>2</oe:type>
+                                        </oe:lower>
+                                        <oe:upper xsi:type="oe:DV_PROPORTION">
+                                            <oe:numerator>20</oe:numerator>
+                                            <oe:denominator>100</oe:denominator>
+                                            <oe:type>2</oe:type>
+                                        </oe:upper>
+                                        <oe:lower_included>true</oe:lower_included>
+                                        <oe:upper_included>true</oe:upper_included>
+                                        <oe:lower_unbounded>false</oe:lower_unbounded>
+                                        <oe:upper_unbounded>false</oe:upper_unbounded>
+                                    </te:normal_range>
+                                    <te:numerator>3</te:numerator>
+                                    <te:type>2</te:type>
+                                </te:value>
+                            </te:Pattern_Standard_deviation_P>
+                            <te:Image archetype_node_id="at0006" valueType="DV_MULTIMEDIA" type="ELEMENT">
                                 <te:name>
                                     <te:value>Image</te:value>
                                 </te:name>
