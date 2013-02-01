@@ -4,7 +4,7 @@ specialize
 	openEHR-EHR-EVALUATION.problem_diagnosis.v1
 
 concept
-	[at0000.1]	-- Problem/Diagnosis (UK)
+	[at0000.1]	-- Problem/Diagnosis
 language
 	original_language = <[ISO_639-1::en]>
 description
@@ -45,11 +45,11 @@ Swedish National Process model.
 IHE Technical Framework Supplement – Patient Plan of Care (PPOC).
 Royal Australian College of General Practitioners - Fact Sheet: Medical History
 Mosby's Pocket Dictionary of Medicine, Nursing and Health Professional, 6th Edition, Mosby Elsevier, 2010">
-		["MD5-CAM-1.0.1"] = <"3591D880E15CB393B7D97AB300D31300">
+		["MD5-CAM-1.0.1"] = <"FE17ECC075030D127A48198F3544A994">
 	>
 
 definition
-	EVALUATION[at0000.1] matches {	-- Problem/Diagnosis (UK)
+	EVALUATION[at0000.1] matches {	-- Problem/Diagnosis
 		data matches {
 			ITEM_TREE[at0001] matches {	-- structure
 				items cardinality matches {1..*; ordered} matches {
@@ -218,7 +218,7 @@ ontology
 					description = <"Any health care condition which may impact on the physical, mental and/or social well-being of an individual, that may require diagnostic, therapeutic or educational action, and which has been determined by a clinician. A diagnosis is based on scientific evaluation of physical signs, symptoms, history, laboratory tests results, and procedures.">
 				>
 				["at0000.1"] = <
-					text = <"Problem/Diagnosis (UK)">
+					text = <"Problem/Diagnosis">
 					description = <"Any health care condition which may impact on the physical, mental and/or social well-being of an individual, that may require diagnostic, therapeutic or educational action, and which has been determined by a clinician. A diagnosis is based on scientific evaluation of physical signs, symptoms, history, laboratory tests results, and procedures.!">
 				>
 				["at0001"] = <

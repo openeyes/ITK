@@ -79,7 +79,7 @@
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.clinical_synopsis.v1" concept_name="Clinical Synopsis" max="1" path="/items[at0002]/items[at0013]" name="Ocular history">
         <Rule path="/data[at0001]" hide_on_form="true" />
       </Item>
-      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" concept_name="Problem/Diagnosis (UK)" path="/items[at0002]/items[at0009]/items">
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" concept_name="Problem/Diagnosis" path="/items[at0002]/items[at0009]/items">
         <Rule path="/data[at0001]" hide_on_form="true" />
         <Rule path="/data[at0001]/items[at0009]" max="0" />
         <Rule path="/data[at0001]/items[at0082]" max="0" />
@@ -151,7 +151,7 @@
         <Rule path="/data[at0001]" hide_on_form="true" />
         <Rule path="/data[at0001]/items[at0002]" name="Systemic medical history" />
       </Item>
-      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" concept_name="Problem/Diagnosis (UK)" path="/items[at0012]/items[at0014]/items">
+      <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" concept_name="Problem/Diagnosis" path="/items[at0012]/items[at0014]/items">
         <Rule path="/data[at0001]" hide_on_form="true" />
         <Rule path="/data[at0001]/items[at0009]" max="0" />
         <Rule path="/data[at0001]/items[at0082]" max="0" />

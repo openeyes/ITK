@@ -1254,7 +1254,7 @@
                     </term_definitions>
                     <term_definitions code="at0000.1">
                       <items id="description">Any health care condition which may impact on the physical, mental and/or social well-being of an individual, that may require diagnostic, therapeutic or educational action, and which has been determined by a clinician. A diagnosis is based on scientific evaluation of physical signs, symptoms, history, laboratory tests results, and procedures.!</items>
-                      <items id="text">Problem/Diagnosis (UK)</items>
+                      <items id="text">Problem/Diagnosis</items>
                     </term_definitions>
                     <term_definitions code="at0001">
                       <items id="description">@ internal @</items>
@@ -2285,7 +2285,7 @@ Note: May include formal severity assessments.</items>
                     </term_definitions>
                     <term_definitions code="at0000.1">
                       <items id="description">Any health care condition which may impact on the physical, mental and/or social well-being of an individual, that may require diagnostic, therapeutic or educational action, and which has been determined by a clinician. A diagnosis is based on scientific evaluation of physical signs, symptoms, history, laboratory tests results, and procedures.!</items>
-                      <items id="text">Problem/Diagnosis (UK)</items>
+                      <items id="text">Problem/Diagnosis</items>
                     </term_definitions>
                     <term_definitions code="at0001">
                       <items id="description">@ internal @</items>
@@ -4850,32 +4850,32 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
               <items id="text">Intraocular Pressure</items>
             </term_definitions>
             <term_definitions code="at0046">
-              <items id="description">Type of toniometer used to measure intracoular pressure.</items>
-              <items id="text">Toniometry Method</items>
+              <items id="description">Type of tonometery used to measure intracoular pressure.</items>
+              <items id="text">Tonometry Method</items>
             </term_definitions>
             <term_definitions code="at0047">
-              <items id="description">Goldmann applanation toniometry was used to perform the test.</items>
+              <items id="description">Goldmann tonometry.</items>
               <items id="text">Goldmann</items>
             </term_definitions>
             <term_definitions code="at0048">
-              <items id="description">Perkins toniometry was used to perform the test.</items>
+              <items id="description">Perkins tonometry</items>
               <items id="text">Perkins</items>
             </term_definitions>
             <term_definitions code="at0049">
-              <items id="description">A Tono-Pen device was used to perform the test.</items>
+              <items id="description">Tono-Pen tonometry.</items>
               <items id="text">Tono-Pen</items>
             </term_definitions>
             <term_definitions code="at0050">
-              <items id="description">An Icare device was used to perform the test.</items>
-              <items id="text">Icare</items>
+              <items id="description">Icare (Rebound) tonometry.</items>
+              <items id="text">Icare (Rebound)</items>
             </term_definitions>
             <term_definitions code="at0051">
-              <items id="description">A Dynamic Contour device was used to perform the test.</items>
+              <items id="description">Dynamic Contour tonometry.</items>
               <items id="text">Dynamic Contour</items>
             </term_definitions>
             <term_definitions code="at0052">
-              <items id="description">An Ocular Response Analyzer was used to perform the test.</items>
-              <items id="text">Ocular Response Analyzer</items>
+              <items id="description">Ocular Response Analyzer.</items>
+              <items id="text">*Ocular Response Analyzer</items>
             </term_definitions>
             <term_definitions code="at0053">
               <items id="description">A TGDc-01 device was used to perform the test.</items>
@@ -4922,7 +4922,7 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
               <items id="text">Tree</items>
             </term_definitions>
             <term_definitions code="at0071">
-              <items id="description">Details of a test result which could not be recorded. Specific detailed reasons should be captured in 'Additional Comment' or 'Confounding Factors' if these realte to the patient's state.</items>
+              <items id="description">Details of a test result which could not be recorded. Specific detailed reasons should be captured in 'Additional Comment' or 'Confounding Factors' if these relate to the patient's state.</items>
               <items id="text">Absent Result</items>
             </term_definitions>
             <term_definitions code="at0072">
@@ -6186,8 +6186,8 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
                                         </occurrences>
                                         <node_id />
                                         <item xsi:type="C_BOOLEAN">
-                                          <true_valid>false</true_valid>
-                                          <false_valid>true</false_valid>
+                                          <true_valid>true</true_valid>
+                                          <false_valid>false</false_valid>
                                         </item>
                                       </children>
                                     </attributes>
@@ -6264,8 +6264,8 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
                                         <upper_included>true</upper_included>
                                         <lower_unbounded>false</lower_unbounded>
                                         <upper_unbounded>false</upper_unbounded>
-                                        <lower>-50</lower>
-                                        <upper>50</upper>
+                                        <lower>-30</lower>
+                                        <upper>10</upper>
                                       </magnitude>
                                       <precision>
                                         <lower_included>true</lower_included>
@@ -6339,36 +6339,9 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
                                             <upper_included>true</upper_included>
                                             <lower_unbounded>false</lower_unbounded>
                                             <upper_unbounded>false</upper_unbounded>
-                                            <lower>0</lower>
-                                            <upper>20</upper>
+                                            <lower>0.5</lower>
+                                            <upper>5</upper>
                                           </range>
-                                        </item>
-                                      </children>
-                                    </attributes>
-                                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-                                      <rm_attribute_name>is_integral</rm_attribute_name>
-                                      <existence>
-                                        <lower_included>true</lower_included>
-                                        <upper_included>true</upper_included>
-                                        <lower_unbounded>false</lower_unbounded>
-                                        <upper_unbounded>false</upper_unbounded>
-                                        <lower>1</lower>
-                                        <upper>1</upper>
-                                      </existence>
-                                      <children xsi:type="C_PRIMITIVE_OBJECT">
-                                        <rm_type_name>BOOLEAN</rm_type_name>
-                                        <occurrences>
-                                          <lower_included>true</lower_included>
-                                          <upper_included>true</upper_included>
-                                          <lower_unbounded>false</lower_unbounded>
-                                          <upper_unbounded>false</upper_unbounded>
-                                          <lower>1</lower>
-                                          <upper>1</upper>
-                                        </occurrences>
-                                        <node_id />
-                                        <item xsi:type="C_BOOLEAN">
-                                          <true_valid>false</true_valid>
-                                          <false_valid>true</false_valid>
                                         </item>
                                       </children>
                                     </attributes>
@@ -6445,8 +6418,8 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
                                         <upper_included>true</upper_included>
                                         <lower_unbounded>false</lower_unbounded>
                                         <upper_unbounded>false</upper_unbounded>
-                                        <lower>-50</lower>
-                                        <upper>50</upper>
+                                        <lower>0</lower>
+                                        <upper>25</upper>
                                       </magnitude>
                                       <precision>
                                         <lower_included>true</lower_included>
@@ -6520,36 +6493,9 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
                                             <upper_included>true</upper_included>
                                             <lower_unbounded>false</lower_unbounded>
                                             <upper_unbounded>false</upper_unbounded>
-                                            <lower>0</lower>
-                                            <upper>10</upper>
+                                            <lower>0.5</lower>
+                                            <upper>5</upper>
                                           </range>
-                                        </item>
-                                      </children>
-                                    </attributes>
-                                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-                                      <rm_attribute_name>is_integral</rm_attribute_name>
-                                      <existence>
-                                        <lower_included>true</lower_included>
-                                        <upper_included>true</upper_included>
-                                        <lower_unbounded>false</lower_unbounded>
-                                        <upper_unbounded>false</upper_unbounded>
-                                        <lower>1</lower>
-                                        <upper>1</upper>
-                                      </existence>
-                                      <children xsi:type="C_PRIMITIVE_OBJECT">
-                                        <rm_type_name>BOOLEAN</rm_type_name>
-                                        <occurrences>
-                                          <lower_included>true</lower_included>
-                                          <upper_included>true</upper_included>
-                                          <lower_unbounded>false</lower_unbounded>
-                                          <upper_unbounded>false</upper_unbounded>
-                                          <lower>1</lower>
-                                          <upper>1</upper>
-                                        </occurrences>
-                                        <node_id />
-                                        <item xsi:type="C_BOOLEAN">
-                                          <true_valid>false</true_valid>
-                                          <false_valid>true</false_valid>
                                         </item>
                                       </children>
                                     </attributes>
@@ -6944,8 +6890,8 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
                                         </occurrences>
                                         <node_id />
                                         <item xsi:type="C_BOOLEAN">
-                                          <true_valid>false</true_valid>
-                                          <false_valid>true</false_valid>
+                                          <true_valid>true</true_valid>
+                                          <false_valid>false</false_valid>
                                         </item>
                                       </children>
                                     </attributes>
@@ -7022,8 +6968,8 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
                                         <upper_included>true</upper_included>
                                         <lower_unbounded>false</lower_unbounded>
                                         <upper_unbounded>false</upper_unbounded>
-                                        <lower>-50</lower>
-                                        <upper>50</upper>
+                                        <lower>-30</lower>
+                                        <upper>10</upper>
                                       </magnitude>
                                       <precision>
                                         <lower_included>true</lower_included>
@@ -7097,36 +7043,9 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
                                             <upper_included>true</upper_included>
                                             <lower_unbounded>false</lower_unbounded>
                                             <upper_unbounded>false</upper_unbounded>
-                                            <lower>0</lower>
-                                            <upper>20</upper>
+                                            <lower>0.5</lower>
+                                            <upper>5</upper>
                                           </range>
-                                        </item>
-                                      </children>
-                                    </attributes>
-                                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-                                      <rm_attribute_name>is_integral</rm_attribute_name>
-                                      <existence>
-                                        <lower_included>true</lower_included>
-                                        <upper_included>true</upper_included>
-                                        <lower_unbounded>false</lower_unbounded>
-                                        <upper_unbounded>false</upper_unbounded>
-                                        <lower>1</lower>
-                                        <upper>1</upper>
-                                      </existence>
-                                      <children xsi:type="C_PRIMITIVE_OBJECT">
-                                        <rm_type_name>BOOLEAN</rm_type_name>
-                                        <occurrences>
-                                          <lower_included>true</lower_included>
-                                          <upper_included>true</upper_included>
-                                          <lower_unbounded>false</lower_unbounded>
-                                          <upper_unbounded>false</upper_unbounded>
-                                          <lower>1</lower>
-                                          <upper>1</upper>
-                                        </occurrences>
-                                        <node_id />
-                                        <item xsi:type="C_BOOLEAN">
-                                          <true_valid>false</true_valid>
-                                          <false_valid>true</false_valid>
                                         </item>
                                       </children>
                                     </attributes>
@@ -7203,8 +7122,8 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
                                         <upper_included>true</upper_included>
                                         <lower_unbounded>false</lower_unbounded>
                                         <upper_unbounded>false</upper_unbounded>
-                                        <lower>-50</lower>
-                                        <upper>50</upper>
+                                        <lower>0</lower>
+                                        <upper>25</upper>
                                       </magnitude>
                                       <precision>
                                         <lower_included>true</lower_included>
@@ -7278,36 +7197,9 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
                                             <upper_included>true</upper_included>
                                             <lower_unbounded>false</lower_unbounded>
                                             <upper_unbounded>false</upper_unbounded>
-                                            <lower>0</lower>
-                                            <upper>10</upper>
+                                            <lower>0.5</lower>
+                                            <upper>5</upper>
                                           </range>
-                                        </item>
-                                      </children>
-                                    </attributes>
-                                    <attributes xsi:type="C_SINGLE_ATTRIBUTE">
-                                      <rm_attribute_name>is_integral</rm_attribute_name>
-                                      <existence>
-                                        <lower_included>true</lower_included>
-                                        <upper_included>true</upper_included>
-                                        <lower_unbounded>false</lower_unbounded>
-                                        <upper_unbounded>false</upper_unbounded>
-                                        <lower>1</lower>
-                                        <upper>1</upper>
-                                      </existence>
-                                      <children xsi:type="C_PRIMITIVE_OBJECT">
-                                        <rm_type_name>BOOLEAN</rm_type_name>
-                                        <occurrences>
-                                          <lower_included>true</lower_included>
-                                          <upper_included>true</upper_included>
-                                          <lower_unbounded>false</lower_unbounded>
-                                          <upper_unbounded>false</upper_unbounded>
-                                          <lower>1</lower>
-                                          <upper>1</upper>
-                                        </occurrences>
-                                        <node_id />
-                                        <item xsi:type="C_BOOLEAN">
-                                          <true_valid>false</true_valid>
-                                          <false_valid>true</false_valid>
                                         </item>
                                       </children>
                                     </attributes>
@@ -7736,7 +7628,7 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
               <items id="text">Image</items>
             </term_definitions>
             <term_definitions code="at0007">
-              <items id="description">Details of the visual acuity test result for each eye or both eyes.</items>
+              <items id="description">Details of the visual field test result for each eye.</items>
               <items id="text">Test Result</items>
             </term_definitions>
             <term_definitions code="at0008">
@@ -7796,11 +7688,11 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
               <items id="text">Confounding Factors</items>
             </term_definitions>
             <term_definitions code="at0024">
-              <items id="description">Any additional narrative comment about the visual acuity test.</items>
+              <items id="description">Any additional narrative comment about the visual field test.</items>
               <items id="text">Additional Comment</items>
             </term_definitions>
             <term_definitions code="at0025">
-              <items id="description">An overall narrative description of the visual acuity test result.</items>
+              <items id="description">A term, commonly coded, expressing an overall interpretation of the visual field test.</items>
               <items id="text">Overall Interpretation</items>
             </term_definitions>
             <term_definitions code="at0026">
@@ -7812,7 +7704,7 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
               <items id="text">Glaucoma Hemifield Test (GHT)</items>
             </term_definitions>
             <term_definitions code="at0028">
-              <items id="description">Differences between a matched pair of corresponding zones exceeds the difference found in 99% of the normal population, or when both members of a pair of zones are more abnormal than 99.5% of the individuals with the normative population</items>
+              <items id="description">Differences between a matched pair of corresponding zones exceeds the difference found in 99% of the normal population, or when both members of a pair of zones are more abnormal than 99.5% of the individuals with the normative population.</items>
               <items id="text">Outside normal limits</items>
             </term_definitions>
             <term_definitions code="at0029">

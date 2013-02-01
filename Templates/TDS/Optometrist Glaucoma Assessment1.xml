@@ -122,9 +122,9 @@
                 <te:name>
                     <te:value>Ocular disease</te:value>
                 </te:name>
-                <te:Problem_fslash_Diagnosis__openBrkt_UK_closeBrkt_ archetype_node_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" type="EVALUATION">
+                <te:Problem_fslash_Diagnosis archetype_node_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" type="EVALUATION">
                     <te:name>
-                        <te:value>Problem/Diagnosis (UK)</te:value>
+                        <te:value>Problem/Diagnosis</te:value>
                     </te:name>
                     <te:language>
                         <te:terminology_id>
@@ -193,14 +193,84 @@
                                     </te:value>
                                 </te:Side>
                             </te:Specific_location>
-                        </te:Anatomical_Location>
-                            <te:name>
-                                <te:value></te:value>
-                            </te:name>
-                        
+                        </te:Anatomical_Location>                 
                     </te:data>
-                </te:Problem_fslash_Diagnosis__openBrkt_UK_closeBrkt_>
-              
+                </te:Problem_fslash_Diagnosis>
+                <te:Problem_fslash_Diagnosis archetype_node_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" type="EVALUATION">
+                    <te:name>
+                        <te:value>Problem/Diagnosis</te:value>
+                    </te:name>
+                    <te:language>
+                        <te:terminology_id>
+                            <te:value>ISO_639-1</te:value>
+                        </te:terminology_id>
+                        <te:code_string>en</te:code_string>
+                    </te:language>
+                    <te:encoding>
+                        <te:terminology_id>
+                            <te:value>IANA_character-sets</te:value>
+                        </te:terminology_id>
+                        <te:code_string>UTF-8</te:code_string>
+                    </te:encoding>
+                    <te:subject xsi:type="oe:PARTY_SELF"/>
+                    <te:data type="ITEM_TREE" archetype_node_id="at0001">
+                        <te:Problem_fslash_Diagnosis  archetype_node_id="at0002" type="ELEMENT" valueType="DV_CODED_TEXT">
+                            <te:name>
+                                <te:value>Problem/Diagnosis</te:value>
+                            </te:name>
+                            <te:value>
+                                <oe:value>Cataract</oe:value>
+                                <oe:defining_code>
+                                    <te:terminology_id>
+                                        <te:value>SNOMEDCT</te:value>
+                                    </te:terminology_id>
+                                    <te:code_string>193570009</te:code_string>
+                                </oe:defining_code>
+                            </te:value>
+                        </te:Problem_fslash_Diagnosis>
+                        <te:Date_of_onset archetype_node_id="at0010" type="ELEMENT" valueType="DV_DATE_TIME">
+                            <te:name>
+                                <te:value>Date of onset</te:value>
+                            </te:name>
+                            <te:value>
+                                <oe:value>1975</oe:value>
+                            </te:value>
+                        </te:Date_of_onset>
+                        <te:Duration archetype_node_id="at0.83" valueType="DV_DURATION" type="ELEMENT">
+                            <te:name>
+                                <te:value>Duration</te:value>
+                            </te:name>
+                            <te:value>
+                                <te:value>P3Y</te:value>
+                            </te:value>
+                        </te:Duration>
+                        <te:Anatomical_Location archetype_node_id="openEHR-EHR-CLUSTER.anatomical_location.v1" type="CLUSTER">
+                            <te:name>
+                                <te:value>Anatomical Location</te:value>
+                            </te:name>
+                            <te:Specific_location archetype_node_id="at0005" type="CLUSTER">
+                                <te:name>
+                                    <te:value>Specific location</te:value>
+                                </te:name>
+                                <te:Side archetype_node_id="at0002" type="ELEMENT" valueType="DV_CODED_TEXT">
+                                    <te:name>
+                                        <te:value>Side</te:value>
+                                    </te:name>
+                                    <te:value>
+                                        <te:value>Right</te:value>
+                                        <te:defining_code>
+                                            <te:terminology_id>
+                                                <te:value>local</te:value>
+                                            </te:terminology_id>
+                                            <te:code_string>at0004</te:code_string>
+                                        </te:defining_code>
+                                    </te:value>
+                                </te:Side>
+                            </te:Specific_location>
+                        </te:Anatomical_Location>                 
+                    </te:data>
+                </te:Problem_fslash_Diagnosis>
+                
             </te:Ocular_disease>
            
         </te:Ocular_history>
@@ -241,9 +311,9 @@
                 <te:name>
                     <te:value>Systemic conditions</te:value>
                 </te:name>
-                <te:Problem_fslash_Diagnosis__openBrkt_UK_closeBrkt_ archetype_node_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" type="EVALUATION">
+                <te:Problem_fslash_Diagnosis archetype_node_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" type="EVALUATION">
                     <te:name>
-                        <te:value>Problem Diagnosis (UK)</te:value>
+                        <te:value>Problem Diagnosis</te:value>
                     </te:name>
                     <te:language>
                         <te:terminology_id>
@@ -272,7 +342,6 @@
                                     <te:code_string>195967001</te:code_string>
                                 </te:defining_code>
                             </te:value>
-                            
                         </te:Problem_fslash_Diagnosis>
                         <te:Date_of_onset archetype_node_id="at0010" type="ELEMENT" valueType="DV_DATE_TIME">
                             <te:name>
@@ -283,7 +352,7 @@
                             </te:value>
                         </te:Date_of_onset>
                     </te:data>
-                </te:Problem_fslash_Diagnosis__openBrkt_UK_closeBrkt_>
+                </te:Problem_fslash_Diagnosis>
             </te:Systemic_conditions>
         </te:Systemic_medical_history>
     </te:Glaucoma_history>
@@ -423,9 +492,9 @@
             </te:encoding>
             <te:subject xsi:type="oe:PARTY_SELF"/>
             <te:protocol archetype_node_id="at0068" type="ITEM_TREE">
-                <te:Toniometry_Method archetype_node_id="at0046" type="ELEMENT" valueType="DV_CODED_TEXT">
+                <te:Tonometry_Method archetype_node_id="at0046" type="ELEMENT" valueType="DV_CODED_TEXT">
                     <te:name>
-                        <te:value>Toniometry Method</te:value>
+                        <te:value>Tonometry Method</te:value>
                     </te:name>
                     <te:value>
                         <te:value>Goldmann</te:value>
@@ -436,7 +505,7 @@
                             <te:code_string>at0047</te:code_string>
                         </te:defining_code>
                     </te:value>
-                </te:Toniometry_Method>
+                </te:Tonometry_Method>
             </te:protocol>
             <te:data archetype_node_id="at0001">
                 <te:origin>
@@ -504,12 +573,12 @@
             </te:encoding>
             <te:subject xsi:type="oe:PARTY_SELF"/>
             <te:protocol archetype_node_id="at0068" type="ITEM_TREE">
-                <te:Toniometry_Method archetype_node_id="at0046" type="ELEMENT" valueType="DV_CODED_TEXT">
+                <te:Tonometry_Method archetype_node_id="at0046" type="ELEMENT" valueType="DV_CODED_TEXT">
                     <te:name>
-                        <te:value>Toniometry Method</te:value>
+                        <te:value>Tonometry Method</te:value>
                     </te:name>
                     <te:value>
-                        <te:value>Non-contact toniometry</te:value>
+                        <te:value>Non-contact tonometry</te:value>
                         <te:defining_code>
                             <te:terminology_id>
                                 <te:value>local</te:value>
@@ -517,7 +586,7 @@
                             <te:code_string>at0066</te:code_string>
                         </te:defining_code>
                     </te:value>
-                </te:Toniometry_Method>
+                </te:Tonometry_Method>
             </te:protocol>
             <te:data archetype_node_id="at0001">
                 <te:origin>
@@ -785,11 +854,11 @@
                                 <te:value>
                                     <te:normal_range>
                                         <oe:lower xsi:type="oe:DV_QUANTITY">
-                                            <oe:magnitude>0</oe:magnitude>
+                                            <oe:magnitude>-25</oe:magnitude>
                                             <oe:units>dB</oe:units>
                                         </oe:lower>
                                         <oe:upper xsi:type="oe:DV_QUANTITY">
-                                                <oe:magnitude>100</oe:magnitude>
+                                                <oe:magnitude>10</oe:magnitude>
                                                 <oe:units>dB</oe:units>
                                         </oe:upper>
                                         <oe:lower_included>true</oe:lower_included>
@@ -797,7 +866,7 @@
                                         <oe:lower_unbounded>false</oe:lower_unbounded>
                                         <oe:upper_unbounded>false</oe:upper_unbounded>
                                     </te:normal_range>
-                                    <te:magnitude>2.40</te:magnitude>
+                                    <te:magnitude>-20.23</te:magnitude>
                                     <te:precision>2</te:precision>
                                     <te:units>dB</te:units>
                                 </te:value>
@@ -807,7 +876,8 @@
                                     <te:value>Mean deviation P</te:value>
                                 </te:name>
                                 <te:value>
-                                    <te:numerator>3</te:numerator>
+                                    <te:magnitude_status>&lt;</te:magnitude_status>
+                                    <te:numerator>0.5</te:numerator>
                                     <te:type>2</te:type>
                                 </te:value>
                             </te:Mean_deviation_P>
@@ -818,12 +888,12 @@
                                 <te:value>
                                     <te:normal_range>
                                         <oe:lower xsi:type="oe:DV_PROPORTION">
-                                            <oe:numerator>0</oe:numerator>
+                                            <oe:numerator>0.5</oe:numerator>
                                             <oe:denominator>100</oe:denominator>
                                             <oe:type>2</oe:type>
                                         </oe:lower>
                                         <oe:upper xsi:type="oe:DV_PROPORTION">
-                                            <oe:numerator>20</oe:numerator>
+                                            <oe:numerator>5</oe:numerator>
                                             <oe:denominator>100</oe:denominator>
                                             <oe:type>2</oe:type>
                                         </oe:upper>
@@ -832,7 +902,8 @@
                                         <oe:lower_unbounded>false</oe:lower_unbounded>
                                         <oe:upper_unbounded>false</oe:upper_unbounded>
                                     </te:normal_range>
-                                    <te:numerator>10</te:numerator>
+                                    <te:magnitude_status>&lt;</te:magnitude_status>
+                                    <te:numerator>5</te:numerator>
                                     <te:type>2</te:type>
                                 </te:value>
                             </te:Pattern_Standard_deviation_P>
@@ -904,11 +975,11 @@
                                 <te:value>
                                     <te:normal_range>
                                         <oe:lower xsi:type="oe:DV_QUANTITY">
-                                            <oe:magnitude>0</oe:magnitude>
+                                            <oe:magnitude>-25</oe:magnitude>
                                             <oe:units>dB</oe:units>
                                         </oe:lower>
                                         <oe:upper xsi:type="oe:DV_QUANTITY">
-                                            <oe:magnitude>100</oe:magnitude>
+                                            <oe:magnitude>10</oe:magnitude>
                                             <oe:units>dB</oe:units>
                                         </oe:upper>
                                         <oe:lower_included>true</oe:lower_included>
@@ -916,7 +987,7 @@
                                         <oe:lower_unbounded>false</oe:lower_unbounded>
                                         <oe:upper_unbounded>false</oe:upper_unbounded>
                                     </te:normal_range>
-                                    <te:magnitude>-10.20</te:magnitude>
+                                    <te:magnitude>-3.26</te:magnitude>
                                     <te:precision>2</te:precision>
                                     <te:units>dB</te:units>
                                 </te:value>
@@ -926,7 +997,8 @@
                                     <te:value>Mean deviation P</te:value>
                                 </te:name>
                                 <te:value>
-                                    <te:numerator>11</te:numerator>
+                                    <te:magnitude_status>&lt;</te:magnitude_status>
+                                    <te:numerator>2</te:numerator>
                                     <te:type>2</te:type>
                                 </te:value>
                             </te:Mean_deviation_P>
@@ -937,12 +1009,12 @@
                                 <te:value>
                                     <te:normal_range>
                                         <oe:lower xsi:type="oe:DV_PROPORTION">
-                                            <oe:numerator>0</oe:numerator>
+                                            <oe:numerator>0.5</oe:numerator>
                                             <oe:denominator>100</oe:denominator>
                                             <oe:type>2</oe:type>
                                         </oe:lower>
                                         <oe:upper xsi:type="oe:DV_PROPORTION">
-                                            <oe:numerator>20</oe:numerator>
+                                            <oe:numerator>5</oe:numerator>
                                             <oe:denominator>100</oe:denominator>
                                             <oe:type>2</oe:type>
                                         </oe:upper>
@@ -951,7 +1023,8 @@
                                         <oe:lower_unbounded>false</oe:lower_unbounded>
                                         <oe:upper_unbounded>false</oe:upper_unbounded>
                                     </te:normal_range>
-                                    <te:numerator>3</te:numerator>
+                                    <te:magnitude_status>&lt;</te:magnitude_status>
+                                    <te:numerator>5</te:numerator>
                                     <te:type>2</te:type>
                                 </te:value>
                             </te:Pattern_Standard_deviation_P>
