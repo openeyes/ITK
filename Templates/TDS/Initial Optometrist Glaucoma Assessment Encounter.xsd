@@ -411,7 +411,7 @@
                                                                             <xs:enumeration value="at0004" />
                                                                             <!-- Value = Right -->
                                                                             <xs:enumeration value="at0051" />
-                                                                            <!-- Value = Bilalteral -->
+                                                                            <!-- Value = Bilateral -->
                                                                           </xs:restriction>
                                                                         </xs:simpleType>
                                                                       </xs:element>
@@ -806,7 +806,7 @@
                                                                             <xs:enumeration value="at0004" />
                                                                             <!-- Value = Right -->
                                                                             <xs:enumeration value="at0051" />
-                                                                            <!-- Value = Bilalteral -->
+                                                                            <!-- Value = Bilateral -->
                                                                           </xs:restriction>
                                                                         </xs:simpleType>
                                                                       </xs:element>
@@ -1439,7 +1439,7 @@
                                                     <xs:enumeration value="at0049" />
                                                     <!-- Value = Tono-Pen -->
                                                     <xs:enumeration value="at0066" />
-                                                    <!-- Value = Non-contact toniometry -->
+                                                    <!-- Value = Non-contact tonometry -->
                                                   </xs:restriction>
                                                 </xs:simpleType>
                                               </xs:element>

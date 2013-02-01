@@ -1051,7 +1051,7 @@
                             </term_definitions>
                             <term_definitions code="at0051">
                               <items id="description">Both left and right.</items>
-                              <items id="text">Bilalteral</items>
+                              <items id="text">Bilateral</items>
                             </term_definitions>
                             <term_definitions code="at0052">
                               <items id="description">Image or images used to identify a location.</items>
@@ -1061,6 +1061,32 @@
                               <items id="description">Description of any visual markings used to orientate the viewer e.g external reference points, special sutures, ink markings.</items>
                               <items id="text">Visual markings/orientation</items>
                             </term_definitions>
+                            <term_bindings terminology="SNOMED-CT">
+                              <items code="at0002">
+                                <value>
+                                  <terminology_id>
+                                    <value>SNOMED-CT</value>
+                                  </terminology_id>
+                                  <code_string>272741003</code_string>
+                                </value>
+                              </items>
+                              <items code="at0003">
+                                <value>
+                                  <terminology_id>
+                                    <value>SNOMED-CT</value>
+                                  </terminology_id>
+                                  <code_string>419161000</code_string>
+                                </value>
+                              </items>
+                              <items code="at0004">
+                                <value>
+                                  <terminology_id>
+                                    <value>SNOMED-CT</value>
+                                  </terminology_id>
+                                  <code_string>419465000</code_string>
+                                </value>
+                              </items>
+                            </term_bindings>
                           </children>
                           <children xsi:type="ARCHETYPE_SLOT">
                             <rm_type_name>CLUSTER</rm_type_name>
@@ -2082,7 +2108,7 @@ Note: May include formal severity assessments.</items>
                             </term_definitions>
                             <term_definitions code="at0051">
                               <items id="description">Both left and right.</items>
-                              <items id="text">Bilalteral</items>
+                              <items id="text">Bilateral</items>
                             </term_definitions>
                             <term_definitions code="at0052">
                               <items id="description">Image or images used to identify a location.</items>
@@ -2092,6 +2118,32 @@ Note: May include formal severity assessments.</items>
                               <items id="description">Description of any visual markings used to orientate the viewer e.g external reference points, special sutures, ink markings.</items>
                               <items id="text">Visual markings/orientation</items>
                             </term_definitions>
+                            <term_bindings terminology="SNOMED-CT">
+                              <items code="at0002">
+                                <value>
+                                  <terminology_id>
+                                    <value>SNOMED-CT</value>
+                                  </terminology_id>
+                                  <code_string>272741003</code_string>
+                                </value>
+                              </items>
+                              <items code="at0003">
+                                <value>
+                                  <terminology_id>
+                                    <value>SNOMED-CT</value>
+                                  </terminology_id>
+                                  <code_string>419161000</code_string>
+                                </value>
+                              </items>
+                              <items code="at0004">
+                                <value>
+                                  <terminology_id>
+                                    <value>SNOMED-CT</value>
+                                  </terminology_id>
+                                  <code_string>419465000</code_string>
+                                </value>
+                              </items>
+                            </term_bindings>
                           </children>
                           <children xsi:type="ARCHETYPE_SLOT">
                             <rm_type_name>CLUSTER</rm_type_name>
@@ -4858,7 +4910,7 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
               <items id="text">Goldmann</items>
             </term_definitions>
             <term_definitions code="at0048">
-              <items id="description">Perkins tonometry</items>
+              <items id="description">Perkins tonometry.</items>
               <items id="text">Perkins</items>
             </term_definitions>
             <term_definitions code="at0049">
@@ -4875,7 +4927,7 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
             </term_definitions>
             <term_definitions code="at0052">
               <items id="description">Ocular Response Analyzer.</items>
-              <items id="text">*Ocular Response Analyzer</items>
+              <items id="text">Ocular Response Analyzer</items>
             </term_definitions>
             <term_definitions code="at0053">
               <items id="description">A TGDc-01 device was used to perform the test.</items>
@@ -4914,8 +4966,8 @@ If the patient can read less than half of a Visual Acuity line, the previous lin
               <items id="text">Applanation Time</items>
             </term_definitions>
             <term_definitions code="at0066">
-              <items id="description">Non-contact toniometry was used to perfrom the test.</items>
-              <items id="text">Non-contact toniometry</items>
+              <items id="description">Non-contact tonometry was used to perfrom the test.</items>
+              <items id="text">Non-contact tonometry</items>
             </term_definitions>
             <term_definitions code="at0068">
               <items id="description">@ internal @</items>
