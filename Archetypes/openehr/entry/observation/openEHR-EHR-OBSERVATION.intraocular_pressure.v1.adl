@@ -23,7 +23,8 @@ The 'Clinical Description' data element can be used to record simple narrative s
 Detailed, structured intraocular pressure results are preferred.
 
 The 'Absent Test Result' element may be used to record circumstances where a test could not be performed or completed. Further details may be recorded under 'Confounding Factors' or 'Additional Comment'.">
-			misuse = <"">
+			keywords = <"IOP", "toniometry", "glaucoma", "eye">
+			misuse = <"Where details of methodology carried under protocol change between the examination of each eye, a new Entry must be created at run-time.">
 			copyright = <"© openEHR Foundation">
 		>
 	>
@@ -40,7 +41,7 @@ DICOM Supplement 30 [Internet]. [cited 2012 Sep 26]. Available from: http://medi
 
 Lamparter, J., & Hoffmann, E. M. (2009). Messung des Augeninnendrucks (Tonometrie) mit unterschiedlichen Verfahren. Der Ophthalmologe, 106(8), 676-682.">
 		["current_contact"] = <"Gustavo M Bacelar-Silva, mail@gustavobacelar.com">
-		["MD5-CAM-1.0.1"] = <"89579AD9958F0D57B62FDDBADF41EBBD">
+		["MD5-CAM-1.0.1"] = <"A3881B6AA67F5DCAF9BF6763D2BF7934">
 	>
 
 definition
@@ -158,9 +159,9 @@ definition
 									at0049, 	-- Tono-Pen
 									at0050, 	-- Icare (Rebound)
 									at0051, 	-- Dynamic Contour
-									at0052, 	-- *Ocular Response Analyzer
+									at0052, 	-- Ocular Response Analyzer
 									at0053, 	-- TGDc-01
-									at0066]	-- Non-contact toniometry
+									at0066]	-- Non-contact tonometry
 								}
 							}
 							DV_TEXT matches {*}
@@ -213,7 +214,7 @@ ontology
 				>
 				["at0048"] = <
 					text = <"Perkins">
-					description = <"Perkins tonometry">
+					description = <"Perkins tonometry.">
 				>
 				["at0049"] = <
 					text = <"Tono-Pen">
@@ -228,7 +229,7 @@ ontology
 					description = <"Dynamic Contour tonometry.">
 				>
 				["at0052"] = <
-					text = <"*Ocular Response Analyzer">
+					text = <"Ocular Response Analyzer">
 					description = <"Ocular Response Analyzer.">
 				>
 				["at0053"] = <
@@ -268,8 +269,8 @@ ontology
 					description = <"The time taken for a non-contact tonometer to flatten the cornea, used to calculate intraocular pressure.">
 				>
 				["at0066"] = <
-					text = <"Non-contact toniometry">
-					description = <"Non-contact toniometry was used to perfrom the test.">
+					text = <"Non-contact tonometry">
+					description = <"Non-contact tonometry was used to perfrom the test.">
 				>
 				["at0068"] = <
 					text = <"Tree">
