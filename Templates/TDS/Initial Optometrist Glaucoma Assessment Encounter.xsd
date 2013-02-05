@@ -1166,9 +1166,76 @@
                                                             <xs:attribute name="valueType" fixed="DV_PROPORTION" />
                                                           </xs:complexType>
                                                         </xs:element>
+                                                        <xs:element name="Low_Vision_Score" minOccurs="0">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="name">
+                                                                <xs:complexType>
+                                                                  <xs:sequence>
+                                                                    <xs:element name="value" type="xs:string" default="Low Vision Score" />
+                                                                    <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                                    <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                  </xs:sequence>
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                              <xs:choice>
+                                                                <xs:element name="value">
+                                                                  <xs:complexType>
+                                                                    <xs:sequence>
+                                                                      <xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0" />
+                                                                      <xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded" />
+                                                                      <xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                      <xs:element name="value">
+                                                                        <xs:simpleType>
+                                                                          <xs:restriction base="xs:int">
+                                                                            <xs:enumeration value="1" />
+                                                                            <!-- symbol.value = NPL - No perception of light (symbol.code_string = at0016) -->
+                                                                            <xs:enumeration value="2" />
+                                                                            <!-- symbol.value = PL -  Perception of light (symbol.code_string = at0017) -->
+                                                                            <xs:enumeration value="3" />
+                                                                            <!-- symbol.value = HM - Hand movement (symbol.code_string = at0018) -->
+                                                                            <xs:enumeration value="4" />
+                                                                            <!-- symbol.value = CF - Count fingers (symbol.code_string = at0019) -->
+                                                                          </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                      </xs:element>
+                                                                      <xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0" />
+                                                                    </xs:sequence>
+                                                                  </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                              </xs:choice>
+                                                            </xs:sequence>
+                                                            <xs:attribute fixed="at0015" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                            <xs:attribute fixed="ELEMENT" name="type" />
+                                                            <xs:attribute name="valueType" fixed="DV_ORDINAL" />
+                                                          </xs:complexType>
+                                                        </xs:element>
                                                       </xs:sequence>
                                                       <xs:attribute fixed="at0028" name="archetype_node_id" type="oe:archetypeNodeId" />
                                                       <xs:attribute fixed="CLUSTER" name="type" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="Clinical_Interpretation" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="name">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="value" type="xs:string" default="Clinical Interpretation" />
+                                                              <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                              <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:choice>
+                                                          <xs:element name="value" type="oe:DV_TEXT" />
+                                                          <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                        </xs:choice>
+                                                      </xs:sequence>
+                                                      <xs:attribute fixed="at0066" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                      <xs:attribute fixed="ELEMENT" name="type" />
+                                                      <xs:attribute name="valueType" fixed="DV_TEXT" />
                                                     </xs:complexType>
                                                   </xs:element>
                                                 </xs:sequence>
@@ -1298,9 +1365,640 @@
                                                             <xs:attribute name="valueType" fixed="DV_PROPORTION" />
                                                           </xs:complexType>
                                                         </xs:element>
+                                                        <xs:element name="Low_Vision_Score" minOccurs="0">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="name">
+                                                                <xs:complexType>
+                                                                  <xs:sequence>
+                                                                    <xs:element name="value" type="xs:string" default="Low Vision Score" />
+                                                                    <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                                    <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                  </xs:sequence>
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                              <xs:choice>
+                                                                <xs:element name="value">
+                                                                  <xs:complexType>
+                                                                    <xs:sequence>
+                                                                      <xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0" />
+                                                                      <xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded" />
+                                                                      <xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                      <xs:element name="value">
+                                                                        <xs:simpleType>
+                                                                          <xs:restriction base="xs:int">
+                                                                            <xs:enumeration value="1" />
+                                                                            <!-- symbol.value = NPL - No perception of light (symbol.code_string = at0016) -->
+                                                                            <xs:enumeration value="2" />
+                                                                            <!-- symbol.value = PL -  Perception of light (symbol.code_string = at0017) -->
+                                                                            <xs:enumeration value="3" />
+                                                                            <!-- symbol.value = HM - Hand movement (symbol.code_string = at0018) -->
+                                                                            <xs:enumeration value="4" />
+                                                                            <!-- symbol.value = CF - Count fingers (symbol.code_string = at0019) -->
+                                                                          </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                      </xs:element>
+                                                                      <xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0" />
+                                                                    </xs:sequence>
+                                                                  </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                              </xs:choice>
+                                                            </xs:sequence>
+                                                            <xs:attribute fixed="at0015" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                            <xs:attribute fixed="ELEMENT" name="type" />
+                                                            <xs:attribute name="valueType" fixed="DV_ORDINAL" />
+                                                          </xs:complexType>
+                                                        </xs:element>
                                                       </xs:sequence>
                                                       <xs:attribute fixed="at0028" name="archetype_node_id" type="oe:archetypeNodeId" />
                                                       <xs:attribute fixed="CLUSTER" name="type" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="Clinical_Interpretation" minOccurs="0">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="name">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="value" type="xs:string" default="Clinical Interpretation" />
+                                                              <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                              <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:choice>
+                                                          <xs:element name="value" type="oe:DV_TEXT" />
+                                                          <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                        </xs:choice>
+                                                      </xs:sequence>
+                                                      <xs:attribute fixed="at0066" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                      <xs:attribute fixed="ELEMENT" name="type" />
+                                                      <xs:attribute name="valueType" fixed="DV_TEXT" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute fixed="at0053" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                <xs:attribute fixed="CLUSTER" name="type" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute fixed="at0003" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                          <xs:attribute fixed="ITEM_TREE" name="type" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="state">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Refraction_Details" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:any processContents="lax" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Pupillary_State" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:any processContents="lax" />
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute fixed="at0041" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                          <xs:attribute fixed="ITEM_TREE" name="type" />
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute fixed="at0134" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                    <xs:attribute name="type" fixed="POINT_EVENT" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute fixed="at0001" name="archetype_node_id" type="oe:archetypeNodeId" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute fixed="openEHR-EHR-OBSERVATION.visual_acuity.v1" name="archetype_node_id" type="oe:archetypeNodeId" />
+                        <xs:attribute fixed="OBSERVATION" name="type" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Uncorrected_visual_acuity" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="value" type="xs:string" fixed="Uncorrected visual acuity" />
+                                <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="uid" type="oe:UID_BASED_ID" minOccurs="0" maxOccurs="1" />
+                          <xs:element name="links" type="oe:LINK" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:element name="language">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="terminology_id">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="value" fixed="ISO_639-1" type="xs:token" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="code_string" default="en" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="encoding">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="terminology_id">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="value" fixed="IANA_character-sets" type="xs:token" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="code_string" default="UTF-8" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="subject" type="oe:PARTY_SELF" />
+                          <xs:element name="provider" type="oe:PARTY_IDENTIFIED" minOccurs="0" maxOccurs="1" />
+                          <xs:element name="other_participations" type="oe:PARTICIPATION" minOccurs="0" maxOccurs="unbounded" />
+                          <xs:element name="work_flow_id" type="oe:OBJECT_REF" minOccurs="0" maxOccurs="1" />
+                          <xs:element name="protocol" minOccurs="0" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Measurement_Device_Details" minOccurs="0" maxOccurs="1">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:any processContents="lax" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute fixed="at0020" name="archetype_node_id" type="oe:archetypeNodeId" />
+                              <xs:attribute fixed="ITEM_TREE" name="type" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="data">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="origin" type="oe:DV_DATE_TIME" minOccurs="0" />
+                                <xs:element name="Any_event" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="value" type="xs:string" default="Any event" />
+                                            <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                            <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="time" type="oe:DV_DATE_TIME" />
+                                      <xs:element name="data">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Test_Name" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="name">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="value" type="xs:string" default="Test Name" />
+                                                        <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                        <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:choice>
+                                                    <xs:element name="value">
+                                                      <xs:complexType>
+                                                        <xs:sequence>
+                                                          <xs:element name="value" type="xs:string" minOccurs="0" />
+                                                          <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                          <xs:element name="defining_code">
+                                                            <xs:complexType>
+                                                              <xs:sequence>
+                                                                <xs:element name="terminology_id">
+                                                                  <xs:complexType>
+                                                                    <xs:sequence>
+                                                                      <xs:element name="value" fixed="local" type="xs:token" />
+                                                                    </xs:sequence>
+                                                                  </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="code_string" fixed="at0139" type="xs:string" />
+                                                                <!-- Value = Unaided visual acuity -->
+                                                              </xs:sequence>
+                                                            </xs:complexType>
+                                                          </xs:element>
+                                                        </xs:sequence>
+                                                      </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                  </xs:choice>
+                                                </xs:sequence>
+                                                <xs:attribute fixed="at0138" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                <xs:attribute fixed="ELEMENT" name="type" />
+                                                <xs:attribute name="valueType" fixed="DV_CODED_TEXT" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Right_eye" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="name">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="value" type="xs:string" fixed="Right eye" />
+                                                        <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                        <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="Eye">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="name">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="value" type="xs:string" default="Eye" />
+                                                              <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                              <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:choice>
+                                                          <xs:element name="value">
+                                                            <xs:complexType>
+                                                              <xs:sequence>
+                                                                <xs:element name="value" type="xs:string" minOccurs="0" />
+                                                                <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                                <xs:element name="defining_code">
+                                                                  <xs:complexType>
+                                                                    <xs:sequence>
+                                                                      <xs:element name="terminology_id">
+                                                                        <xs:complexType>
+                                                                          <xs:sequence>
+                                                                            <xs:element name="value" fixed="local" type="xs:token" />
+                                                                          </xs:sequence>
+                                                                        </xs:complexType>
+                                                                      </xs:element>
+                                                                      <xs:element name="code_string" fixed="at0013" type="xs:string" />
+                                                                      <!-- Value = Right eye -->
+                                                                    </xs:sequence>
+                                                                  </xs:complexType>
+                                                                </xs:element>
+                                                              </xs:sequence>
+                                                            </xs:complexType>
+                                                          </xs:element>
+                                                          <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                        </xs:choice>
+                                                      </xs:sequence>
+                                                      <xs:attribute fixed="at0007" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                      <xs:attribute fixed="ELEMENT" name="type" />
+                                                      <xs:attribute name="valueType" fixed="DV_CODED_TEXT" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="Notation" minOccurs="0">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="name">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="value" type="xs:string" default="Notation" />
+                                                              <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                              <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="Metric_Snellen" minOccurs="0">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="name">
+                                                                <xs:complexType>
+                                                                  <xs:sequence>
+                                                                    <xs:element name="value" type="xs:string" default="Metric Snellen" />
+                                                                    <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                                    <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                  </xs:sequence>
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                              <xs:choice>
+                                                                <xs:element name="value">
+                                                                  <xs:complexType>
+                                                                    <xs:sequence>
+                                                                      <xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0" />
+                                                                      <xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded" />
+                                                                      <xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                      <xs:element name="magnitude_status" type="xs:string" minOccurs="0" />
+                                                                      <xs:element name="numerator">
+                                                                        <xs:simpleType>
+                                                                          <xs:restriction base="xs:float">
+                                                                            <xs:minInclusive value="1" />
+                                                                            <xs:maxInclusive value="6" />
+                                                                          </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                      </xs:element>
+                                                                      <xs:element name="denominator">
+                                                                        <xs:simpleType>
+                                                                          <xs:restriction base="xs:float">
+                                                                            <xs:minInclusive value="4" />
+                                                                            <xs:maxInclusive value="60" />
+                                                                          </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                      </xs:element>
+                                                                      <xs:element name="type">
+                                                                        <xs:simpleType>
+                                                                          <xs:restriction base="xs:integer">
+                                                                            <xs:enumeration value="0" />
+                                                                          </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                      </xs:element>
+                                                                    </xs:sequence>
+                                                                  </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                              </xs:choice>
+                                                            </xs:sequence>
+                                                            <xs:attribute fixed="at0056" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                            <xs:attribute fixed="ELEMENT" name="type" />
+                                                            <xs:attribute name="valueType" fixed="DV_PROPORTION" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="Low_Vision_Score" minOccurs="0">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="name">
+                                                                <xs:complexType>
+                                                                  <xs:sequence>
+                                                                    <xs:element name="value" type="xs:string" default="Low Vision Score" />
+                                                                    <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                                    <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                  </xs:sequence>
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                              <xs:choice>
+                                                                <xs:element name="value">
+                                                                  <xs:complexType>
+                                                                    <xs:sequence>
+                                                                      <xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0" />
+                                                                      <xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded" />
+                                                                      <xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                      <xs:element name="value">
+                                                                        <xs:simpleType>
+                                                                          <xs:restriction base="xs:int">
+                                                                            <xs:enumeration value="1" />
+                                                                            <!-- symbol.value = NPL - No perception of light (symbol.code_string = at0016) -->
+                                                                            <xs:enumeration value="2" />
+                                                                            <!-- symbol.value = PL -  Perception of light (symbol.code_string = at0017) -->
+                                                                            <xs:enumeration value="3" />
+                                                                            <!-- symbol.value = HM - Hand movement (symbol.code_string = at0018) -->
+                                                                            <xs:enumeration value="4" />
+                                                                            <!-- symbol.value = CF - Count fingers (symbol.code_string = at0019) -->
+                                                                          </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                      </xs:element>
+                                                                      <xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0" />
+                                                                    </xs:sequence>
+                                                                  </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                              </xs:choice>
+                                                            </xs:sequence>
+                                                            <xs:attribute fixed="at0015" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                            <xs:attribute fixed="ELEMENT" name="type" />
+                                                            <xs:attribute name="valueType" fixed="DV_ORDINAL" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute fixed="at0028" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                      <xs:attribute fixed="CLUSTER" name="type" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="Clinical_Interpretation" minOccurs="0" maxOccurs="unbounded">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="name">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="value" type="xs:string" default="Clinical Interpretation" />
+                                                              <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                              <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:choice>
+                                                          <xs:element name="value" type="oe:DV_TEXT" />
+                                                          <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                        </xs:choice>
+                                                      </xs:sequence>
+                                                      <xs:attribute fixed="at0066" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                      <xs:attribute fixed="ELEMENT" name="type" />
+                                                      <xs:attribute name="valueType" fixed="DV_TEXT" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute fixed="at0053" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                <xs:attribute fixed="CLUSTER" name="type" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="Left_eye" minOccurs="0">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="name">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="value" type="xs:string" fixed="Left eye" />
+                                                        <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                        <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="Eye">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="name">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="value" type="xs:string" default="Eye" />
+                                                              <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                              <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:choice>
+                                                          <xs:element name="value">
+                                                            <xs:complexType>
+                                                              <xs:sequence>
+                                                                <xs:element name="value" type="xs:string" minOccurs="0" />
+                                                                <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                                <xs:element name="defining_code">
+                                                                  <xs:complexType>
+                                                                    <xs:sequence>
+                                                                      <xs:element name="terminology_id">
+                                                                        <xs:complexType>
+                                                                          <xs:sequence>
+                                                                            <xs:element name="value" fixed="local" type="xs:token" />
+                                                                          </xs:sequence>
+                                                                        </xs:complexType>
+                                                                      </xs:element>
+                                                                      <xs:element name="code_string" fixed="at0012" type="xs:string" />
+                                                                      <!-- Value = Left eye -->
+                                                                    </xs:sequence>
+                                                                  </xs:complexType>
+                                                                </xs:element>
+                                                              </xs:sequence>
+                                                            </xs:complexType>
+                                                          </xs:element>
+                                                          <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                        </xs:choice>
+                                                      </xs:sequence>
+                                                      <xs:attribute fixed="at0007" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                      <xs:attribute fixed="ELEMENT" name="type" />
+                                                      <xs:attribute name="valueType" fixed="DV_CODED_TEXT" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="Notation" minOccurs="0">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="name">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="value" type="xs:string" default="Notation" />
+                                                              <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                              <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="Metric_Snellen" minOccurs="0">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="name">
+                                                                <xs:complexType>
+                                                                  <xs:sequence>
+                                                                    <xs:element name="value" type="xs:string" default="Metric Snellen" />
+                                                                    <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                                    <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                  </xs:sequence>
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                              <xs:choice>
+                                                                <xs:element name="value">
+                                                                  <xs:complexType>
+                                                                    <xs:sequence>
+                                                                      <xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0" />
+                                                                      <xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded" />
+                                                                      <xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                      <xs:element name="magnitude_status" type="xs:string" minOccurs="0" />
+                                                                      <xs:element name="numerator">
+                                                                        <xs:simpleType>
+                                                                          <xs:restriction base="xs:float">
+                                                                            <xs:minInclusive value="1" />
+                                                                            <xs:maxInclusive value="6" />
+                                                                          </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                      </xs:element>
+                                                                      <xs:element name="denominator">
+                                                                        <xs:simpleType>
+                                                                          <xs:restriction base="xs:float">
+                                                                            <xs:minInclusive value="4" />
+                                                                            <xs:maxInclusive value="60" />
+                                                                          </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                      </xs:element>
+                                                                      <xs:element name="type">
+                                                                        <xs:simpleType>
+                                                                          <xs:restriction base="xs:integer">
+                                                                            <xs:enumeration value="0" />
+                                                                          </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                      </xs:element>
+                                                                    </xs:sequence>
+                                                                  </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                              </xs:choice>
+                                                            </xs:sequence>
+                                                            <xs:attribute fixed="at0056" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                            <xs:attribute fixed="ELEMENT" name="type" />
+                                                            <xs:attribute name="valueType" fixed="DV_PROPORTION" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="Low_Vision_Score" minOccurs="0">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="name">
+                                                                <xs:complexType>
+                                                                  <xs:sequence>
+                                                                    <xs:element name="value" type="xs:string" default="Low Vision Score" />
+                                                                    <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                                    <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                  </xs:sequence>
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                              <xs:choice>
+                                                                <xs:element name="value">
+                                                                  <xs:complexType>
+                                                                    <xs:sequence>
+                                                                      <xs:element name="normal_range" type="oe:DV_INTERVAL" minOccurs="0" />
+                                                                      <xs:element name="other_reference_ranges" type="oe:REFERENCE_RANGE" minOccurs="0" maxOccurs="unbounded" />
+                                                                      <xs:element name="normal_status" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                                      <xs:element name="value">
+                                                                        <xs:simpleType>
+                                                                          <xs:restriction base="xs:int">
+                                                                            <xs:enumeration value="1" />
+                                                                            <!-- symbol.value = NPL - No perception of light (symbol.code_string = at0016) -->
+                                                                            <xs:enumeration value="2" />
+                                                                            <!-- symbol.value = PL -  Perception of light (symbol.code_string = at0017) -->
+                                                                            <xs:enumeration value="3" />
+                                                                            <!-- symbol.value = HM - Hand movement (symbol.code_string = at0018) -->
+                                                                            <xs:enumeration value="4" />
+                                                                            <!-- symbol.value = CF - Count fingers (symbol.code_string = at0019) -->
+                                                                          </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                      </xs:element>
+                                                                      <xs:element name="symbol" type="oe:DV_CODED_TEXT" minOccurs="0" />
+                                                                    </xs:sequence>
+                                                                  </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                              </xs:choice>
+                                                            </xs:sequence>
+                                                            <xs:attribute fixed="at0015" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                            <xs:attribute fixed="ELEMENT" name="type" />
+                                                            <xs:attribute name="valueType" fixed="DV_ORDINAL" />
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute fixed="at0028" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                      <xs:attribute fixed="CLUSTER" name="type" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="Clinical_Interpretation" minOccurs="0">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="name">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="value" type="xs:string" default="Clinical Interpretation" />
+                                                              <xs:element name="mappings" type="oe:TERM_MAPPING" minOccurs="0" maxOccurs="unbounded" />
+                                                              <xs:element name="defining_code" type="oe:CODE_PHRASE" minOccurs="0" />
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:choice>
+                                                          <xs:element name="value" type="oe:DV_TEXT" />
+                                                          <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
+                                                        </xs:choice>
+                                                      </xs:sequence>
+                                                      <xs:attribute fixed="at0066" name="archetype_node_id" type="oe:archetypeNodeId" />
+                                                      <xs:attribute fixed="ELEMENT" name="type" />
+                                                      <xs:attribute name="valueType" fixed="DV_TEXT" />
                                                     </xs:complexType>
                                                   </xs:element>
                                                 </xs:sequence>
