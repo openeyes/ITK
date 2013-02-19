@@ -1000,7 +1000,7 @@
                                       <xs:element name="data">
                                         <xs:complexType>
                                           <xs:sequence>
-                                            <xs:element name="Test_Name" minOccurs="0">
+                                            <xs:element name="Test_Name">
                                               <xs:complexType>
                                                 <xs:sequence>
                                                   <xs:element name="name">
@@ -1564,7 +1564,7 @@
                                       <xs:element name="data">
                                         <xs:complexType>
                                           <xs:sequence>
-                                            <xs:element name="Test_Name" minOccurs="0">
+                                            <xs:element name="Test_Name">
                                               <xs:complexType>
                                                 <xs:sequence>
                                                   <xs:element name="name">
@@ -2200,7 +2200,7 @@
                                                   </xs:sequence>
                                                 </xs:complexType>
                                               </xs:element>
-                                              <xs:element name="Eye" minOccurs="0">
+                                              <xs:element name="Eye">
                                                 <xs:complexType>
                                                   <xs:sequence>
                                                     <xs:element name="name">
@@ -2310,7 +2310,7 @@
                                                   </xs:sequence>
                                                 </xs:complexType>
                                               </xs:element>
-                                              <xs:element name="Eye" minOccurs="0">
+                                              <xs:element name="Eye">
                                                 <xs:complexType>
                                                   <xs:sequence>
                                                     <xs:element name="name">
@@ -2455,7 +2455,7 @@
                                                   </xs:sequence>
                                                 </xs:complexType>
                                               </xs:element>
-                                              <xs:element name="Eye" minOccurs="0">
+                                              <xs:element name="Eye">
                                                 <xs:complexType>
                                                   <xs:sequence>
                                                     <xs:element name="name">
@@ -2565,7 +2565,7 @@
                                                   </xs:sequence>
                                                 </xs:complexType>
                                               </xs:element>
-                                              <xs:element name="Eye" minOccurs="0">
+                                              <xs:element name="Eye">
                                                 <xs:complexType>
                                                   <xs:sequence>
                                                     <xs:element name="name">
@@ -2783,7 +2783,7 @@
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="Eye_Examined" minOccurs="0">
+                                            <xs:element name="Eye_Examined">
                                               <xs:complexType>
                                                 <xs:sequence>
                                                   <xs:element name="name">
@@ -2883,7 +2883,7 @@
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="Eye_Examined" minOccurs="0">
+                                            <xs:element name="Eye_Examined">
                                               <xs:complexType>
                                                 <xs:sequence>
                                                   <xs:element name="name">
@@ -3144,7 +3144,7 @@
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="Eye" minOccurs="0">
+                                            <xs:element name="Eye">
                                               <xs:complexType>
                                                 <xs:sequence>
                                                   <xs:element name="name">
@@ -3552,7 +3552,7 @@
                                                 </xs:sequence>
                                               </xs:complexType>
                                             </xs:element>
-                                            <xs:element name="Eye" minOccurs="0">
+                                            <xs:element name="Eye">
                                               <xs:complexType>
                                                 <xs:sequence>
                                                   <xs:element name="name">

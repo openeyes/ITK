@@ -195,7 +195,7 @@
           <Rule path="/data[at0001]" hide_on_form="true" />
           <Rule path="/data[at0001]/events[at0134]" hide_on_form="true" />
           <Rule path="/data[at0001]/events[at0134]/data[at0003]" hide_on_form="true" />
-          <Rule path="/data[at0001]/events[at0134]/data[at0003]/items[at0138]" default="local::at0136::Usual corrected visual acuity" hide_on_form="true">
+          <Rule path="/data[at0001]/events[at0134]/data[at0003]/items[at0138]" min="1" default="local::at0136::Usual corrected visual acuity" hide_on_form="true">
             <constraint xsi:type="textConstraint">
               <excludedValues>local::at0135</excludedValues>
               <excludedValues>local::at0137</excludedValues>
@@ -251,7 +251,7 @@
           <Rule path="/data[at0001]" hide_on_form="true" />
           <Rule path="/data[at0001]/events[at0134]" hide_on_form="true" />
           <Rule path="/data[at0001]/events[at0134]/data[at0003]" hide_on_form="true" />
-          <Rule path="/data[at0001]/events[at0134]/data[at0003]/items[at0138]" default="local::at0136::Usual corrected visual acuity" hide_on_form="true">
+          <Rule path="/data[at0001]/events[at0134]/data[at0003]/items[at0138]" min="1" default="local::at0139::Unaided visual acuity" hide_on_form="true">
             <constraint xsi:type="textConstraint">
               <excludedValues>local::at0135</excludedValues>
               <excludedValues>local::at0136</excludedValues>
@@ -416,7 +416,7 @@
         <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0062]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0076]" max="1" name="Right eye" />
-        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0076 and name/value='Right eye']/items[at0057]" default="local::at0059::Right eye" hide_on_form="true">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0076 and name/value='Right eye']/items[at0057]" min="1" default="local::at0059::Right eye" hide_on_form="true">
           <constraint xsi:type="textConstraint">
             <excludedValues>local::at0058</excludedValues>
           </constraint>
@@ -425,7 +425,7 @@
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0076 and name/value='Right eye']/items[at0065]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0076 and name/value='Right eye']/items[at0061]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0076]" max="1" clone="true" name="Left eye" />
-        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0076 and name/value='Left eye']/items[at0057]" default="local::at0058::Left eye" hide_on_form="true">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0076 and name/value='Left eye']/items[at0057]" min="1" default="local::at0058::Left eye" hide_on_form="true">
           <constraint xsi:type="textConstraint">
             <excludedValues>local::at0059</excludedValues>
           </constraint>
@@ -493,7 +493,7 @@
         <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0008]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007]" max="1" name="Right eye" />
-        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0004]" default="local::at0006::Right eye&#xA;" hide_on_form="true">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0004]" min="1" default="local::at0006::Right eye&#xA;" hide_on_form="true">
           <constraint xsi:type="textConstraint">
             <excludedValues>local::at0005</excludedValues>
           </constraint>
@@ -518,7 +518,7 @@
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0052]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0009]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007]" max="1" clone="true" name="Left eye" />
-        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0004]" default="local::at0005::Left eye&#xA;" hide_on_form="true">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0004]" min="1" default="local::at0005::Left eye&#xA;" hide_on_form="true">
           <constraint xsi:type="textConstraint">
             <excludedValues>local::at0006</excludedValues>
           </constraint>
@@ -557,7 +557,7 @@
         <Rule path="/data[at0001]/events[at0002]/data[at0003]" hide_on_form="true" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0005]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007]" max="1" name="Right eye" />
-        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0008]" default="local::at0020::Right eye" hide_on_form="true">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0008]" min="1" default="local::at0020::Right eye" hide_on_form="true">
           <constraint xsi:type="textConstraint">
             <excludedValues>local::at0019</excludedValues>
           </constraint>
@@ -569,7 +569,7 @@
         </Rule>
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Right eye']/items[at0009]" max="0" />
         <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007]" max="1" clone="true" name="Left eye" />
-        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0008]" default="local::at0019::Left eye" hide_on_form="true">
+        <Rule path="/data[at0001]/events[at0002]/data[at0003]/items[at0007 and name/value='Left eye']/items[at0008]" min="1" default="local::at0019::Left eye" hide_on_form="true">
           <constraint xsi:type="textConstraint">
             <excludedValues>local::at0020</excludedValues>
           </constraint>
@@ -612,7 +612,7 @@
         <Rule path="/data[at0001]/events[at0134]/state[at0041]/items[at0042]" max="0" />
         <Rule path="/protocol[at0020]" hide_on_form="true" />
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.refraction_details.v1" concept_name="Refraction Details" path="/data[at0001]/events[at0134]/data[at0003]/items[at0053 and name/value='Right eye']/items[at0139]">
-          <Rule path="/items[at0017]" default="local::at0019::Right eye">
+          <Rule path="/items[at0017]" min="1" default="local::at0019::Right eye">
             <constraint xsi:type="textConstraint">
               <excludedValues>local::at0018</excludedValues>
             </constraint>
@@ -624,7 +624,7 @@
           <Rule path="/items[at0016]" max="0" />
         </Items>
         <Items xsi:type="CLUSTER" archetype_id="openEHR-EHR-CLUSTER.refraction_details.v1" concept_name="Refraction Details" path="/data[at0001]/events[at0134]/data[at0003]/items[at0053 and name/value='Left eye']/items[at0139]">
-          <Rule path="/items[at0017]" default="local::at0018::Left eye&#xA;">
+          <Rule path="/items[at0017]" min="1" default="local::at0018::Left eye&#xA;">
             <constraint xsi:type="textConstraint">
               <excludedValues>local::at0019</excludedValues>
             </constraint>
