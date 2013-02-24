@@ -81,6 +81,11 @@
       </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" concept_name="Problem/Diagnosis" path="/items[at0002]/items[at0009]/items">
         <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/items[at0002]">
+          <constraint xsi:type="textConstraint">
+            <termQueryId terminologyID="SNOMEDCT" terminologyLang="en-GB" queryName="AnyClinicalFinding" />
+          </constraint>
+        </Rule>
         <Rule path="/data[at0001]/items[at0009]" max="0" />
         <Rule path="/data[at0001]/items[at0082]" max="0" />
         <Rule path="/data[at0001]/items[at0.83]">
@@ -109,6 +114,11 @@
         </Items>
       </Item>
       <Item xsi:type="ACTION" archetype_id="openEHR-EHR-ACTION.procedure.v1" concept_name="Procedure undertaken" path="/items[at0002]/items[at0010]/items">
+        <Rule path="/description[at0001]/items[at0002]">
+          <constraint xsi:type="textConstraint">
+            <termQueryId terminologyID=" SNOMEDCT" terminologyLang="en-GB" queryName="AnyOcularProcedure" />
+          </constraint>
+        </Rule>
         <Rule path="/description[at0001]/items[at0014]" max="0" />
         <Rule path="/description[at0001]/items[at0051]" max="0" />
         <Rule path="/description[at0001]/items[at0049]" max="0" />
@@ -153,6 +163,11 @@
       </Item>
       <Item xsi:type="EVALUATION" archetype_id="openEHR-EHR-EVALUATION.problem_diagnosis-uk.v1" concept_name="Problem/Diagnosis" path="/items[at0012]/items[at0014]/items">
         <Rule path="/data[at0001]" hide_on_form="true" />
+        <Rule path="/data[at0001]/items[at0002]">
+          <constraint xsi:type="textConstraint">
+            <termQueryId terminologyID="SNOMEDCT" terminologyLang="en-GB" queryName="AnyClinicalFinding" />
+          </constraint>
+        </Rule>
         <Rule path="/data[at0001]/items[at0009]" max="0" />
         <Rule path="/data[at0001]/items[at0082]" max="0" />
         <Rule path="/data[at0001]/items[at0.83]">

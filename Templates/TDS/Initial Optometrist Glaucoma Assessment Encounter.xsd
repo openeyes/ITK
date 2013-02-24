@@ -282,13 +282,13 @@
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:choice>
-                                              <xs:element name="value" type="oe:DV_TEXT" />
+                                              <xs:element name="value" type="oe:DV_CODED_TEXT" />
                                               <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
                                             </xs:choice>
                                           </xs:sequence>
                                           <xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId" />
                                           <xs:attribute fixed="ELEMENT" name="type" />
-                                          <xs:attribute name="valueType" fixed="DV_TEXT" />
+                                          <xs:attribute name="valueType" fixed="DV_CODED_TEXT" />
                                         </xs:complexType>
                                       </xs:element>
                                       <xs:element name="Date_of_onset" minOccurs="0">
@@ -677,13 +677,13 @@
                                               </xs:complexType>
                                             </xs:element>
                                             <xs:choice>
-                                              <xs:element name="value" type="oe:DV_TEXT" />
+                                              <xs:element name="value" type="oe:DV_CODED_TEXT" />
                                               <xs:element name="null_flavour" type="oe:DV_CODED_TEXT" />
                                             </xs:choice>
                                           </xs:sequence>
                                           <xs:attribute fixed="at0002" name="archetype_node_id" type="oe:archetypeNodeId" />
                                           <xs:attribute fixed="ELEMENT" name="type" />
-                                          <xs:attribute name="valueType" fixed="DV_TEXT" />
+                                          <xs:attribute name="valueType" fixed="DV_CODED_TEXT" />
                                         </xs:complexType>
                                       </xs:element>
                                       <xs:element name="Date_of_onset" minOccurs="0">
